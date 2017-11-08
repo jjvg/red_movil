@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "red_comunitaria",
+  "short_name": "red_comunitaria",
+  "version": "io.cordova.helloworld",
+  "description": "Vue.js + Onsen UI + Cordova sample app",
+  "author": "Vue.js + Onsen UI + Cordova teams",
+  "icons": [],
+  "start_url": "index.html"
+}

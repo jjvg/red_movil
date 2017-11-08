@@ -7,7 +7,11 @@ import Vue from 'vue'
 import VueOnsen from 'vue-onsenui'
 import store from './store'
 import App from './App'
-
+import cordova from '../cordova.js'
+import router from './router'
+import { sync } from 'vuex-router-sync'
+import { mapState } from 'vuex'
+sync(store, router);
 Vue.config.productionTip = false
 
 Vue.use(VueOnsen)
@@ -16,6 +20,11 @@ Vue.use(VueOnsen)
 new Vue({
   el: '#app',
   store,
-  template: '<App/>',
-  components: { App }
+  router,
+  render: h => h(App),
+  //template: '<App/>',
+  /*mounted(){
+    cordova.initialize()
+}*/
+  //components: { App }
 })
