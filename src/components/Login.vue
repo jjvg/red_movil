@@ -20,10 +20,14 @@
             </v-ons-row>
                  <form name="login" action="#">
                 <v-ons-row>
-                    <v-ons-col width="20%"></v-ons-col>
+                    <v-ons-col width="15%"></v-ons-col>
                          <v-ons-col  vertical-align="center">
-                        <v-ons-icon fixed-width size="30px" icon="md-account-box"></v-ons-icon>
-                        <v-ons-input name="email" type="email" required="true" placeholder="Correo"></v-ons-input>
+                       <div class="left">
+                           <v-ons-icon style="margin-right: -1px"fixed-width size="30px" icon="md-account-box"></v-ons-icon>
+                        </div>
+                        <div class="center">
+                           <v-ons-input name="email" type="email" required="true" placeholder="Correo"></v-ons-input>
+                         </div> 
                        </v-ons-col>
                 </v-ons-row>
                 <v-ons-row>

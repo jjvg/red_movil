@@ -39,13 +39,17 @@
         <v-ons-card @click="goTo('https://github.com/vuejs/awesome-vue')">awesome-vue</v-ons-card>
       </v-ons-col>
     </v-ons-row>
-
+      <post-page></post-page>
   </v-ons-page>
 </template>
 
 <script>
+import Post from './Post.vue'
 export default {
   name: 'home',
+  components:{
+    Post
+  },
   data () {
     return {
       msg: 'Welcome',
