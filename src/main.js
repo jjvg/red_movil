@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'onsenui/css/onsenui.css'
 import 'onsenui/css/onsen-css-components.css'
-
+import Materials from "vue-materials"
 import Vue from 'vue'
 import VueOnsen from 'vue-onsenui'
 import store from './store'
@@ -13,18 +13,18 @@ import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
 sync(store, router);
 Vue.config.productionTip = false
-
+Vue.use(Materials)
 Vue.use(VueOnsen)
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  store,
-  router,
-  render: h => h(App),
-  //template: '<App/>',
-  /*mounted(){
+    el: '#app',
+    store,
+    router,
+    render: h => h(App),
+    //template: '<App/>',
+    /*mounted(){
     cordova.initialize()
 }*/
-  //components: { App }
+    //components: { App }
 })
