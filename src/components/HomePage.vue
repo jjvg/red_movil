@@ -21,7 +21,7 @@
         <div class="right"><v-ons-icon icon="fa-external-link"></v-ons-icon></div>
       </v-ons-list-item>
     </v-ons-list>
-
+    <post-page></post-page>
     <v-ons-list-title>Vue.js Ecosystem</v-ons-list-title>
     <v-ons-row>
       <v-ons-col>
@@ -39,7 +39,7 @@
         <v-ons-card @click="goTo('https://github.com/vuejs/awesome-vue')">awesome-vue</v-ons-card>
       </v-ons-col>
     </v-ons-row>
-      <post-page></post-page>
+     
   </v-ons-page>
 </template>
 
@@ -48,7 +48,7 @@ import Post from './Post.vue'
 export default {
   name: 'home',
   components:{
-    Post
+    'post-page': Post
   },
   data () {
     return {
