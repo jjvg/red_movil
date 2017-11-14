@@ -12,7 +12,9 @@ import router from './router'
 import img from './assets/amigos.jpg'
 import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
+import Materials from 'vue-materials'
 sync(store, router);
+Vue.use(Materials);
 Vue.config.productionTip = false
 
 Vue.use(VueOnsen)

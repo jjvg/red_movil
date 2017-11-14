@@ -20,6 +20,9 @@
 import img2 from '../assets/amigos.jpg'
 export default {
   name: 'post',
+  components:{
+    DetallePost
+  },
   data: function() {
     return {
            datos: [
