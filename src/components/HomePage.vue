@@ -1,27 +1,14 @@
 <template>
   <v-ons-page>
     <v-ons-toolbar class="toolbar--material">
-      <div class="left">
-        <v-ons-toolbar-button @click="$store.commit('splitter/toggle')">
-          <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
-        </v-ons-toolbar-button>
-      </div>
-      <div class="center">{{ msg }}</div>
+      <div class="center">REDCOM</div>
     </v-ons-toolbar>
-
-    <div class="header">
-      <img src="../assets/logo.png">
-    </div>
-
-    <v-ons-list-title>Vue.js Essential Links</v-ons-list-title>
-    <v-ons-list>
-      <v-ons-list-item v-for="item in essentialLinks" @click="goTo(item.link)" :key="item.link">
-        <div class="left"><v-ons-icon fixed-width :icon="item.icon"></v-ons-icon></div>
-        <div class="center">{{ item.label }}</div>
-        <div class="right"><v-ons-icon icon="fa-external-link"></v-ons-icon></div>
-      </v-ons-list-item>
-    </v-ons-list>
-
+     <v-ons-tabbar material swipeable position="auto"
+              :tabs="tabs"
+              :visible="true"
+              :index.sync="activeIndex">
+      </v-ons-tabbar>
+    <post-page></post-page>
     <v-ons-list-title>Vue.js Ecosystem</v-ons-list-title>
     <v-ons-row>
       <v-ons-col>
@@ -39,13 +26,30 @@
         <v-ons-card @click="goTo('https://github.com/vuejs/awesome-vue')">awesome-vue</v-ons-card>
       </v-ons-col>
     </v-ons-row>
-
+     <v-ons-speed-dial position="bottom right" direction="up"
+      :visible="spdVisible"
+      :open.sync="spdOpen" >
+      <v-ons-fab :style="spdStyle">
+        <v-ons-icon icon="md-dialpad"></v-ons-icon>
+      </v-ons-fab>
+      <router-link to="/"><v-ons-speed-dial-item :style="spdStyle">
+        <v-ons-icon icon="md-run"></v-ons-icon>
+      </v-ons-speed-dial-item></router-link>
+       <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
+        <v-ons-icon icon="md-airplay"></v-ons-icon>
+      </v-ons-speed-dial-item></router-link>
+    </v-ons-speed-dial>
+        
   </v-ons-page>
 </template>
 
 <script>
+import Post from './Post.vue'
 export default {
   name: 'home',
+  components:{
+    'post-page': Post
+  },
   data () {
     return {
       msg: 'Welcome',
@@ -75,8 +79,19 @@ export default {
           link: 'http://vuejs-templates.github.io/webpack/',
           icon: 'fa-file-text'
         }
-      ]
-    }
+      ],
+      spdVisible: true,
+      spdOpen: true,
+      spdStyle: {
+        backgroundColor: this.$ons.platform.isIOS() ? '#4282cc' : null
+      },
+      shareItems: {
+        'Twitter': 'md-twitter',
+        'Facebook': 'md-facebook',
+        'Google+': 'md-google-plus'
+      }
+    };
+    
   },
   methods: {
     goTo (url) {

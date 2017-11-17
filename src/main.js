@@ -9,18 +9,23 @@ import store from './store'
 import App from './App'
 import cordova from '../cordova.js'
 import router from './router'
+import img from './assets/amigos.jpg'
 import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
+import Materials from 'vue-materials'
 sync(store, router);
+Vue.use(Materials)
 Vue.config.productionTip = false
 
 Vue.use(VueOnsen)
+
 
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
     store,
     router,
+    img,
     render: h => h(App),
     //template: '<App/>',
     /*mounted(){
