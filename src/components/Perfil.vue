@@ -1,43 +1,58 @@
 <template>
     <v-ons-page id="app">
-       <!--<v-ons-toolbar>
-      <div class="center">Perfil</div>
-               
-    </v-ons-toolbar>-->
-
-    
+       <v-ons-toolbar class="toolbar--material">
+      <div class="center white-text">REDCOM</div>
+    </v-ons-toolbar>
     <v-ons-card>
-        <img src="../assets/perfil.jpg" alt="Onsen UI" >
+        <img src="../assets/perfil.jpg" alt="Imagen perfil" >
           <div class="title">
-            Andrea
+            {{nombre}}
           </div>
       <div class="content">
 
         <v-ons-list>
           <v-ons-list-header>Información</v-ons-list-header>
-          <v-ons-list-item>Correo electrónico</v-ons-list-item>
-          <v-ons-list-item>Descripción</v-ons-list-item>
+          <v-ons-list-item>{{correo}}</v-ons-list-item>
+          <v-ons-list-item>{{descripcion}}</v-ons-list-item>
           
         </v-ons-list>
         <div >
-            <div class="left"><v-ons-button class="button--material"><v-ons-icon></v-ons-icon>Escribir publicación</v-ons-button></div>
-            <v-ons-button class="button--material" style="border-radius:50%; 
-            position: absolute; right: 16px; top:8px;"> <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button>
+            <div class="rigth"><v-ons-button  modifier="material" style="margin: 6px 0">Publicar</v-ons-button></div>
+            <v-ons-button modifier="material" style="border-radius:50%; 
+                                                  position: absolute; 
+                                                  right: 16px; 
+                                                  top:8px;">
+             <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button>
         </div>
         
       </div>
     </v-ons-card>
-    
-      
+    <v-ons-card>
+      <v-ons-list-header>Publicaciones</v-ons-list-header>
+    <post-page></post-page>
+     </v-ons-card>
 
     </v-ons-page>
         </template>
+
 <script>
 
+import Post from './Post.vue'
 export default {
-  name: 'perfil'
-
+  name: 'perfil',
+   components:{
+    'post-page': Post,
+   },
+  data(){
+    return{
+      nombre: 'Andrea',
+      correo: 'andrea123@gmail.com',
+      descripcion: 'ggasgs'
+    }
+  }
+  
 }
+
 </script>
 
 <style scoped>
@@ -55,19 +70,4 @@ ons-card {
   text-align: center;
   
 }
-
-.btn {
-  
-  font-weight: bold;
-  font-family: 'Roboto' ;
-  position: absolute;
-  right: 16px;
-  border-radius: 50%;
-  top:8px;
-  
-  
- 
-}
-
-
 </style>
