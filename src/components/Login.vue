@@ -20,7 +20,7 @@
             </v-ons-row>
                  <form name="login" action="#">
                 <v-ons-row>
-                    <v-ons-col width="15%"></v-ons-col>
+                    <v-ons-col width="20%"></v-ons-col>
                          <v-ons-col  vertical-align="center">
                        <div class="left">
                            <v-ons-icon style="margin-right: -1px"fixed-width size="30px" icon="md-account-box"></v-ons-icon>
@@ -39,7 +39,7 @@
                 </v-ons-row>
                  </form>
                  <div class="center">
-                     <v-ons-button @click="verificar()" modifier="material" style="margin: 6px 0">Ingresar</v-ons-button>
+                <router-link to="/home"><v-ons-button  modifier="material" style="margin: 6px 0">Ingresar</v-ons-button></router-link> 
                  </div>
                  <br>
                     <div align="center">
@@ -55,7 +55,7 @@ export default {
 
   methods:{
       verificar(){
-
+          redirect: '/home';
       }
   }
 }

@@ -5,9 +5,9 @@
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <v-ons-card>
             <div class="card__title center">{{item.label}}</div>
-            <div class="card__imagen">
+            <router-link to="/detallepost"><div ref='DetallePost' class="card__imagen">
                 <img :src="item.img" style="width: 100%">    
-            </div>
+            </div></router-link>
             <div class="card_content">
                 <p>{{item.contenido}}</p>
             </div>
@@ -18,9 +18,10 @@
 </template>
 <script>
 import img2 from '../assets/amigos.jpg'
+import DetallePost from './DetallePost.vue'
 export default {
   name: 'post',
-  components:{
+  components: {
     DetallePost
   },
   data: function() {
@@ -41,6 +42,11 @@ export default {
           },
         ]
       }
+  },
+  methods: {
+     verDetalle(){
+       
+     }
   }
 }
 </script>
