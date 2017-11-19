@@ -1,44 +1,78 @@
 <template>
     <v-ons-page id="app">
-       <!--<v-ons-toolbar>
-      <div class="center">Perfil</div>
-    </v-ons-toolbar>-->
-
-    
+       <v-ons-toolbar class="toolbar--material">
+      <div class="center white-text">REDCOM</div>
+    </v-ons-toolbar>
     <v-ons-card>
-       <img src="../assets/perfil.jpg" alt="Onsen UI" style="border-radius: 50%; width: 150px;
-     height: 150px">
+        <img src="../assets/perfil.jpg" alt="Imagen perfil" >
           <div class="title">
-            Awesome framework
+            {{nombre}}
           </div>
       <div class="content">
-        <div>
-            <v-ons-button class="button--material"><v-ons-icon></v-ons-icon>Editar perfil</v-ons-button>
-        </div>
+
         <v-ons-list>
-          <!--<v-ons-list-header>Bindings</v-ons-list-header>-->
-          <v-ons-list-item>Vue</v-ons-list-item>
-          <v-ons-list-item>Angular</v-ons-list-item>
-          <v-ons-list-item>React</v-ons-list-item>
+          <v-ons-list-header>Información</v-ons-list-header>
+          <v-ons-list-item>{{correo}}</v-ons-list-item>
+          <v-ons-list-item>{{descripcion}}</v-ons-list-item>
+          
         </v-ons-list>
+        <div >
+          <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material" @click="nuevoPost()">Publicar</v-ons-button></router-link>
+            
+          <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
+                                                  position: absolute; 
+                                                  right: 16px; 
+                                                  top:8px;"
+                                                  @click="editarPerfil()">
+             <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
+        </div>
+        
       </div>
     </v-ons-card>
-    
-      
+    <v-ons-card>
+      <v-ons-list-header>Publicaciones</v-ons-list-header>
+    <post-page></post-page>
+     </v-ons-card>
 
     </v-ons-page>
         </template>
+
 <script>
+
+import Post from './Post.vue'
 export default {
-  name: 'perfil'
+  name: 'perfil',
+   components:{
+    'post-page': Post,
+   },
+  data(){
+    return{
+      nombre: 'Andrea',
+      correo: 'andrea123@gmail.com',
+      descripcion: 'ggasgs'
+    }
+  },
+  
+
+ methods: {
+
+       nuevoPost(){
+           redirect: '/nuevopost';
+            
+       },
+       editarPerfil(){
+           redirect: '/editarperfil';
+       }
+   }
 }
 </script>
 
 <style scoped>
-.img{
+img{
      border-radius: 50%;
      width: 150px;
      height: 150px;
+     
      }
 
 .toolbar--material{
@@ -48,14 +82,4 @@ ons-card {
   text-align: center;
   
 }
-.button--material {
-  font-weight: 100;
-  font-size: 10px;
-  font-weight: bold;
-  font-family: 'Roboto' ;
- 
-
-}
-
-
 </style>

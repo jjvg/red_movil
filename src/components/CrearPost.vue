@@ -1,7 +1,7 @@
 <template>
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
-      <div class="center">Nueva Publicacion</div>
+      <div class="center">Nueva Publicación</div>
     </v-ons-toolbar>
     <br>
     <br>
@@ -24,10 +24,11 @@
            <div class="col s12 m12 l6">
                <div class="input-field">
                      <v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
-                     <label for="text">Describe la Situacion</label>
+                     <label for="text">Describe la Situación</label>
                 </div>
            </div>
         </div>
+<<<<<<< HEAD
          <v-ons-list>
              <v-ons-list-item>
                 <div class="center">
@@ -41,6 +42,17 @@
         </div>
       </v-ons-list-item>
          </v-ons-list>
+=======
+         <div class="row">
+             <div class="col s12 m6 l4">
+                     <div class="input-field">
+                    <v-select name="select" id="select" v-model="selectedItem" :item="items"></v-select>
+                    <label for="select">Seleccione el Área dirigida</label>
+                    </div>
+             </div>
+         </div>
+        
+>>>>>>> f384dcf6748ff22e28afe9fea29049e79cde943d
         <section style="margin: 20px">
              <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="savePost()">Publicar</v-ons-button></router-link>
              <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="regresar()">Cancelar</v-ons-button></router-link>  
