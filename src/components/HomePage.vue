@@ -7,13 +7,10 @@
           <div class="buscar"><v-ons-search-input class="busq material"></v-ons-search-input></div>
         </div>
     </v-ons-toolbar>
+    
    </div>
 
-     <v-ons-tabbar material swipeable position="auto"
-              :tabs="tabs"
-              :visible="true"
-              :index.sync="activeIndex">
-      </v-ons-tabbar>
+     
     <div class="estado">
       <estado-page></estado-page>
      </div>

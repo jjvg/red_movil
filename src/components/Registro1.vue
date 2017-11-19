@@ -2,7 +2,7 @@
     <v-ons-page id="app" modifier="material">
             <v-ons-row>
              <v-ons-col>
-                  <div class="card--material small purple">
+                  <div class="card--material small verde">
                     <div class="card-image">
                         <img src="../assets/amigos.jpg" style="width: 100%">
                         <span class="card__title white-text center">Bienvenido a REDCOM</span>
@@ -42,5 +42,8 @@
     flex-direction: column;
     margin-left: 10px;
     margin-top: 20px;
+}
+.verde{
+    background-color: #44714E;
 }
 </style>

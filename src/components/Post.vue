@@ -34,10 +34,12 @@
 <script>
 import img2 from '../assets/amigos.jpg'
 import DetallePost from './DetallePost.vue'
+import Comentarios from './Comentario.vue'
 export default {
   name: 'post',
   components: {
-    DetallePost
+    DetallePost,
+    'comentarios-page': Comentarios,
   },
   data: function() {
     return {
