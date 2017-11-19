@@ -4,14 +4,14 @@ import Router from 'vue-router';
 // const Foo = resolve => require(['../views/hello.vue'], resolve);
 // import hello from '../views/hello.vue';
 
-import login from './components/login.vue';
-import HomePage from './components/HomePage.vue';
-import CrearPost from './components/CrearPost.vue';
-import Perfil from './components/Perfil.vue';
-import DetallePost from './components/DetallePost.vue';
-import RegistrarEnte from './components/RegistrarEnte.vue';
-import RegistrarCom from './components/RegistrarCom.vue';
-import Registro1 from './components/Registro1.vue';
+import login from './components/login.vue'
+import HomePage from './components/HomePage.vue'
+import CrearPost from './components/CrearPost.vue'
+import Perfil from './components/Perfil.vue'
+import DetallePost from './components/DetallePost.vue'
+import RegistrarEnte from './components/RegistrarEnte.vue'
+import RegistrarCom from './components/RegistrarCom.vue'
+import Registro1 from './components/Registro1.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -23,8 +23,8 @@ export default new Router({
         { name: 'perfil', path: '/perfil', component: Perfil },
         { name: 'crearpost', path: '/nuevopost', component: CrearPost },
         { name: 'detallepost', path: '/detallepost', component: DetallePost },
-        { name: 'regente', path: '/registrarente', component: RegistrarEnte },
-        { name: 'registro1', path: '/Paso1', component: Registro1 },
+        { name: 'editarperfil', path: '/editarperfil', component: EditarPerfil },
+        { name: 'regente', path: '/registarente', component: RegistrarEnte },
         { name: 'regcom', path: '/registrarcom', component: RegistrarCom },
     ],
 });
