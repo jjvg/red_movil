@@ -17,12 +17,14 @@
           
         </v-ons-list>
         <div >
-            <div class="rigth"><v-ons-button  modifier="material" style="margin: 6px 0">Publicar</v-ons-button></div>
-            <v-ons-button modifier="material" style="border-radius:50%; 
+          <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material" @click="nuevoPost()">Publicar</v-ons-button></router-link>
+            
+          <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
                                                   position: absolute; 
                                                   right: 16px; 
-                                                  top:8px;">
-             <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button>
+                                                  top:8px;"
+                                                  @click="editarPerfil()">
+             <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
         </div>
         
       </div>
@@ -49,10 +51,20 @@ export default {
       correo: 'andrea123@gmail.com',
       descripcion: 'ggasgs'
     }
-  }
+  },
   
-}
 
+ methods: {
+
+       nuevoPost(){
+           redirect: '/nuevopost';
+            
+       },
+       editarPerfil(){
+           redirect: '/editarperfil';
+       }
+   }
+}
 </script>
 
 <style scoped>

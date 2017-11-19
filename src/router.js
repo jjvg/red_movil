@@ -8,6 +8,7 @@ import login from './components/login.vue';
 import HomePage from './components/HomePage.vue';
 import CrearPost from './components/CrearPost.vue';
 import Perfil from './components/Perfil.vue';
+import EditarPerfil from './components/EditarPerfil.vue';
 import DetallePost from './components/DetallePost.vue'
 Vue.use(Router);
 
@@ -20,5 +21,6 @@ export default new Router({
         { name: 'perfil', path: '/perfil', component: Perfil },
         { name: 'crearpost', path: '/nuevopost', component: CrearPost },
         { name: 'detallepost', path: '/detallepost', component: DetallePost },
+        { name: 'editarperfil', path: '/editarperfil', component: EditarPerfil },
     ],
 });
