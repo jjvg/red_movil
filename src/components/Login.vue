@@ -43,7 +43,7 @@
                  </div>
                  <br>
                     <div align="center">
-						¿Aun no te has Registrado..?<router-link to="/home">  Registrarse</router-link>	
+						¿Aun no te has Registrado..?<router-link to="/Paso1">  Registrarse</router-link>	
 					</div>
     </v-ons-page>
 
