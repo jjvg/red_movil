@@ -1,24 +1,45 @@
 <template>
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
-      <div class="center">Nueva Publicación</div>
-    </v-ons-toolbar>
-    <br>
-    <br>
-    <br>
+        <div class="left">
+            <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        </div>
+        <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+        </v-ons-toolbar>
+    
     <div class="container">
-         <form id="registroPost" method="POST" action="/home">
-        <div class="row">
+        
+        <form id="registroPost" method="POST" action="/home">
+        <div class="right publ">
+             <router-link to="/home"><h4 style="color: #20cc0b;">Publicar</h4></router-link>
+             </div>
+        <div class="">
+            <v-ons-row>
+                <v-ons-col>
+                  <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #4bdc1c;">add_a_photo</i></div>
+                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
+                  </div>
+                </v-ons-col>
+                <v-ons-col>
+                    <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: rgb(220, 161, 28);">collections</i></div>
+                     <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
+                  </div>
+                </v-ons-col>
+            </v-ons-row>
+        </div>
+        
+            
+        <div class="row l">
+         
             <div class="col s12 m6 l4">
-            <div class="input field" style="margin: 20px,40px,20px,10px">
-                 <v-text-input name="titulo" id="titulo" v-model="titulo" placeholder="Titulo de tu Problema"></v-text-input>
-             </div>   
+            <div class="input field inp" >
+                 <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" placeholder="Cuéntanos qué está sucediendo"></v-text-area>
+                     <label for="text">Situación Actual</label>
+            </div>   
             </div>
-             <div class="col s12 m6 l4">
-                <div class="input-field">
-                    <v-file-input v-model="imagen" placeholder="Selecione una imagen" id="img"></v-file-input>
-                 </div>
-            </div>
+             
         </div>
         <div class="row">
            <div class="col s12 m12 l6">
@@ -31,14 +52,15 @@
          <v-ons-list>
              <v-ons-list-item>
                 <div class="center">
-
-                 <v-ons-select material class="material" style="width: 80%" v-model="selectedItem" >
-                 <option v-for="item in items" :value="item.value" :key="item.key">
-              {{ item.text }}
-            </option>
-          </v-ons-select>
-
-        </div>
+                    <label  >¿Con qué área se relaciona esta situación?</label>
+                
+                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
+                            {{ item.text }}
+                        </option>
+                    </v-ons-select>
+                
+                </div>
       </v-ons-list-item>
          </v-ons-list>
 
@@ -53,8 +75,7 @@
         
 
         <section style="margin: 20px">
-             <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="savePost()">Publicar</v-ons-button></router-link>
-             <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="regresar()">Cancelar</v-ons-button></router-link>  
+            
         </section>
     </form>
 
@@ -78,9 +99,26 @@ export default {
             contenido:{type:String},
             categoria:{type:Boolean},
             items: [
+        { text: 'Otra', value: 'Otra' },
         { text: 'Salud', value: 'Salud' },
         { text: 'Seguridad', value: 'Seguridad' },
-        { text: 'Arte', value: 'Arte' }
+        { text: 'Arte', value: 'Arte' },
+        { text: 'Alimentación', value: 'Alimentación' }
+      ],
+      edos: [
+        { text: 'Lara', value: 'Lara' },
+        { text: 'Yaracuy', value: 'Yaracuy' },
+        { text: 'Falcón', value: 'Falcón' },
+        { text: 'Zulia', value: 'Zulia'},
+        { text: 'Aragua', value: 'Aragua' }
+      ],
+      
+      ciudad: [
+        { text: 'Barquisimeto', value: 'Barquisimeto' },
+        { text: 'San Felipe', value: 'San Felipe' },
+        { text: 'Coro', value: 'Coro' },
+        { text: 'Maracaibo', value: 'Maracaibo'},
+        { text: 'Maracay', value: 'Maracay' }
       ],
       selectedItem: ''
         
@@ -104,5 +142,64 @@ export default {
 </script>
 
 <style scoped>
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    margin-left: 100px;
+    margin-right: 100px;    
+}
+.inp{
+  margin-top: 10px; 
+  width: 100%; 
+}
+.tam{
+    font-size: 10px;
+}
 
+.tit{
+	    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.ic {
+	width: 20%;
+    display: flex;
+    align-items: center !important;
+    flex-direction: row;
+    margin-left: 10px;
+	margin-right: 0px;
+}
+.ub{
+	width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 0px;
+}
+.publ{
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h6{
+  font-size: 15px;
+}
+.ic{
+  width: 20%;
+  display: flex;
+  margin-right:5px;
+}
+.col2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+}
 </style>

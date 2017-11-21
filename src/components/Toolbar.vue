@@ -1,17 +1,8 @@
 <template>
-  <v-ons-page>
-   <div>
-      <v-ons-toolbar class="toolbar--material">
-          <div class="center">REDCOM1</div>
-    </v-ons-toolbar>
-   </div>
-
-     <v-ons-tabbar material swipeable position="auto"
-              :tabs="tabs"
-              :visible="true"
-              :index.sync="activeIndex">
-      </v-ons-tabbar>
-   </v-ons-page>
+  <div class="left">
+            <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        </div>
+        <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
 </template>
 <script>
 export default {

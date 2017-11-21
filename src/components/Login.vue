@@ -2,7 +2,7 @@
     <v-ons-page id="app" modifier="material">
             <v-ons-row>
              <v-ons-col>
-                  <div class="card--material small purple">
+                  <div class="card--material small verde">
                     <div class="card-image">
                         <img src="../assets/amigos.jpg" style="width: 100%">
                         <span class="card__title white-text center">Bienvenido a REDCOM</span>
@@ -62,7 +62,10 @@ export default {
 </script>
 <style scoped>
 .toolbar--material{
-    background-color: purple;
+    background-color: #44714E;
+}
+.verde{
+    background-color: #44714E;
 }
 p{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
