@@ -28,7 +28,6 @@
                 </div>
            </div>
         </div>
-<<<<<<< HEAD
          <v-ons-list>
              <v-ons-list-item>
                 <div class="center">
@@ -42,7 +41,7 @@
         </div>
       </v-ons-list-item>
          </v-ons-list>
-=======
+
          <div class="row">
              <div class="col s12 m6 l4">
                      <div class="input-field">
@@ -52,7 +51,7 @@
              </div>
          </div>
         
->>>>>>> f384dcf6748ff22e28afe9fea29049e79cde943d
+
         <section style="margin: 20px">
              <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="savePost()">Publicar</v-ons-button></router-link>
              <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="regresar()">Cancelar</v-ons-button></router-link>  
