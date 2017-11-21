@@ -63,15 +63,6 @@
                 </div>
       </v-ons-list-item>
          </v-ons-list>
-
-         <div class="row">
-             <div class="col s12 m6 l4">
-                     <div class="input-field">
-                    <v-select name="select" id="select" v-model="selectedItem" :item="items"></v-select>
-                    <label for="select">Seleccione el Área dirigida</label>
-                    </div>
-             </div>
-         </div>
         
 
         <section style="margin: 20px">
