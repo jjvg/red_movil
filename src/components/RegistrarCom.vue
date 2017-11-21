@@ -1,11 +1,17 @@
-
 <template>
     <v-ons-page id="app">
+		    <v-ons-toolbar class="toolbar--material">
+        <div class="left">
+            <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        </div>
+        <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+        </v-ons-toolbar>
+    
         <div class="container">
 	<div class="row">
 		<div class="col s12">
 			<div align="center">
-				<h2>Registro de Comunidades</h2>
+				<h2 style="color: rgba(62, 173, 48, 0.79);">Registro de Comunidades</h2>
 			</div>
 		</div>
 	</div>
@@ -30,10 +36,10 @@
 			</div>
 			<div class="row">
 				<div class= "tit">
-					<div class="ic"><i class="material-icons prefix">place</i></div>
+					<div class="ic"><i style="color: #20cc0b;" class="material-icons prefix">place</i></div>
 					
 				
-				<div class="ub"><h5>Ubicación</h5></div>
+				<div class="ub center" style="color: #656158d1;"><h5>Ubicación</h5></div>
 				</div>
 				<br>
 				<div class="col s10 m8">
@@ -70,3 +76,42 @@
     }
 
 </script>
+
+<style scooped>
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    margin-left: 100px;
+    margin-right: 100px;    
+}
+
+.tit{
+	    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+	align: center;
+	width: 50%;
+}
+
+.ic {
+	width: 20%;
+    display: flex;
+    align-items: center !important;
+    flex-direction: row;
+    margin-left: 10px;
+	margin-right: 0px;
+}
+.ub{
+	width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 0px;
+	align: center;
+
+}
+</style>

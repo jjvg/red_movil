@@ -3,28 +3,47 @@
      <v-ons-list>
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <v-ons-card>
-            <div class="card__title center">{{item.label}}</div>
-            <router-link to="/detallepost"><div class="card__imagen">
+            <div class="pub">
+               <div class="img">
+                   <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
+               </div> 
+                <div class="col">
+                  <div class="f1">
+                      <h4>Pepito Torres</h4>
+                  </div>
+                  <div class="f2">
+                      <h6>Hace 2 minutos</h6>
+                  </div>
+                </div>
+            </div>
+           
+            <router-link to="/detallepost"><div class="card__imagen posti">
                 <img :src="item.img" style="width: 100%">    
             </div></router-link>
             <div class="card_content">
-                <p>{{item.contenido}}</p>
+                <h5>{{item.contenido}}</h5>
             </div>
-            <div class="botn">
-               <div class="gustar"><v-ons-button  modifier="material" style="margin: 6px 0"><i class="material-icons">thumb_up</i>Me gusta</v-ons-button></div>
-              <div class="cm"><v-ons-button  modifier="material" style="margin: 6px 0"><i class="material-icons" prefix>chat_bubble</i>Comentarios</v-ons-button></div>
-              
-              </div>
-              <div class="coment">
-            <div class="comentario">
-              <div class="ic">
-                <i class="material-icons">chat_bubble</i>
-              </div>
-              <div class="com">
-                <v-ons-input name="comentario" type="text" placeholder="¿Qué opinas?"></v-ons-input>
-              </div>
-              </div>
-              <v-ons-button  modifier="material" style="margin: 6px 0">Comentar</v-ons-button>
+            
+            <v-ons-row>
+                <v-ons-col>
+                  <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #5d6367;">thumb_up</i></div>
+                     <h6 style="color: #5d6367;"> Me gusta</h6>
+                  </div>
+                </v-ons-col>
+                <v-ons-col>
+                  
+                  <router-link to="/detallepost">
+                  <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #5d6367;">chat_bubble_outline</i></div>
+                     <h6 style="color: #5d6367;"> Comentarios</h6>
+                  </div>
+                  </router-link>
+                  
+                </v-ons-col>
+            </v-ons-row>
+            <div class="com">
+                
             </div>
         </v-ons-card>
       </v-ons-list-item>
@@ -50,7 +69,7 @@ export default {
             type: File,
           },
           img:img2,
-          contenido: 'Probando'
+          contenido: 'Con mis amichis'
           },
           {
           label: 'Community Chat',
@@ -68,25 +87,52 @@ export default {
 }
 </script>
 <style>
-.comentario{
+.texto{
    display: flex;
     align-items: center;
-    flex-direction: row;
     width: 100%;
+    justify-content: flex-end;
+    margin-left: 0px;
+    
+}
+h6{
+  font-size: 15px;
 }
 .ic{
   width: 20%;
   display: flex;
-  flex-direction: row;
-  margin-left: 10px;
-	margin-right: 0px;
+  margin-right:5px;
 }
 
-.com{
-    width: 100%;
+.p{
+    display: inline-block;
+    
+}
+.perfil {
+    border-radius: 50%;
+}
+.pub{
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 30px;    
+}
+.posti{
+  margin-top: 15px;
+}
+.col{
+  display: flex;
+    align-items: left;
     flex-direction: column;
-    margin-left: 10px;
+    width: 100%;
+    margin-left: 20px;
 }
 .botn{
   display: flex;
@@ -102,7 +148,24 @@ export default {
   margin-left: 5px;
 	margin-right: 5px;
 }
-.cm{
+.col2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+}
+h4{
+  color: #44714E;
+  line-height: 0;
+}
 
+h6{
+  line-height: 0;
+  font-size: 10px;
+}
+h5{
+  line-height: 0.8;
+  font-size: 15px;
+  color: #00000099;
 }
 </style>

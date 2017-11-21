@@ -4,7 +4,7 @@
         <div class="left">
         <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
       </div>
-      <div class="center">REDCOM</div>
+      <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
     </v-ons-toolbar>
     <br>
     <br>
@@ -65,4 +65,14 @@ export default {
     max-width: 10000px;
     margin: 0px, 0px ,0px,0px 
 }
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    margin-left: 100px;
+    margin-right: 100px;    
+}
 </style>
+

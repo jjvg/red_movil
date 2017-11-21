@@ -2,7 +2,7 @@
 
 
     <div class="ctn-edo">
-        <router-link to="/nuevopost">
+        
         <v-ons-card>
         <div class="estado">
             <div class="img">
@@ -10,13 +10,13 @@
             </div> 
             
 	        <div class="edo">                
-   		        ¿Qué está sucediendo?
+   		       <router-link to="/nuevopost"><h6 style="color: #00000054;"> ¿Qué está sucediendo?</h6></router-link>
  	        </div>
         </div>
         
 	  		
         </v-ons-card>
-        </router-link>      
+              
     </div>
 
 </template>
@@ -52,7 +52,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 

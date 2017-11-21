@@ -3,8 +3,14 @@
    <div>
       <v-ons-toolbar class="toolbar--material">
         <div class="tool">
-          <div class="center1"><img src='../assets/img/rc1.png' class="logo"></div>
-          <div class="buscar"><v-ons-search-input class="busq material"></v-ons-search-input></div>
+          <div class="log"><img src='../assets/img/rc1.png' class="logo"></div>
+          <div class="buscar">
+              <div class="ico"><i class="material-icons" style="color: white;">search</i></div>
+         	 	  <div class="b"><input id="busq" type="text" ></div>
+          </div>
+          <div class="perfil">
+           <router-link to="/perfil"><i class="material-icons" style="color: white;">account_circle</i></router-link>
+          </div>
         </div>
     </v-ons-toolbar>
     
@@ -117,34 +123,25 @@ ons-toolbar{
     align: center;
     
 }
-.center1{
+.log{
   width: 20%;
     display: flex;
-  flex-direction: row;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+
     justify-content: flex-start;
     
 }
-.busq{
-  color: white !important;
-   display: flex;
-  flex-direction: row;
-  margin-left: 5px;
-    margin-right: 5px;
-    width: 100%;
-    justify-content: center;
-}
+
 .buscar{
     display: flex;
-  flex-direction: row;
-  margin-left: 5px;
-    margin-right: 5px;
-    width: 100%;
+    width: 60%;
+    align-items: center;
+}
+.perfil{
+   display: flex;
+    width: 20%;
+    align-items: flex-end !important;
 }
 .tool{
-  align-items: center;
   margin-top: 10px;
   width: 100%;
   display: flex;
