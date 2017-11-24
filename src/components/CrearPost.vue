@@ -2,28 +2,30 @@
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
         <div class="left">
-            <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+            <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
         </div>
         <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
         </v-ons-toolbar>
     
     <div class="container">
         
-        <form id="registroPost" method="POST" action="/home">
-        <div class="right publ">
-             <router-link to="/home"><h4 style="color: #20cc0b;">Publicar</h4></router-link>
-             </div>
+        <form id="registroPost" method="POST" action="/principal">
+       <v-ons-row>
+           <h3 class="center">Nueva Publicacion</h3>
+       </v-ons-row>
+       <br>
+       <br>
         <div class="">
             <v-ons-row>
                 <v-ons-col>
                   <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #4bdc1c;">add_a_photo</i></div>
+                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
                      <div><h6 style="color: #5d6367;"> Cámara</h6></div>
                   </div>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: rgb(220, 161, 28);">collections</i></div>
+                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
                      <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
                   </div>
                 </v-ons-col>
@@ -68,6 +70,9 @@
         <section style="margin: 20px">
             
         </section>
+         <div class="center">
+                <router-link to="/principal"><v-ons-button  modifier="material large" style="margin: 6px 0">Registrar</v-ons-button></router-link> 
+         </div>
     </form>
 
     </div>

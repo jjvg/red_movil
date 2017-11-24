@@ -2,7 +2,7 @@
 <div id="home">
     <v-ons-toolbar class="toolbar--material">
         <div class="left">
-        <router-link to="/home"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
       </div>
       <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
     </v-ons-toolbar>
@@ -11,21 +11,19 @@
     <br>
     <v-ons-row>
     <div class="container" >
-        <v-card large>
-         <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../assets/amigos.jpg">
+        <div class="card--material small purple ">
+                    <div class="card-image">
+                        <img src="../assets/amigos.jpg" style="width: 100%">
+                        <span class="card__title white-text center">{{titulo}}</span>
+                    </div>
+                    <div class="card-material__content white-text center">
+                     {{contenido}}
+                     <div class="right">
+                        <router-link to="/comentarios"><v-ons-button modifier="material">Comentarios</v-ons-button></router-link>
+                    </div>
+                    </div>
+                    
         </div>
-        <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{post.titulo}}<i class="material-icons right">more_vert</i></span>
-             <div class="left">
-                <v-btn>Comentarios</v-btn>    
-             </div>
-        </div>
-        <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{post.titulo}}<i class="material-icons right">close</i></span>
-            <p>{{post.contenido}}</p>
-        </div>
-    </v-card>
        
     </div>
     </v-ons-row>
@@ -39,20 +37,15 @@ export default {
 
      data () {
          return {
-              post: [
-          {
-          titulo: 'Core Docs',
-          img:{
-            type: File,
-          },
-          img:img2,
-          contenido: 'Probando'
-          }
-          ],
-         }
-     }      
      
-}
+                    titulo: 'Celebrando con mis amigos',
+                    contenido: 'Hoy disfrutamos de un juego en equipo y todos trabajamos juntos para alcanzar nuestra meta'
+                }
+
+            } 
+}      
+     
+
 </script>
 
 <style scoped>

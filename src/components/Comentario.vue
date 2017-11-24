@@ -18,7 +18,7 @@
               </div>
               
     </div>
-              <v-ons-button  modifier="material" style="margin: 6px 0">Comentar</v-ons-button>
+              <v-ons-button modifier="material" style="margin: 6px 0">Comentar</v-ons-button>
     </v-ons-page>
 </template>
 

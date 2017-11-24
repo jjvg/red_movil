@@ -1,22 +1,17 @@
 <template>
-
-
     <div class="ctn-edo">
         
-        <v-ons-card>
+        </router-link><v-ons-card>
         <div class="estado">
             <div class="img">
                 <img src="https://pbs.twimg.com/profile_images/2669709327/0d45257779c840117f61f48822a82954_normal.jpeg" class="perfil">
             </div> 
-            
 	        <div class="edo">                
-   		       <router-link to="/nuevopost"><h6 style="color: #00000054;"> ¿Qué está sucediendo?</h6></router-link>
- 	        </div>
+   		      <router-link to="/nuevopost"><h6 style="color: #080e0d54; font-family: Roboto;font-style: Roboto; font-size: 20px; align-content: center;"> ¿Qué está sucediendo?</h6>
+ 	        </router-link>
+              </div>
         </div>
-        
-	  		
         </v-ons-card>
-              
     </div>
 
 </template>

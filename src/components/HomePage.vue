@@ -1,28 +1,28 @@
 <template>
-  <v-ons-page>
-   <div>
-      <v-ons-toolbar class="toolbar--material">
-        <div class="tool">
-          <div class="log"><img src='../assets/img/rc1.png' class="logo"></div>
-          <div class="buscar">
-              <div class="ico"><i class="material-icons" style="color: white;">search</i></div>
-         	 	  <div class="b"><input id="busq" type="text" ></div>
-          </div>
-          <div class="perfil">
-           <router-link to="/perfil"><i class="material-icons" style="color: white;">account_circle</i></router-link>
-          </div>
-        </div>
-    </v-ons-toolbar>
-    
-   </div>
-
-     
+  <v-ons-page>	  
     <div class="estado">
       <estado-page></estado-page>
      </div>
      <div class="post">   
         <post-page></post-page>
     </div>
+     <v-ons-speed-dial position="bottom right" direction="up"
+      :visible="spdVisible"
+      :open.sync="spdOpen" >
+      <v-ons-fab :style="spdStyle">
+        <v-ons-icon icon="md-dialpad"></v-ons-icon>
+      </v-ons-fab>
+      <router-link to="/"><v-ons-speed-dial-item :style="spdStyle" 
+      >
+        <v-ons-icon icon="md-run"></v-ons-icon>
+      </v-ons-speed-dial-item></router-link>
+       <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
+        <v-ons-icon icon="md-airplay"></v-ons-icon>
+      </v-ons-speed-dial-item></router-link>
+      <v-ons-speed-dial-item :style="spdStyle" >
+        <v-ons-icon icon="md-search"></v-ons-icon>
+      </v-ons-speed-dial-item>
+    </v-ons-speed-dial>
   </v-ons-page>
 </template>
 
@@ -38,43 +38,14 @@ export default {
   data () {
     return {
       msg: 'Welcome',
-      essentialLinks: [
-        {
-          label: 'Core Docs',
-          link: 'https://vuejs.org',
-          icon: 'fa-book'
-        },
-        {
-          label: 'Community Chat',
-          link: 'https://chat.vuejs.org',
-          icon: 'fa-commenting'
-        },
-        {
-          label: 'Forum',
-          link: 'https://forum.vuejs.org',
-          icon: 'ion-chatboxes'
-        },
-        {
-          label: 'Twitter',
-          link: 'https://twitter.com/vuejs',
-          icon: 'fa-twitter'
-        },
-        {
-          label: 'Docs for this template',
-          link: 'http://vuejs-templates.github.io/webpack/',
-          icon: 'fa-file-text'
-        }
-      ],
+      
       spdVisible: true,
+      updated:open,
       spdOpen: true,
       spdStyle: {
         backgroundColor: this.$ons.platform.isIOS() ? '#4282cc' : null
       },
-      shareItems: {
-        'Twitter': 'md-twitter',
-        'Facebook': 'md-facebook',
-        'Google+': 'md-google-plus'
-      }
+      
     };
     
   },
@@ -112,7 +83,7 @@ ons-toolbar{
 }
 .estado {
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 .logo{
@@ -124,7 +95,7 @@ ons-toolbar{
     
 }
 .log{
-  width: 20%;
+  width: 300%;
     display: flex;
 
     justify-content: flex-start;
@@ -134,7 +105,7 @@ ons-toolbar{
 .buscar{
     display: flex;
     width: 60%;
-    align-items: center;
+    align-items: right;
 }
 .perfil{
    display: flex;
@@ -148,6 +119,6 @@ ons-toolbar{
   flex-direction: row;
 }
 .toolbar--material{
-    background-color: #44714E;
+    background-color: purple;
 }
 </style>

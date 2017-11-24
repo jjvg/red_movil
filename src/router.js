@@ -13,6 +13,7 @@ import EditarPerfil from './components/EditarPerfil.vue'
 import RegistrarEnte from './components/RegistrarEnte.vue'
 import RegistrarCom from './components/RegistrarCom.vue'
 import Registro1 from './components/Registro1.vue'
+import Principal from './components/Principal.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -28,5 +29,6 @@ export default new Router({
         { name: 'regente', path: '/registarente', component: RegistrarEnte },
         { name: 'regcom', path: '/registrarcom', component: RegistrarCom },
         { name: 'paso1', path: '/Paso1', component: Registro1 },
+        { name: 'principal', path: '/principal', component: Principal },
     ],
 });
