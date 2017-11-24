@@ -1,95 +1,51 @@
 <template>
-  <v-ons-page>
-    <v-ons-toolbar class="toolbar--material">
-      <div class="center">REDCOM</div>
-    </v-ons-toolbar>
-     <v-ons-tabbar material swipeable position="auto"
-              :tabs="tabs"
-              :visible="true"
-              :index.sync="activeIndex">
-      </v-ons-tabbar>
-    <post-page></post-page>
-    <v-ons-list-title>Vue.js Ecosystem</v-ons-list-title>
-    <v-ons-row>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://router.vuejs.org/')">vue-router</v-ons-card>
-      </v-ons-col>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://vuex.vuejs.org/')">vuex</v-ons-card>
-      </v-ons-col>
-    </v-ons-row>
-    <v-ons-row>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://vue-loader.vuejs.org/')">vue-loader</v-ons-card>
-      </v-ons-col>
-      <v-ons-col>
-        <v-ons-card @click="goTo('https://github.com/vuejs/awesome-vue')">awesome-vue</v-ons-card>
-      </v-ons-col>
-    </v-ons-row>
+  <v-ons-page>	  
+    <div class="estado">
+      <estado-page></estado-page>
+     </div>
+     <div class="post">   
+        <post-page></post-page>
+    </div>
      <v-ons-speed-dial position="bottom right" direction="up"
       :visible="spdVisible"
       :open.sync="spdOpen" >
       <v-ons-fab :style="spdStyle">
         <v-ons-icon icon="md-dialpad"></v-ons-icon>
       </v-ons-fab>
-      <router-link to="/"><v-ons-speed-dial-item :style="spdStyle">
+      <router-link to="/"><v-ons-speed-dial-item :style="spdStyle" 
+      >
         <v-ons-icon icon="md-run"></v-ons-icon>
       </v-ons-speed-dial-item></router-link>
        <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
         <v-ons-icon icon="md-airplay"></v-ons-icon>
       </v-ons-speed-dial-item></router-link>
+      <v-ons-speed-dial-item :style="spdStyle" >
+        <v-ons-icon icon="md-search"></v-ons-icon>
+      </v-ons-speed-dial-item>
     </v-ons-speed-dial>
-        
   </v-ons-page>
 </template>
 
 <script>
 import Post from './Post.vue'
+import Estado from './Estado.vue'
 export default {
   name: 'home',
   components:{
-    'post-page': Post
+    'post-page': Post,
+    'estado-page': Estado
   },
   data () {
     return {
       msg: 'Welcome',
-      essentialLinks: [
-        {
-          label: 'Core Docs',
-          link: 'https://vuejs.org',
-          icon: 'fa-book'
-        },
-        {
-          label: 'Community Chat',
-          link: 'https://chat.vuejs.org',
-          icon: 'fa-commenting'
-        },
-        {
-          label: 'Forum',
-          link: 'https://forum.vuejs.org',
-          icon: 'ion-chatboxes'
-        },
-        {
-          label: 'Twitter',
-          link: 'https://twitter.com/vuejs',
-          icon: 'fa-twitter'
-        },
-        {
-          label: 'Docs for this template',
-          link: 'http://vuejs-templates.github.io/webpack/',
-          icon: 'fa-file-text'
-        }
-      ],
+      
       spdVisible: true,
+      updated:open,
       spdOpen: true,
       spdStyle: {
         backgroundColor: this.$ons.platform.isIOS() ? '#4282cc' : null
       },
-      shareItems: {
-        'Twitter': 'md-twitter',
-        'Facebook': 'md-facebook',
-        'Google+': 'md-google-plus'
-      }
+      
     };
     
   },
@@ -124,5 +80,45 @@ ons-list-item, ons-card {
 }
 ons-toolbar{
   color: purple;
+}
+.estado {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    
+}
+.log{
+  width: 300%;
+    display: flex;
+
+    justify-content: flex-start;
+    
+}
+
+.buscar{
+    display: flex;
+    width: 60%;
+    align-items: right;
+}
+.perfil{
+   display: flex;
+    width: 20%;
+    align-items: flex-end !important;
+}
+.tool{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.toolbar--material{
+    background-color: purple;
 }
 </style>

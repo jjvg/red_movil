@@ -58,8 +58,8 @@
             </div>
                  
         <section style="margin: 20px">
-            <!-- <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="savePost()">Publicar</v-ons-button></router-link>
-             <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="regresar()">Cancelar</v-ons-button></router-link>  -->
+             <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Publicar</v-ons-button></router-link>
+             <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Cancelar</v-ons-button></router-link>  -->
         </section>
     </form>
 

@@ -1,8 +1,5 @@
 <template>
     <v-ons-page id="app">
-       <v-ons-toolbar class="toolbar--material">
-      <div class="center white-text">REDCOM</div>
-    </v-ons-toolbar>
     <v-ons-card>
         <img src="../assets/perfil.jpg" alt="Imagen perfil" >
           <div class="title">
@@ -16,12 +13,17 @@
           
         </v-ons-list>
         <div >
+<<<<<<< HEAD
           <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material" @click="nuevoPost()">Publicar</v-ons-button></router-link>
+=======
+          <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material">Publicar</v-ons-button></router-link>
+            
+>>>>>>> 1ccf437286b5813295d36a8dcb0e4c9d04d23f58
           <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
                                                   position: absolute; 
                                                   right: 16px; 
                                                   top:8px;"
-                                                  @click="editarPerfil()">
+                                                 >
              <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
         </div>
         
@@ -33,7 +35,7 @@
      </v-ons-card>
 
     </v-ons-page>
-        </template>
+</template>
 
 <script>
 
@@ -51,16 +53,6 @@ export default {
   },
   
 
- methods: {
-
-       nuevoPost(){
-           redirect: '/nuevopost';
-            
-       },
-       editarPerfil(){
-           redirect: '/editarperfil';
-       }
-   }
 }
 </script>
 

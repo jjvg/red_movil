@@ -1,46 +1,78 @@
 <template>
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
-      <div class="center">Nueva Publicacion</div>
-    </v-ons-toolbar>
-    <br>
-    <br>
-    <br>
+        <div class="left">
+            <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        </div>
+        <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+        </v-ons-toolbar>
+    
     <div class="container">
-         <form id="registroPost" method="POST" action="/home">
-        <div class="row">
+        
+        <form id="registroPost" method="POST" action="/principal">
+       <v-ons-row>
+           <h3 class="center">Nueva Publicacion</h3>
+       </v-ons-row>
+       <br>
+       <br>
+        <div class="">
+            <v-ons-row>
+                <v-ons-col>
+                  <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
+                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
+                  </div>
+                </v-ons-col>
+                <v-ons-col>
+                    <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
+                     <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
+                  </div>
+                </v-ons-col>
+            </v-ons-row>
+        </div>
+        
+            
+        <div class="row l">
+         
             <div class="col s12 m6 l4">
-            <div class="input field" style="margin: 20px,40px,20px,10px">
-                 <v-text-input name="titulo" id="titulo" v-model="titulo" placeholder="Titulo de tu Problema"></v-text-input>
-             </div>   
+            <div class="input field inp" >
+                 <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" placeholder="Cuéntanos qué está sucediendo"></v-text-area>
+                     <label for="text">Situación Actual</label>
+            </div>   
             </div>
-             <div class="col s12 m6 l4">
-                <div class="input-field">
-                    <v-file-input v-model="img" placeholder="Selecione una imagen"></v-file-input>
-                 </div>
-            </div>
+             
         </div>
         <div class="row">
            <div class="col s12 m12 l6">
                <div class="input-field">
                      <v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
-                     <label for="text">Describe la Situacion</label>
+                     <label for="text">Describe la Situación</label>
                 </div>
            </div>
         </div>
-         <div class="row">
-             <div class="col s12 m6 l4">
-                     <div class="input-field">
-                    <v-select name="select" id="select" v-model="selectedItem" :item="items"></v-select>
-                    <label for="select">Seleccione el Area dirigida</label>
-                    </div>
-             </div>
-         </div>
+         <v-ons-list>
+             <v-ons-list-item>
+                <div class="center">
+                    <label  >¿Con qué área se relaciona esta situación?</label>
+                
+                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
+                            {{ item.text }}
+                        </option>
+                    </v-ons-select>
+                
+                </div>
+      </v-ons-list-item>
+         </v-ons-list>
         
+
         <section style="margin: 20px">
-             <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="savePost()">Publicar</v-ons-button></router-link>
-             <router-link to="/home"><v-ons-button style="margin: 10px 0;" class="material" @click="regresar()">Cancelar</v-ons-button></router-link>  
+            
         </section>
+         <div class="center">
+                <router-link to="/principal"><v-ons-button  modifier="material large" style="margin: 6px 0">Registrar</v-ons-button></router-link> 
+         </div>
     </form>
 
     </div>
@@ -54,26 +86,43 @@
 export default {
    name: 'crearpost',
 
-   data () {
-       return {
-           post:[
-            titulo, 
-            imagen,
-            contenido,
-            categoria
-           ],
-            items:[
-                'Seguridad',
-                'Salud',
-                'Deporte',
-                'Servicios' ,
-                'Arte',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                'Trasporte',
-            ],
-            selectedItem:'ninguno',
+   data : function() {
+        return {
+           
+            titulo:{type:String},
+            titulo:'', 
+            imagen:{type:File},
+            contenido:{type:String},
+            categoria:{type:Boolean},
+            items: [
+        { text: 'Otra', value: 'Otra' },
+        { text: 'Salud', value: 'Salud' },
+        { text: 'Seguridad', value: 'Seguridad' },
+        { text: 'Arte', value: 'Arte' },
+        { text: 'Alimentación', value: 'Alimentación' }
+      ],
+      edos: [
+        { text: 'Lara', value: 'Lara' },
+        { text: 'Yaracuy', value: 'Yaracuy' },
+        { text: 'Falcón', value: 'Falcón' },
+        { text: 'Zulia', value: 'Zulia'},
+        { text: 'Aragua', value: 'Aragua' }
+      ],
+      
+      ciudad: [
+        { text: 'Barquisimeto', value: 'Barquisimeto' },
+        { text: 'San Felipe', value: 'San Felipe' },
+        { text: 'Coro', value: 'Coro' },
+        { text: 'Maracaibo', value: 'Maracaibo'},
+        { text: 'Maracay', value: 'Maracay' }
+      ],
+      selectedItem: ''
         
 
        }
+       
+   
+      
    },
    methods: {
 
@@ -89,5 +138,64 @@ export default {
 </script>
 
 <style scoped>
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    margin-left: 100px;
+    margin-right: 100px;    
+}
+.inp{
+  margin-top: 10px; 
+  width: 100%; 
+}
+.tam{
+    font-size: 10px;
+}
 
+.tit{
+	    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.ic {
+	width: 20%;
+    display: flex;
+    align-items: center !important;
+    flex-direction: row;
+    margin-left: 10px;
+	margin-right: 0px;
+}
+.ub{
+	width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 0px;
+}
+.publ{
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h6{
+  font-size: 15px;
+}
+.ic{
+  width: 20%;
+  display: flex;
+  margin-right:5px;
+}
+.col2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+}
 </style>
