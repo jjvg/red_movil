@@ -11,14 +11,12 @@
       <div class="content">
 
         <v-ons-list>
-          <v-ons-list-header>Información</v-ons-list-header>
-          <v-ons-list-item>{{correo}}</v-ons-list-item>
+          <v-ons-list-header>Acerca de {{nombre}}</v-ons-list-header>
           <v-ons-list-item>{{descripcion}}</v-ons-list-item>
           
         </v-ons-list>
         <div >
           <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material" @click="nuevoPost()">Publicar</v-ons-button></router-link>
-            
           <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
                                                   position: absolute; 
                                                   right: 16px; 
@@ -48,7 +46,6 @@ export default {
   data(){
     return{
       nombre: 'Andrea',
-      correo: 'andrea123@gmail.com',
       descripcion: 'ggasgs'
     }
   },
