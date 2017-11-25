@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cordova.redcom" version="1.0.0">
-  <name>red_com</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cordova.redcom" version="1.1.0">
+  <name>RedCom</name>
   <description>
       Vue.js + Onsen UI + Cordova sample app
     </description>
@@ -25,12 +25,12 @@
   <engine name="browser" spec="~5.0.1"/>
   <engine name="android" spec="~6.3.0"/>
   <preference name="WindowsStorePublisherName" value="My Name"/>
-  <preference name="WindowsStoreIdentityName" value="70109716-56eb-b42a-ebe0-c7e4f5d09a36"/>
+  <preference name="WindowsStoreIdentityName" value="846ed6e1-9860-675c-e6cf-527a3462635e"/>
   <access origin="*"/>
   <preference name="KeepRunning" value="true"/>
   <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
-  <preference name="DisallowOverscroll" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
   <preference name="Orientation" value="default"/>
-  <preference name="SplashScreenDelay" value="2"/>
-  <preference name="Fullscreen" value="true"/>
+  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="Fullscreen" value="false"/>
 </widget>
