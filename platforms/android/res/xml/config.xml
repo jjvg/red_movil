@@ -1,15 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.redcom" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>red_comunitaria</name>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <name>RedCom</name>
     <description>
-      Vue.js + Onsen UI + Cordova sample app
+      Red Social Comunitaria
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-      Vue.js + Onsen UI + Cordova teams
+      Equipo Lab
     </author>
     <content src="index.html" />
     <access origin="*" />
