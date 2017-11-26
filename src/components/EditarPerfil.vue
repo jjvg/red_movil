@@ -7,63 +7,79 @@
     <br>
     <br>
     <div class="container">
-         <form id="editarPerfil" method="EditarPerfil" action="/editarperfil">
+         <form class="col s12" id="editarPerfil" method="EditarPerfil" action="/editarperfil">
+         <div class="center">
             <div class="row">
-                <div class="col s12 m12 l2">
-                    <v-file-input v-model="img" placeholder="Selecione una imagen"></v-file-input>
-                </div>
+                <v-ons-row>
+                <v-ons-col>
+                  <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
+                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
+                  </div>
+                </v-ons-col>
+                <v-ons-col>
+                    <div class="col2">
+                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
+                     <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
+                  </div>
+                </v-ons-col>
+            </v-ons-row>
             </div> 
 
-        
+       
+          
             <div class="row">
-                <div class="col s12 m12 l4">
-                   <label for="text">Nombre</label>
-                   <div class="input field" >
+                <div class="col s12 m6 l2">
+                   <label for="nombre">Nombre</label>
+                   <div class="input-field" >
                       <v-text-input name="nombre" id="nombre" v-model="nombre"></v-text-input>
                    </div>   
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m12 l4">
-                   <label for="text">Apellido</label>
-                   <div class="input field" >
+                <div class="col s12 m6 l2">
+                   <label for="apellido">Apellido</label>
+                   <div class="input-field" >
+                       
                       <v-text-input name="apellido" id="apellido" v-model="apellido"></v-text-input>
                    </div>   
                 </div>
             </div>
             
             <div class="row">
-                <div class="col s12 m12 l6">
-                    <label for="text">Correo eléctronico</label>
-                    <div class="input field">
-                          <v-text-input name="correo" id="correo"  v-model="correo"></v-text-input>
-                   </div>
+                <div class="col s12 m6 l2">
+                    
+                     <label for="correo">Correo eléctronico</label>             
+                        <div class="input-field">
+                            <v-text-input name="correo" id="correo"  v-model="correo"></v-text-input>
+                        </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m12 l6">
-                    <label for="text">Descripción</label>
-                    <div class="input field">
+                <div class="col s12 m6 l4">
+                    <label for="descripcion">Descripción</label>
+                    <div class="input-field">
                           <v-text-area name="descripcion" id="descripcion" length="50" v-model="descripcion"></v-text-area>
                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m12 l6">
-                    <label for="text">Dirección</label>
-                    <div class="input field">
+                <div class="col s12 m6 l4">
+                    <label for="direccion">Dirección</label>
+                    <div class="input-field">
                           <v-text-input name="direccion" id="direccion" v-model="direccion"></v-text-input>
                    </div>
                 </div>
             </div>
-                 
-        <section style="margin: 20px">
-             <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Publicar</v-ons-button></router-link>
-             <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Cancelar</v-ons-button></router-link>  -->
-        </section>
-    </form>
 
-    </div>
+            <section style="margin: 20px">
+                <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Guardar</v-ons-button></router-link>
+                <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Cancelar</v-ons-button></router-link>
+            </section>
+         </div>
+         </form>
+         </div>
+         
     </v-ons-page>
 
 
@@ -77,7 +93,7 @@
       nombre: 'Andrea',
       apellido: '',
       correo: 'andrea123@gmail.com',
-      descripcion: 'ggasgs',
+      descripcion: 'Licenciada en Educación',
       direccion:''
     }
     
@@ -85,6 +101,7 @@
  }   
 </script>
 <style scoped>
+
 img{
      border-radius: 50%;
      width: 80px;
@@ -94,8 +111,10 @@ img{
 .toolbar--material{
     background-color: purple;
 }
+
 ons-card {
   text-align: center;
   
 }
+
 </style>
