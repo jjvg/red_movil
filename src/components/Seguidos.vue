@@ -14,7 +14,7 @@
                 </div>
               </div>
               <div class="right">
-                  <button class="button button--light"><v-ons-icon icon="ion-plus-circled">Dejar de Seguir</v-ons-icon></button>
+                  <button class="button button--light"><v-ons-icon icon="ion-plus-circled"> Dejar de Seguir</v-ons-icon></button>
               </div>
           </v-ons-list-item>
         </v-ons-card>

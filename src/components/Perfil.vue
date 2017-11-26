@@ -87,12 +87,14 @@ export default {
   background-color: transparent;
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
+ 
 }
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
   opacity: 1;
+ 
 }
 img{
      border-radius: 50%;
