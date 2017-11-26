@@ -7,7 +7,7 @@
     <br>
     <br>
     <div class="container">
-         <form id="editarPerfil" method="EditPerfil" action="/editarperfil">
+         <form id="editarPerfil" method="EditarPerfil" action="/editarperfil">
             <div class="row">
                 <div class="col s12 m12 l2">
                     <v-file-input v-model="img" placeholder="Selecione una imagen"></v-file-input>
@@ -23,6 +23,15 @@
                    </div>   
                 </div>
             </div>
+            <div class="row">
+                <div class="col s12 m12 l4">
+                   <label for="text">Apellido</label>
+                   <div class="input field" >
+                      <v-text-input name="apellido" id="apellido" v-model="apellido"></v-text-input>
+                   </div>   
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="col s12 m12 l6">
                     <label for="text">Correo eléctronico</label>
@@ -66,6 +75,7 @@
     
       return{
       nombre: 'Andrea',
+      apellido: '',
       correo: 'andrea123@gmail.com',
       descripcion: 'ggasgs',
       direccion:''
