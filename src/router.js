@@ -26,7 +26,7 @@ export default new Router({
         { name: 'crearpost', path: '/nuevopost', component: CrearPost },
         { name: 'detallepost', path: '/detallepost', component: DetallePost },
         { name: 'editarperfil', path: '/editarperfil', component: EditarPerfil },
-        { name: 'regente', path: '/registarente', component: RegistrarEnte },
+        { name: 'regente', path: '/registrarente', component: RegistrarEnte },
         { name: 'regcom', path: '/registrarcom', component: RegistrarCom },
         { name: 'paso1', path: '/Paso1', component: Registro1 },
         { name: 'principal', path: '/principal', component: Principal },
