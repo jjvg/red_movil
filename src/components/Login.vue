@@ -54,6 +54,7 @@
                         <v-ons-action-sheet-button>Comunidad</v-ons-action-sheet-button>
                         <v-ons-action-sheet-button>Ente</v-ons-action-sheet-button>
                     </v-ons-action-sheet>
+    
     </v-ons-page>
 
    

@@ -4,6 +4,7 @@
       <div class="center white-text">REDCOM</div>
     </v-ons-toolbar>
     <tab></tab>
+   
   </v-ons-page>
 </template>
 <script>
@@ -16,3 +17,8 @@ export default {
 }
 </script>
 
+<style scoped>
+.toolbar--material{
+  background-color: purple;
+}
+</style>
