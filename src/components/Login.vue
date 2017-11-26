@@ -41,20 +41,23 @@
                     <div class="center">
                     <v-ons-row>
                         <v-ons-col width="99%">
-                            ¿Aun no te has Registrado..?<div style="color:  rgb(10, 160, 152);font-weight: bold;" @click="actionSheetVisible = true">  Registrarse</div>
+                            ¿Aún no te has Registrado..?<div style="color:  rgb(10, 160, 152);font-weight: bold;" @click="actionSheetVisible = true">  Regístrate aquí</div>
                         </v-ons-col>
                         <v-ons-col>
                             
                         </v-ons-col>
                     </v-ons-row>
                     </div>
-                    <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true>
-                        <v-ons-action-sheet-button @click="actionSheetVisible=false" >Tipo de registro</v-ons-action-sheet-button>
-                        <router-link to="/registraruser"><v-ons-action-sheet-button>Usuario</v-ons-action-sheet-button></router-link>
-                        <v-ons-action-sheet-button>Comunidad</v-ons-action-sheet-button>
-                        <v-ons-action-sheet-button>Ente</v-ons-action-sheet-button>
+                    
+                    <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
+                        
+                            <router-link to="/registraruser" style="align: center;"><v-ons-action-sheet-button style="align: center;"><i class="material-icons" style="margin-right:10px;">face</i>Usuario</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarcom"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">supervisor_account</i>Comunidad</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarente"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">business</i>Ente</v-ons-action-sheet-button></router-link>
+                            <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0;" >Cancelar</v-ons-action-sheet-button>
+                        
                     </v-ons-action-sheet>
-    
+                    
     </v-ons-page>
 
    
