@@ -13,12 +13,8 @@
           
         </v-ons-list>
         <div >
-<<<<<<< HEAD
-          <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material" @click="nuevoPost()">Publicar</v-ons-button></router-link>
-=======
           <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material">Publicar</v-ons-button></router-link>
             
->>>>>>> 1ccf437286b5813295d36a8dcb0e4c9d04d23f58
           <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
                                                   position: absolute; 
                                                   right: 16px; 
