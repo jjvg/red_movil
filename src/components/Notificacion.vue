@@ -1,18 +1,24 @@
 <template>
     <v-ons-page id="app">
+    <v-ons-card>
     <v-ons-list>
-    <v-ons-list-item v-for="item in datos" :key="item.link">
-        <v-collection>
-        <v-collection-avatar :src="item.img"
-            <span class="title impor">{{item.nombre}}</span>
-            <p>
-                {{item.contenido}}
-            </p>
-            <span slot="secondary"><v-icon>thumb-up</v-icon></span>
-        </v-collection-avatar>
-    </v-collection>
-    </v-ons-list-item>
+    <v-ons-list-header style="color:  rgb(10, 160, 152);font-weight: bold;">Actividad</v-ons-list-header>
+    <v-ons-list-item tappable modifier="material" v-for="item in datos" :key="item.link" class="ite">
+        <div class="left">
+          <img class="list-item__thumbnail" :src="item.img">
+        </div>
+        <div class="center">
+          <span class="list-item__title">{{item.nombre}}</span>
+          <span class="list-item__subtitle">{{item.contenido}}</span>
+        </div>
+      </v-ons-list-item>
+      <br>
+    <v-ons-list-header style="color:  rgb(10, 160, 152);font-weight: bold;">Publicaciones</v-ons-list-header>
+      <v-ons-list-item tappable  modifier="longdivider " class="material ite" v-for="i in publi" :key="i.link">
+      {{i.cont}}
+      </v-ons-list-item>
     </v-ons-list>
+    </v-ons-card>
     </v-ons-page>
 </template>
 <script>
@@ -23,27 +29,26 @@ export default {
     return {
            datos: [
           {
-          nombre: 'Maria Gomez',
+          nombre:'Maria Gomez',
           img:{ type: File,},
           img:img3,
-          contenido: 'Tiene toda la razon estoy de acuerdo que desastre'
+          contenido: 'ha comenzado a seguirte'
           },
           {
-          label: 'Jose Moreno',
+          nombre:'Jose Vaamonde',
           img: img3,
-          contenido: 'No puede ser hasta donde hemos llegado Dios'
+          contenido: 'te ha etiquetado en una nueva denuncia'
+          },
+           ],
+          publi:[
+          {
+          cont: 'Tu denuncia esta siendo seguida'
           },
            {
-          label: 'Luisa Marcano',
-          img: img3,
-          contenido: 'Asi no se puede seguir hay que denunciarlo , yo le dare me gusta'
-          },
-           {
-          label: 'Marta Lopez',
-          img: img3,
-          contenido: 'vamos que si podemos mejorar'
+          cont: 'Tu denuncia ha sido atendida'
           },
         ]
+         
       }
   },
 }
@@ -54,4 +59,11 @@ export default {
     font-size: 20px;
     
 }
+.ite{
+     border-bottom: 1px purple solid;
+     border-left: 1px purple solid;
+     margin: 2px;
+     border-radius: 5%
+}
+
 </style>
