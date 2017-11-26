@@ -12,15 +12,8 @@
           <v-ons-list-item>{{descripcion}}</v-ons-list-item>
           
         </v-ons-list>
-<<<<<<< HEAD
-        <div >
-          <router-link to="/nuevopost"><v-ons-button style="margin: 10px 0;" class="material">Publicar</v-ons-button></router-link>
-            
-          <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
-=======
         <div>
            <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
->>>>>>> 6ca8e63012115fa6a1676a7e49c3d182ce000789
                                                   position: absolute; 
                                                   right: 16px; 
                                                   top:8px;"
