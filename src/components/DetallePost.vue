@@ -9,6 +9,7 @@
     <br>
     <br>
     <br>
+<<<<<<< HEAD
 
 <v-ons-card>
 
@@ -23,6 +24,23 @@
             <div class="f2">
                 <h6>Hace 2 minutos</h6>
             </div>
+=======
+    <v-ons-row>
+    <div class="container" >
+        <div class="card--material small">
+                    <div class="center">
+                        <img src="../assets/amigos.jpg" style="width: 100%">
+                        <h3 style="color: black;">{{titulo}}</h3>
+                    </div>
+                    <div class="center">
+                         <h5 style="color: black;">{{contenido}}</h5>
+                    </div>
+                     <div class="right">
+                        
+                    </div>
+                    </div>
+                    
+>>>>>>> 854a5902d55f5c9387385b3d699dd4e9e2908df7
         </div>
     </div>
     <div class="card__imagen posti">
@@ -74,7 +92,6 @@ export default {
   padding: 0px;
     width: 40px;
     height: 40px;
-    align: center;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 8px;    
