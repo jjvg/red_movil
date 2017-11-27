@@ -17,17 +17,22 @@
         <div class="">
             <v-ons-row>
                 <v-ons-col>
-                  <div class="col2">
+                  <div class="col2" name="im" @click="camara()">
                       <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
                      <div><h6 style="color: #5d6367;"> Cámara</h6></div>
                   </div>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
+                      <div class="ic"><i class="material-icons" style="color: rgb(172, 7, 187);">collections</i></div>
                      <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
                   </div>
                 </v-ons-col>
+                <v-ons-card>
+                     <div class="center">
+                        <img id="myimg"style="width: 80%"></img>
+                    </div>
+                </v-ons-card>
             </v-ons-row>
         </div>
         
@@ -104,7 +109,11 @@
     </form>
 
     </div>
+    <div id="deviceready" class="blink">
    
+      <p class="event listening"></p>
+      <p class="event received"></p>
+    </div>
     </v-ons-page>
 
 
@@ -150,11 +159,27 @@ export default {
 
        }
        
-   
+         document.getElementById("im").addEventListener 
+         ("click", cameraTakePicture);
       
    },
    methods: {
-
+       camara(){
+       function cameraTakePicture() { 
+   navigator.camera.getPicture(onSuccess, onFail, {  
+      quality: 50, 
+      destinationType: Camera.DestinationType.DATA_URL 
+   });  
+   
+   function onSuccess(imageData) { 
+      var image = document.getElementById('myimg'); 
+      image.src = "data:image/jpeg;base64," + imageData; 
+   }  
+   
+   function onFail(message) { 
+      alert('Failed because: ' + message); 
+   } 
+}},
        savePost(){
            redirect: '/home';
             
