@@ -6,7 +6,7 @@
                 <img src="../assets/perfil.jpg" class="perfil">
             </div> 
 	        <div class="edo">                
-   		      <router-link to="/nuevopost"><h6 style="color: #080e0d54; font-family: Roboto;font-style: Roboto; font-size: 20px; align-content: center;"> ¿Qué está sucediendo?</h6>
+   		      <router-link to="/nuevopost"><h6 style="color: #080e0d54; font-family: Roboto;font-style: Roboto; font-size: 15px; align-content: center;"> ¿Qué está sucediendo?</h6>
  	        </router-link>
               </div>
         </div>
