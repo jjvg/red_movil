@@ -11,22 +11,28 @@
          <div class="center">
             <div class="row">
                 <v-ons-row>
-                <v-ons-col>
-                  <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
-                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
-                  </div>
+                    <v-ons-col>
+                    <div class="col2">
+                <v-ons-button id="im" modifier="quiet">
+                    <div style="color:#5d6367"><i class="material-icons" style="color: #61e4b8; margin-right: 5px; margin-top:10px ">add_a_photo</i>   Camara</div>
+                </v-ons-button>
+                </div>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
-                     <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
-                  </div>
+                        <v-ons-button id="im" modifier="quiet">
+                    <div style="color:#5d6367"><i class="material-icons" style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px ">collections</i> Fototeca</div>
+                     </v-ons-button>
+                    </div>
                 </v-ons-col>
             </v-ons-row>
             </div> 
-
-       
+           <v-ons-card>
+                 <div class="center">
+                     <img id="myimg"style="width: 80%"></img>
+                 </div>
+            </v-ons-card>
+            <br>
           
             <div class="row">
                 <div class="col s12 m6 l2">
@@ -85,8 +91,9 @@
 
 </template>
 <script>
- export default{
+ export default {
      name: 'editarperfil',
+     
      data(){
     
       return{
@@ -95,10 +102,35 @@
       correo: 'andrea123@gmail.com',
       descripcion: 'Licenciada en Educación',
       direccion:''
+      
     }
+     document.getElementById("im").addEventListener 
+         ("click", cameraTakePicture);
     
   },
- }   
+
+   
+      
+   methods: {
+              camara()
+              {
+                    function cameraTakePicture() { 
+                     navigator.camera.getPicture(onSuccess, onFail, {  
+                        quality: 50, 
+                        destinationType: Camera.DestinationType.DATA_URL });  
+   
+                    function onSuccess(imageData) { 
+                     var image = document.getElementById('myimg'); 
+                    image.src = "data:image/jpeg;base64," + imageData; 
+                    }  
+   
+                        function onFail(message) { 
+                        alert('Failed because: ' + message); 
+                    } 
+                 }
+                }
+            } 
+ }  
 </script>
 <style scoped>
 

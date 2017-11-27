@@ -17,25 +17,27 @@
         <div class="">
             <v-ons-row>
                 <v-ons-col>
-                <v-ons-button id="im"modifier="quiet" style="margin: 6px 0">
-                    <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
+                    <div class="col2">
+                <v-ons-button id="im" modifier="quiet">
+                    <div style="color:#5d6367"><i class="material-icons" style="color: #61e4b8; margin-right: 5px; margin-top:10px ">add_a_photo</i>   Camara</div>
                 </v-ons-button>
+                </div>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: rgb(172, 7, 187);">collections</i></div>
-                     <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
-                  </div>
-                </v-ons-col>
-                <v-ons-card>
-                     <div class="center">
-                        <img id="myimg"style="width: 80%"></img>
+                        <v-ons-button id="im" modifier="quiet">
+                    <div style="color:#5d6367"><i class="material-icons" style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px ">collections</i> Fototeca</div>
+                     </v-ons-button>
                     </div>
-                </v-ons-card>
+                </v-ons-col>
             </v-ons-row>
         </div>
-        
-            
+         <v-ons-card>
+        <div class="center">
+             <img id="myimg"style="width: 80%"></img>
+        </div>
+        </v-ons-card>
+            <br>
         <div class="row l">
          
             <div class="input-field col s12 m6 l4">
