@@ -11,7 +11,7 @@
 	<div class="row">
 		<div class="col s12">
 			<div align="center">
-				<h3>Registro de Comunidades</h3>
+				<h3  style="color: rgb(10, 160, 152);">Registro de Comunidades</h3>
 			</div>
 		</div>
 	</div>
@@ -34,13 +34,10 @@
           			<label for="password">Contraseña</label>
         		</div>
 			</div>
-			<div class="row">
 				<div class= "tit">
-					<div class="ic"><i class="material-icons prefix">place</i></div>
-					<div class="ub center"><h5>Ubicación</h5></div>
+					<i class="material-icons prefix" style="color: rgb(10, 160, 152);">place</i>
+					<h5 style="color: rgb(10, 160, 152);">Ubicación</h5>
 				</div>
-				<br>
-			</div>
 			<label>Estado</label>
                 <div class="center">
                     
@@ -136,6 +133,8 @@
 	    display: flex;
     align-items: center;
     flex-direction: row;
+    align: center;
+    margin-left: 100px;
 }
 
 .ic {
