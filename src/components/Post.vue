@@ -28,19 +28,27 @@
                 <v-ons-col>
                   <div  class="col2">
                       <div class="ic"><i class="material-icons" style="color: #5d6367;">thumb_up</i></div>
-                     <h6 style="color: #5d6367;"> Me gusta</h6>
+                     <h6 style="color: #5d6367; margin-left:10px; margin-top: 15px;"> Me gusta</h6>
                   </div>
                 </v-ons-col>
                 <v-ons-col>
                   
                   <router-link to="/detallepost">
                   <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #5d6367;">chat_bubble_outline</i></div>
-                     <h6 style="color: #5d6367;"> Comentarios</h6>
+                      <div class="ic"><i class="material-icons" style="color: #5d6367;margin-top: 2px;">chat_bubble_outline</i></div>
+                     <h6 style="color: #5d6367;margin-left:10px;margin-top: 15px;"> Comentarios</h6>
                   </div>
                   </router-link>
-                  
+                </v-ons-col>  
+                <v-ons-col>
+                  <div class="right">
+                  <div  class="col2">
+                      <div class="ic"><i class="material-icons" style="color: #5d6367; margin-top: 2px;">local_offer</i></div>
+                   </div>
+                  </div>
                 </v-ons-col>
+                  
+                
             </v-ons-row>
             <div class="com">
                 

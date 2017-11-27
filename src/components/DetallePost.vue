@@ -38,7 +38,8 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link> 
+                <router-link to="/comentario" ><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link>
+                <v-ons-button  modifier="material" class="button button--light"><i class="material-icons prefix">local_offer</i></v-ons-button>
          </div>
           
 </v-ons-card>
