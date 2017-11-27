@@ -17,17 +17,21 @@
         <div>
             <v-ons-row>
                 <v-ons-col>
-                  <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
-                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
-                  </div>
+                <v-ons-button id="im"modifier="quiet" style="margin: 6px 0">
+                    <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
+                </v-ons-button>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: rgb(220, 34, 236);">collections</i></div>
+                      <div class="ic"><i class="material-icons" style="color: rgb(172, 7, 187);">collections</i></div>
                      <div><h6 style="color: #5d6367;"> Fototeca</h6></div>
                   </div>
                 </v-ons-col>
+                <v-ons-card>
+                     <div class="center">
+                        <img id="myimg"style="width: 80%"></img>
+                    </div>
+                </v-ons-card>
             </v-ons-row>
         </div>
         
@@ -56,7 +60,7 @@
                 <div class="center">
                     <label  >¿Con qué área se relaciona esta situación?</label>
                 
-                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem1" >
                         <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
                             {{ item.text }}
                         </option>
@@ -75,7 +79,7 @@
                 <div class="center">
                     
                 
-                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem2" >
                         <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
                             {{ item1.text }}
                         </option>
@@ -86,7 +90,7 @@
                 <div class="center">
                     
                 
-                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem3" >
                         <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
@@ -109,7 +113,11 @@
     </form>
 
     </div>
+    <div id="deviceready" class="blink">
    
+      <p class="event listening"></p>
+      <p class="event received"></p>
+    </div>
     </v-ons-page>
 
 
@@ -149,16 +157,33 @@ export default {
         { text: 'Maracaibo', value: 'Maracaibo'},
         { text: 'Maracay', value: 'Maracay' }
       ],
-      selectedItem: ''
-        
+      selectedItem1: '',
+      selectedItem2: '',
+      selectedItem3: '',         
 
        }
        
-   
+         document.getElementById("im").addEventListener 
+         ("click", cameraTakePicture);
       
    },
    methods: {
-
+       camara(){
+       function cameraTakePicture() { 
+   navigator.camera.getPicture(onSuccess, onFail, {  
+      quality: 50, 
+      destinationType: Camera.DestinationType.DATA_URL 
+   });  
+   
+   function onSuccess(imageData) { 
+      var image = document.getElementById('myimg'); 
+      image.src = "data:image/jpeg;base64," + imageData; 
+   }  
+   
+   function onFail(message) { 
+      alert('Failed because: ' + message); 
+   } 
+}},
        savePost(){
            redirect: '/home';
             

@@ -43,24 +43,6 @@
       <v-ons-list-header>Publicaciones</v-ons-list-header>
     <post-page></post-page>
      </v-ons-card>
-
-     <v-ons-speed-dial position="bottom right" direction="up"
-      :visible="spdVisible"
-      :open.sync="spdOpen" >
-      <v-ons-fab :style="spdStyle">
-        <v-ons-icon icon="md-dialpad"></v-ons-icon>
-      </v-ons-fab>
-      <router-link to="/"><v-ons-speed-dial-item :style="spdStyle" 
-      >
-        <v-ons-icon icon="md-run"></v-ons-icon>
-      </v-ons-speed-dial-item></router-link>
-       <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
-        <v-ons-icon icon="md-airplay"></v-ons-icon>
-      </v-ons-speed-dial-item></router-link>
-      <v-ons-speed-dial-item :style="spdStyle" >
-        <v-ons-icon icon="md-search"></v-ons-icon>
-      </v-ons-speed-dial-item>
-    </v-ons-speed-dial>
     </v-ons-page>
 </template>
 
