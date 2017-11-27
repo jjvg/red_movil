@@ -12,7 +12,6 @@ import DetallePost from './components/DetallePost.vue'
 import EditarPerfil from './components/EditarPerfil.vue'
 import RegistrarEnte from './components/RegistrarEnte.vue'
 import RegistrarCom from './components/RegistrarCom.vue'
-import Registro1 from './components/Registro1.vue'
 import Principal from './components/Principal.vue'
 import RegistrarUser from './components/RegistrarUser.vue'
 import Comentario from './components/Comentario.vue'
@@ -30,9 +29,8 @@ export default new Router({
         { name: 'editarperfil', path: '/editarperfil', component: EditarPerfil },
         { name: 'regente', path: '/registrarente', component: RegistrarEnte },
         { name: 'regcom', path: '/registrarcom', component: RegistrarCom },
-        { name: 'paso1', path: '/Paso1', component: Registro1 },
         { name: 'principal', path: '/principal', component: Principal },
         { name: 'registro', path: '/registrarpersona', component: RegistrarUser },
-        {name: 'comentario', path: '/comentario', component: Comentario}
+        { name: 'comentario', path: '/comentario', component: Comentario }
     ],
 });

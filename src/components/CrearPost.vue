@@ -2,7 +2,7 @@
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
         <div class="left">
-            <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+            <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
         </div>
         <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
         </v-ons-toolbar>
