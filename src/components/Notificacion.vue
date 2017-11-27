@@ -60,8 +60,8 @@ export default {
     
 }
 .ite{
-     border-bottom: 1px purple solid;
-     border-left: 1px purple solid;
+     border-bottom: 1px grey solid;
+     border-left: 1px grey solid;
      margin: 2px;
      border-radius: 5%
 }
