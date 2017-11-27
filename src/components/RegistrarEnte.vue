@@ -6,6 +6,7 @@
 			</div>
 			<div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
         </v-ons-toolbar>
+<<<<<<< HEAD
         <div class="container">
 	    <div class="row">
 		    <div class="col s12">
@@ -16,6 +17,15 @@
 	    </div>
 	    <div class="row">
    		    <form class="col s12" action="#">
+=======
+<div class="container">
+	
+			<div align="center">
+				<h3 style="color: rgb(10, 160, 152);">Registro de Entes</h3>
+			</div>
+	<div class="row">
+   		<form class="col s12" action="#">
+>>>>>>> 33bfde6ffa0bfc744666048f9dff2d84f91c0b4f
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
@@ -156,8 +166,7 @@
     width: 40px;
     height: 40px;
     align: center;
-    margin-left: 100px;
-    margin-right: 100px;    
+    margin-left: 70px; 
     margin-top: 8px;   
 }
 

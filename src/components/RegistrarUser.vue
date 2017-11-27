@@ -2,20 +2,16 @@
  <v-ons-page id="app">
 	 	    <v-ons-toolbar class="toolbar--material">
 			<div class="left">
-				<router-link to="/"><v-ons-back-button style="background-color: white"></v-ons-back-button></router-link>
+				<router-link to="/"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
 			</div>
 			<div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
         </v-ons-toolbar>
 		
 
 <div class="container">
-	<div class="row">
-		<div class="col s12">
 			<div align="center">
 				<h3 style="color: rgb(10, 160, 152);">Registro de Personas</h3>
 			</div>
-		</div>
-	</div>
 	<div class="row">
    		<form class="col s12" action="#">
       		<div class="row">
@@ -121,8 +117,8 @@ p{
     width: 40px;
     height: 40px;
     align: center;
-    margin-left: 100px;
-    margin-right: 100px;    
+    margin-left: 70px;
+    margin-right: 0px;    
 	margin-top: 8px;   
 }
 

@@ -8,13 +8,10 @@
         </v-ons-toolbar>
     
         <div class="container">
-	<div class="row">
-		<div class="col s12">
+
 			<div align="center">
 				<h3  style="color: rgb(10, 160, 152);">Registro de Comunidades</h3>
 			</div>
-		</div>
-	</div>
 	<div class="row">
    		<form class="col s12" action="#">
       		<div class="row">
@@ -125,8 +122,8 @@
     width: 40px;
     height: 40px;
     align: center;
-    margin-left: 100px;
-    margin-right: 100px;    
+    margin-left: 70px;
+    margin-right: 0px;    
     margin-top: 8px;   
 }
 
