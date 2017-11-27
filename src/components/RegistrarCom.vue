@@ -122,8 +122,8 @@
     width: 40px;
     height: 40px;
     align: center;
-    margin-left: 100px;
-    margin-right: 100px;    
+    margin-left: 70px;
+    margin-right: 0px;    
     margin-top: 8px;   
 }
 
