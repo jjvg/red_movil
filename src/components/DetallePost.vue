@@ -38,7 +38,7 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentarios" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link> 
+                <router-link to="/comentario" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link> 
          </div>
           
 </v-ons-card>
