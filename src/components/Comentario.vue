@@ -7,11 +7,11 @@
     <v-ons-list>
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <div class="left">
-          <img class="list-item__thumbnail" :src="datos.img">
+          <img class="list-item__thumbnail" :src="item.img">
         </div>
         <div class="center">
-          <span class="list-item__title">{{datos.nombre}}</span>
-          <span class="list-item__subtitle">{{datos.contenido}}</span>
+          <span class="list-item__title">{{item.nombre}}</span>
+          <span class="list-item__subtitle">{{item.contenido}}</span>
         </div>
       </v-ons-list-item>
       </v-ons-list>
