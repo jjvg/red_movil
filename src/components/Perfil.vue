@@ -20,7 +20,7 @@
                                                  >
              <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
         </div>
-        
+        <section style="margin: 20px">
         <v-ons-button  modifier="material" class="button button--light" @click="showModal">{{seguidos}} Seguidos</v-ons-button>
         <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
             <p style="text-align: center">
@@ -33,6 +33,7 @@
                 <seguidores-page></seguidores-page>
             </p>
         </v-ons-modal>
+        </section>
                      
       </div>
     </v-ons-card>

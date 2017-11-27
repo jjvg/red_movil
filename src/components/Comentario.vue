@@ -39,6 +39,7 @@
 
 <script>
 import imagen from '../assets/img/perfil.jpg'
+import img1 from '../assets/img/perrito.jpg'
 export default {
    name: 'comentario',
    data: function() {
@@ -52,7 +53,7 @@ export default {
           },
           {
           nombre: 'José Torres',
-          img: imagen,
+          img: img1,
           contenido: 'Saludos',
           },
           {
@@ -83,56 +84,18 @@ export default {
   border: 1px solid #ccc;
   color: #1f1f21;
   width: 80%;
-  margin-right: 10px ;
- 
-  
+  margin-right: 10px ; 
 }
+
 .list__item__left {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  
-  display: flex;
-  padding: 12px 14px 12px 0;
-  -webkit-box-ordinal-group: 1;
-  -webkit-order: 0;
-  -moz-box-ordinal-group: 1;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
+ 
+  padding: 0 12px 0 0;
   line-height: 1.2em;
   min-height: 44px;
 }
 
 .list__item__center {
- 
- 
-  
- -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-  -moz-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
   margin-right: auto;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  margin-left: 0;
-  border-bottom: none;
   -webkit-background-size: 100% 1px;
   background-size: 100% 1px;
   padding: 12px 6px 12px 0;
