@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
+
 .button--light {
   background-color: transparent;
   color: rgba(0,0,0,0.4);
@@ -84,8 +84,7 @@ export default {
     color:purple;
     margin: 0px, 0px ,0px,0px 
 }
-=======
->>>>>>> ccd77520c82ac901638f6166bfe92ac77544c5ea
+
 .card-image{
     max-width: 10000px;
     margin: 0px, 0px ,0px,0px 
