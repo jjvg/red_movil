@@ -56,7 +56,7 @@
                 <div class="center">
                     <label  >¿Con qué área se relaciona esta situación?</label>
                 
-                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem1" >
                         <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
                             {{ item.text }}
                         </option>
@@ -70,7 +70,7 @@
                 <div class="center">
                     
                 
-                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem2" >
                         <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
                             {{ item1.text }}
                         </option>
@@ -81,7 +81,7 @@
                 <div class="center">
                     
                 
-                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem3" >
                         <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
@@ -144,8 +144,9 @@ export default {
         { text: 'Maracaibo', value: 'Maracaibo'},
         { text: 'Maracay', value: 'Maracay' }
       ],
-      selectedItem: ''
-        
+      selectedItem1: '',
+      selectedItem2: '',
+      selectedItem3: '',         
 
        }
        
