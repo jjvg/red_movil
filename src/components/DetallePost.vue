@@ -20,12 +20,12 @@
                          <h5 style="color: black;">{{contenido}}</h5>
                     </div>
                      <div class="right">
-                        <v-ons-button class="button button--light" modifier="material" @click="showModal">Comentarios</v-ons-button>
+                        <!--<v-ons-button class="button button--light" modifier="material" @click="showModal">Comentarios</v-ons-button>
                         <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
                             <p style="text-align: center">
                                 <h1>hola</h1>
                             </p>
-                        </v-ons-modal>
+                        </v-ons-modal>-->
                     </div>
                     </div>
                     
