@@ -1,44 +1,68 @@
 <template>
-<v-ons-page>
-    <div class="coment">
-        
-        <div class="img">{{img}} </div>
-        <div class="ctn2">
-        
-            <div class="nombre"  v-model="nombre">{{nombre}} </div>
-            <div class="coment" v-model="contenido">{{contenido}} </div>
+    <v-ons-page id="app">
+        <v-ons-toolbar class="toolbar--material">
+            <div class="center">Comentarios</div>
+        </v-ons-toolbar>
+    <v-ons-card>    
+    <v-ons-list>
+      <v-ons-list-item v-for="item in datos" :key="item.link">
+        <div class="left">
+          <img class="list-item__thumbnail" :src="datos.img">
         </div>
-    </div>
+        <div class="center">
+          <span class="list-item__title">{{datos.nombre}}</span>
+          <span class="list-item__subtitle">{{datos.contenido}}</span>
+        </div>
+      </v-ons-list-item>
+      </v-ons-list>
+     
+     
     <div class="comenta">
-              <div class="ic">
-                    <i class="material-icons">chat_bubble</i>
-              </div>
-              <div class="com">
-                     <v-ons-input name="comentario" type="text" placeholder="¿Qué opinas?"></v-ons-input>
-              </div>
-              
+            <v-ons-input name="comentario" type="text" placeholder="Comentar..."></v-ons-input>
+                <div class="right">
+                    <v-ons-button class="material" style="border-radius:50%; top:6px;">
+                        <v-ons-icon icon="md-edit"></v-ons-icon>
+                    </v-ons-button>
+                </div>  
+                          
     </div>
-              <v-ons-button modifier="material" style="margin: 6px 0">Comentar</v-ons-button>
+             
+     </v-ons-card>         
     </v-ons-page>
 </template>
 
 <script>
 import imagen from '../assets/img/rc1.png'
 export default {
-   name: 'comentarios',
+   name: 'comentario',
    data: function() {
     return {
            
-          
-          nombre: 'María Conchita',
-          img:{ type: File},
+        datos: [
+          {
+          nombre: 'María Perez',
           img:imagen,
-          contenido: 'Probando',
-          }
-
-      },
-
+          contenido: 'Buena foto',
+          },
+          {
+          nombre: 'José Torres',
+          img: imagen,
+          contenido: 'Saludos',
+          },
+          {
+          nombre: 'Ana Rojas',
+          img: imagen,
+          contenido: 'Me encanta esta foto',
+          },
+        ]
+      }
+   },
 }
 
 
 </script>
+<style scoped>
+.toolbar--material{
+    background-color: purple;
+}
+</style>

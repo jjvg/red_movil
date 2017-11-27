@@ -45,7 +45,7 @@
                 <div class="center">
                     
                 
-                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="sexo" material class="material" style="width: 80%" v-model="selectedItem" >
                         <option class="tam" v-for="item2 in sexo" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
@@ -123,6 +123,7 @@ p{
     align: center;
     margin-left: 100px;
     margin-right: 100px;    
+	margin-top: 8px;   
 }
 
 </style>

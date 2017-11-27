@@ -14,7 +14,7 @@
                 </div>
               </div>
               <div class="right">
-                  <button class="button button--light"><v-ons-icon icon="ion-plus-circled"> Dejar de Seguir</v-ons-icon></button>
+                  <v-ons-button  modifier="material" class="button button--light"><v-ons-icon icon="ion-plus-circled"> Dejar de Seguir</v-ons-icon></v-ons-button>
               </div>
           </v-ons-list-item>
         </v-ons-card>
@@ -42,7 +42,7 @@ export default {
           img: img2,
           },
           {
-          label: 'Ana Rodriguez',
+          label: 'Ana Rojas',
           img: img2,
           },
         ]
@@ -55,8 +55,21 @@ export default {
 <style scoped>
 .button{
   position: right;
-   font-size: 14px;
+   font-size: 12px;
 
+}
+.button--light {
+  background-color: transparent;
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+ 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 1;
+ 
 }
 .pub{
     display: flex;
@@ -69,5 +82,8 @@ img{
     align-items: center;
     flex-direction: row;
     width: 50px;    
+}
+v-ons-card{
+  text-align: center;
 }
 </style>

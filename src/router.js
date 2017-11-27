@@ -15,6 +15,7 @@ import RegistrarCom from './components/RegistrarCom.vue'
 import Registro1 from './components/Registro1.vue'
 import Principal from './components/Principal.vue'
 import RegistrarUser from './components/RegistrarUser.vue'
+import Comentario from './components/Comentario.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -32,5 +33,6 @@ export default new Router({
         { name: 'paso1', path: '/Paso1', component: Registro1 },
         { name: 'principal', path: '/principal', component: Principal },
         { name: 'registro', path: '/registrarpersona', component: RegistrarUser },
+        {name: 'comentario', path: '/comentario', component: Comentario}
     ],
 });
