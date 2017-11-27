@@ -70,7 +70,4 @@ img{
     flex-direction: row;
     width: 50px;    
 }
-h5{
-
-}
 </style>

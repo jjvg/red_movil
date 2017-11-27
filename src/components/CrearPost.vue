@@ -12,7 +12,7 @@
         <form id="registroPost" method="POST" action="/principal">
        
            
-           <h3>Nueva Publicación</h3>
+           <h3  style="color: rgb(10, 160, 152);">Nueva Publicación</h3>
         <br>
         <div class="">
             <v-ons-row>
@@ -70,6 +70,11 @@
                 
             </v-ons-list-item>
          </v-ons-list>
+         
+				<div class= "tit">
+					<i class="material-icons prefix" style="color: rgb(10, 160, 152);">place</i>
+					<h5 style="color: rgb(10, 160, 152);">¿Dónde ocurrió?</h5>
+				</div>
          <label>Estado</label>
                 <div class="center">
                     
@@ -199,6 +204,7 @@ export default {
     align: center;
     margin-left: 100px;
     margin-right: 100px;    
+    margin-top: 8px;   
 }
 .inp{
   margin-top: 10px; 
@@ -274,4 +280,13 @@ h3{
 .l{
     margin-top: 30px;
 }
+
+.tit{
+	    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align: center;
+    margin-left: 80px;
+}
+
 </style>
