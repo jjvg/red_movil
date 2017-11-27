@@ -20,20 +20,20 @@
                                                  >
              <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
         </div>
-        <section style="margin: 20px">
+        <div class="boton">
         <v-ons-button  modifier="material" class="button button--light" @click="showModal">{{seguidos}} Seguidos</v-ons-button>
         <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
             <p style="text-align: center">
                 <seguidos-page></seguidos-page>
             </p>
         </v-ons-modal>
-        <v-ons-button  modifier="material" class="button button--light" @click="showModal1">{{seguidores}} Seguidores</v-ons-button>
+        <v-ons-button  modifier="material" class="button button--light"  @click="showModal1">{{seguidores}} Seguidores</v-ons-button>
         <v-ons-modal :visible="modalVisible1" @click="modalVisible1 = false">
             <p style="text-align: center">
                 <seguidores-page></seguidores-page>
             </p>
         </v-ons-modal>
-        </section>
+        </div>
                      
       </div>
     </v-ons-card>
@@ -91,8 +91,9 @@ export default {
 
 .button--light {
   background-color: transparent;
-  color: rgba(0,0,0,0.4);
+ color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
+  font-size: 12px;
  
 }
 .button--light:active {
