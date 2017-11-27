@@ -10,12 +10,12 @@
     <v-ons-list>
     <v-ons-list-header style="color:  rgb(10, 160, 152);font-weight: bold;">Comentarios</v-ons-list-header>
       <v-ons-list-item v-for="item in datos" :key="item.link">
-        <div class="left">
+        <div class="list__item__left">
           <img class="list-item__thumbnail" :src="item.img">
           
         </div>
         
-        <div class="center">
+        <div class="list__item__center">
           <span class="list-item__title">{{item.nombre}}</span>
           <span class="list-item__subtitle">{{item.contenido}}</span>
         </div>
@@ -24,16 +24,16 @@
      
      
     <div class="comenta">
-         <v-ons-input name="comentario" type="text" placeholder="Comentar..."></v-ons-input>
-           
+         <textarea class="textarea" rows="3" placeholder="Comentar..."></textarea>
                 <div class="right">
-                    <v-ons-button class="material" style="border-radius:50%; top:6px;"><i class="zmdi zmdi-check"></i>
+                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><i class="zmdi zmdi-check"></i>
                     </v-ons-button>
                 </div>  
                           
     </div>
              
-     </v-ons-card>         
+     </v-ons-card> 
+             
     </v-ons-page>
 </template>
 
@@ -68,6 +68,110 @@ export default {
 
 </script>
 <style scoped>
+
+.textarea {
+  
+  background: transparent;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px 5px 5px 5px;
+  font-size: 15px;
+  font-weight: 400;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #1f1f21;
+  width: 80%;
+  margin-right: 10px ;
+ 
+  
+}
+.list__item__left {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  display: flex;
+  padding: 12px 14px 12px 0;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  line-height: 1.2em;
+  min-height: 44px;
+}
+
+.list__item__center {
+ 
+ 
+  
+ -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  margin-right: auto;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin-left: 0;
+  border-bottom: none;
+  -webkit-background-size: 100% 1px;
+  background-size: 100% 1px;
+  padding: 12px 6px 12px 0;
+ 
+}
+
+
+.list-item__title {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 0;
+  order: 0;
+  color: #000;
+  font-weight: 900;
+  font-size: 16px;
+}
+.list-item__subtitle {
+  opacity: 1;
+  font-size: 14px;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
 .toolbar--material{
     background-color: purple;
 }
