@@ -1,12 +1,18 @@
 <template>
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
-      <div class="center">Editar Perfil</div>
-    </v-ons-toolbar>
+            <div class="left">
+                <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+            </div>
+            <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+            
+        </v-ons-toolbar>
 
-    <br>
-    <br>
+			<div align="center">
+				<h3  style="color: rgb(10, 160, 152);">Editar perfil</h3>
+			</div>
     <div class="container">
+        
          <form class="col s12" id="editarPerfil" method="EditarPerfil" action="/editarperfil">
          <div class="center">
             <div class="row">
@@ -117,4 +123,26 @@ ons-card {
   
 }
 
+.ic {
+	width: 20%;
+    display: flex;
+    align-items: center !important;
+    flex-direction: row;
+    margin-left: 10px;
+	margin-right: 0px;
+}
+
+h6{
+  font-size: 15px;
+}
+
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 8px;    
+}
 </style>

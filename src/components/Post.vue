@@ -9,7 +9,7 @@
                </div> 
                 <div class="col">
                   <div class="f1">
-                      <h4>Pepito Torres</h4>
+                      <h4>Andrea</h4>
                   </div>
                   <div class="f2">
                       <h6>Hace 2 minutos</h6>
@@ -26,7 +26,7 @@
             
             <v-ons-row>
                 <v-ons-col>
-                  <div class="col2">
+                  <div  class="col2">
                       <div class="ic"><i class="material-icons" style="color: #5d6367;">thumb_up</i></div>
                      <h6 style="color: #5d6367;"> Me gusta</h6>
                   </div>
@@ -69,7 +69,7 @@ export default {
             type: File,
           },
           img:img2,
-          contenido: 'Con mis amichis'
+          contenido: 'Celebrando con mis amigos'
           },
           {
           label: 'Community Chat',

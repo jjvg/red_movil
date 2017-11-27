@@ -29,5 +29,6 @@ export default {
     height: 45px;
     align: center;
     margin-left: 140px; 
+    margin-top: 8px;  
 }
 </style>
