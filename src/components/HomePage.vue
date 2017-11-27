@@ -1,5 +1,5 @@
 <template>
-  <v-ons-page>	  
+  <v-ons-page id="app">	  
     <div class="estado">
       <estado-page></estado-page>
      </div>

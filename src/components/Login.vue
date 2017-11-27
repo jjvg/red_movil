@@ -37,18 +37,16 @@
                  <div class="center">
                 <router-link to="/principal"><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ingresar</v-ons-button></router-link> 
                  </div>
-                
+                <br>
                     <div class="center">
                     <v-ons-row>
                         <v-ons-col width="99%">
                             ¿Aún no te has Registrado?<div style="color:  rgb(10, 160, 152);font-weight: bold;" @click="actionSheetVisible = true">  Regístrate aquí</div>
                         </v-ons-col>
                         <v-ons-col>
-                            
                         </v-ons-col>
                     </v-ons-row>
                     </div>
-                    
                     <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
                         
                             <router-link to="/registrarpersona" style="align: center;"><v-ons-action-sheet-button style="align: center;"><i class="material-icons" style="margin-right:10px;">face</i>Usuario</v-ons-action-sheet-button></router-link>
@@ -72,13 +70,7 @@ export default {
       
   },
    
-  methods:{
-      
-      validar(){
-          
-              this.actionSheetVisible = true;
-      }
-  }
+
 }
 </script>
 <style scoped>

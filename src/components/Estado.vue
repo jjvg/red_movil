@@ -1,5 +1,5 @@
 <template>
-    <div class="ctn-edo">
+    <div class="ctn-edo" id="app">
         </router-link><v-ons-card>
         <div class="estado">
             <div class="img">

@@ -1,5 +1,5 @@
 <template>
-<div id="home">
+<v-ons-page id="app">
     <v-ons-toolbar class="toolbar--material">
       <div class="left">
         <router-link to="/principal"><v-ons-back-button style="color:white"></v-ons-back-button></router-link>
@@ -44,7 +44,7 @@
           
 </v-ons-card>
     
-</div>
+</v-ons-page>
 </template>
 
 <script>

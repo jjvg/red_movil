@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container" id="app">
      <v-ons-list>
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <v-ons-card>

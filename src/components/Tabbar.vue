@@ -1,6 +1,6 @@
 <template>
     <v-ons-tabbar swipeable position="bottom" modifier="material" style="background-color: purple; color: purple" 
-    :visible="true" :index.sync="activeIndex">
+    :visible="true" :index.sync="activeIndex" id="app">
   <template slot="pages">
     <home-page></home-page>
     <perfil-page></perfil-page>
