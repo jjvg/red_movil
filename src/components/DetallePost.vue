@@ -19,7 +19,12 @@
                     <div class="card-material__content white-text center">
                      {{contenido}}
                      <div class="right">
-                        <router-link to="/comentarios"><v-ons-button modifier="material">Comentarios</v-ons-button></router-link>
+                        <v-ons-button class="button button--light" modifier="material" @click="showModal">Comentarios</v-ons-button>
+                        <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
+                            <p style="text-align: center">
+                                <h1>hola</h1>
+                            </p>
+                        </v-ons-modal>
                     </div>
                     </div>
                     

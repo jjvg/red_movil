@@ -27,8 +27,8 @@
                 <seguidos-page></seguidos-page>
             </p>
         </v-ons-modal>
-        <button class="button button--light" @click="showModal">{{seguidores}} Seguidores</button>
-        <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
+        <button class="button button--light" @click="showModal1">{{seguidores}} Seguidores</button>
+        <v-ons-modal :visible="modalVisible1" @click="modalVisible1 = false">
             <p style="text-align: center">
                 <seguidores-page></seguidores-page>
             </p>
@@ -68,13 +68,19 @@ export default {
       seguidos:'150',
       seguidores:'100',
       modalVisible: false,
+      modalVisible1:false
+      
       
     }
   },
   methods: {
     showModal() {
-      this.modalVisible = true;
-        }
+            this.modalVisible = true;
+        
+        },
+    showModal1(){
+      this.modalVisible1= true;
+    }
   },
   
 
