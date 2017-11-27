@@ -16,7 +16,6 @@
         </div>
         
         <div class="center">
-
           <span class="list-item__title">{{item.nombre}}</span>
           <span class="list-item__subtitle">{{item.contenido}}</span>
         </div>
