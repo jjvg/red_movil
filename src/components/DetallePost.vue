@@ -80,7 +80,7 @@ export default {
  
 }
 .card{
-    background-color: purple;
+    background-color:white;
     color:purple;
     margin: 0px, 0px ,0px,0px 
 }
