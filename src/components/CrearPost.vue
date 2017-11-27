@@ -14,7 +14,7 @@
            
            <h3  style="color: rgb(10, 160, 152);">Nueva Publicación</h3>
         <br>
-        <div class="">
+        <div>
             <v-ons-row>
                 <v-ons-col>
                     <div class="col2">
@@ -247,11 +247,6 @@ export default {
 
 h6{
   font-size: 15px;
-}
-.ic{
-  width: 20%;
-  display: flex;
-  margin-right:5px;
 }
 .col2{
     width: 100%;
