@@ -10,11 +10,10 @@
     <div class="container">
         
         <form id="registroPost" method="POST" action="/principal">
-       <v-ons-row>
-           <h3 class="center">Nueva Publicacion</h3>
-       </v-ons-row>
-       <br>
-       <br>
+       
+           
+           <h3  style="color: rgb(10, 160, 152);">Nueva Publicación</h3>
+        <br>
         <div class="">
             <v-ons-row>
                 <v-ons-col>
@@ -35,14 +34,15 @@
             
         <div class="row l">
          
-            <div class="col s12 m6 l4">
-            <div class="input field inp" >
-                 <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" placeholder="Cuéntanos qué está sucediendo"></v-text-area>
-                     <label for="text">Situación Actual</label>
-            </div>   
-            </div>
+            <div class="input-field col s12 m6 l4">
+               
+                    <input id="situacion" type="text" class="validate">
+         			 <label for="email">Cuéntanos qué está sucediendo</label>
+                
+                </div>
              
         </div>
+      
         <div class="row">
            <div class="col s12 m12 l6">
                <div class="input-field">
@@ -63,15 +63,48 @@
                     </v-ons-select>
                 
                 </div>
-      </v-ons-list-item>
+                
+            </v-ons-list-item>
          </v-ons-list>
-        
+         
+				<div class= "tit">
+					<i class="material-icons prefix" style="color: rgb(10, 160, 152);">place</i>
+					<h5 style="color: rgb(10, 160, 152);">¿Dónde ocurrió?</h5>
+				</div>
+         <label>Estado</label>
+                <div class="center">
+                    
+                
+                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
+                            {{ item1.text }}
+                        </option>
+                    </v-ons-select>
+                
+                </div>
+                <label>Ciudad</label>
+                <div class="center">
+                    
+                
+                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
+                            {{ item2.text }}
+                        </option>
+                    </v-ons-select>
+                
+                </div>
+                <div class="col s12 m12 l6">
+               <div class="input-field">
+                     <v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
+                     <label for="text">Dirección</label>
+                </div>
+           </div>
 
         <section style="margin: 20px">
             
         </section>
          <div class="center">
-                <router-link to="/principal"><v-ons-button  modifier="material large" style="margin: 6px 0">Registrar</v-ons-button></router-link> 
+                <router-link to="/principal" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Publicar</v-ons-button></router-link> 
          </div>
     </form>
 
@@ -197,5 +230,37 @@ h6{
     display: flex;
     flex-direction: row;
     margin-top: 7px;
+    margin-left:20px;
 }
+ons-toolbar{
+  color: purple;
+}
+h3{
+    text-align: center;
+}
+
+.button--light {
+  background-color: transparent;
+  color: #9E9898;
+  border: 1px solid rgba(0,0,0,0.2); 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: #9E9898;
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 3;
+ 
+}
+.l{
+    margin-top: 30px;
+}
+
+.tit{
+	    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align: center;
+    margin-left: 80px;
+}
+
 </style>

@@ -1,6 +1,5 @@
 <template>
     <div class="ctn-edo">
-        
         </router-link><v-ons-card>
         <div class="estado">
             <div class="img">

@@ -11,13 +11,14 @@
     <br>
     <v-ons-row>
     <div class="container" >
-        <div class="card--material small purple ">
-                    <div class="card-image">
+        <div class="card--material small">
+                    <div class="center">
                         <img src="../assets/amigos.jpg" style="width: 100%">
-                        <span class="card__title white-text center">{{titulo}}</span>
+                        <h3 style="color: black;">{{titulo}}</h3>
                     </div>
-                    <div class="card-material__content white-text center">
-                     {{contenido}}
+                    <div class="center">
+                         <h5 style="color: black;">{{contenido}}</h5>
+                    </div>
                      <div class="right">
                         <v-ons-button class="button button--light" modifier="material" @click="showModal">Comentarios</v-ons-button>
                         <v-ons-modal :visible="modalVisible" @click="modalVisible = false">

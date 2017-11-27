@@ -17,7 +17,7 @@
        under the License.
  */
 
-package io.cordova.helloworld;
+package io.cordova.redcom;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

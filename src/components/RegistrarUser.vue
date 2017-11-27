@@ -1,10 +1,18 @@
 <template>
- <div id="app">
+ <v-ons-page id="app">
+	 	    <v-ons-toolbar class="toolbar--material">
+			<div class="left">
+				<router-link to="/"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+			</div>
+			<div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+        </v-ons-toolbar>
+		
+
 <div class="container">
 	<div class="row">
 		<div class="col s12">
 			<div align="center">
-				<p>Registro de Usuario</p>
+				<h3>Registro de Personas</h3>
 			</div>
 		</div>
 	</div>
@@ -32,35 +40,46 @@
           			<label for="password">Contraseña</label>
         		</div>
 			</div>
-			<div class="row">
-				<div class= "col s2 m4">
-					<i class="material-icons prefix">lock</i>
-				</div>
-				<div class="col s10 m8">
-					<v-select class="validate" :options="['Femenino','Masculino']" :placeholder="'Genero'"></v-select>
-  				</div>
-			</div>
-			<br>
-	  		<div class="row">
-				<div class="col s6">
-					<button class="btn waves-effect waves-light" type="submit" v-on:click="registrarse()">Registrar</button>
-				</div>
-					<div class="col s6">
-					<button class="btn waves-effect waves-light" type="submit" name="cancelar">Cancelar</button>
-			</div>
-			</div>
 			
+                <label>Sexo</label>
+                <div class="center">
+                    
+                
+                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <option class="tam" v-for="item2 in sexo" :value="item2.value" :key="item2.key">
+                            {{ item2.text }}
+                        </option>
+                    </v-ons-select>
+                
+                </div>
+			<br>
+	  		<div class="center">
+                <router-link to="/" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Registrar</v-ons-button></router-link> 
+         </div>
+		
 			
    		 </form>
  	  </div>
 	</div>				
- </div>		 
+ </v-ons-page>
 </template>
 <script>
 import {mapGetters} from 'vuex';
 export default {
 	name: 'registro',
-	
+	data : function() {
+        return {
+           
+            titulo:{type:String},
+            titulo:'', 
+            imagen:{type:File},
+            contenido:{type:String},
+            categoria:{type:Boolean},
+      sexo: [
+        { text: 'Femenino', value: 'Femenino' },
+        { text: 'Masculino', value: 'Masculino' },
+      ],
+	}},
 	computed:{
 		...mapGetters([
 			'nombre'
@@ -78,9 +97,32 @@ export default {
 </script>
 <style scoped>
 p{
-	color: purple;
+	color: black;	
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font: Roboto;
 	font-size: 20px;
 }
+
+.button--light {
+  background-color: transparent;
+  color: #9E9898;
+  border: 1px solid rgba(0,0,0,0.2); 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: #9E9898;
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 3;
+ 
+}
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    align: center;
+    margin-left: 100px;
+    margin-right: 100px;    
+}
+
 </style>
