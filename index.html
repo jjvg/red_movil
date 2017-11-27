@@ -13,7 +13,12 @@
 
 <body>
     <%= htmlWebpackPlugin.options.cordova || '' %>
-        <div id="app"></div>
+        <div id="app">
+            <div id="deviceready" class="blink">
+                <p class="event listening"></p>
+                <p class="event received"></p>
+            </div>
+        </div>
         <!-- built files will be auto injected -->
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
