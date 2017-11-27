@@ -17,10 +17,9 @@
         <div class="">
             <v-ons-row>
                 <v-ons-col>
-                  <div class="col2" name="im" @click="camara()">
-                      <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
-                     <div><h6 style="color: #5d6367;"> Cámara</h6></div>
-                  </div>
+                <v-ons-button id="im"modifier="quiet" style="margin: 6px 0">
+                    <div class="ic"><i class="material-icons" style="color: #61e4b8;">add_a_photo</i></div>
+                </v-ons-button>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col2">
