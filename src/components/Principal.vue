@@ -48,7 +48,7 @@ export default {
     width: 45px;
     height: 45px;
     align: center;
-    margin-left: 140px; 
+    margin-left: 120px; 
     margin-top: 8px;  
 }
 
