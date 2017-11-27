@@ -21,13 +21,13 @@
              <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
         </div>
         
-        <button class="button button--light" @click="showModal">{{seguidos}} Seguidos</button>
+        <v-ons-button  modifier="material" class="button button--light" @click="showModal">{{seguidos}} Seguidos</v-ons-button>
         <v-ons-modal :visible="modalVisible" @click="modalVisible = false">
             <p style="text-align: center">
                 <seguidos-page></seguidos-page>
             </p>
         </v-ons-modal>
-        <button class="button button--light" @click="showModal1">{{seguidores}} Seguidores</button>
+        <v-ons-button  modifier="material" class="button button--light" @click="showModal1">{{seguidores}} Seguidores</v-ons-button>
         <v-ons-modal :visible="modalVisible1" @click="modalVisible1 = false">
             <p style="text-align: center">
                 <seguidores-page></seguidores-page>
@@ -67,7 +67,7 @@ export default {
       seguidos:'150',
       seguidores:'100',
       modalVisible: false,
-      modalVisible1:false
+      modalVisible1:false,
       
       
     }
@@ -98,7 +98,7 @@ export default {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
-  opacity: 1;
+  opacity: 3;
  
 }
 img{

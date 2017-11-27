@@ -85,8 +85,8 @@
             </div>
 
             <section style="margin: 20px">
-                <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Guardar</v-ons-button></router-link>
-                <router-link to="/principal"><v-ons-button style="margin: 10px 0;" modifier="material">Cancelar</v-ons-button></router-link>
+                <router-link to="/principal"><v-ons-button class="button button--light" modifier="material" >Guardar</v-ons-button></router-link>
+                <router-link to="/principal"><v-ons-button class="button button--light" modifier="material">Cancelar</v-ons-button></router-link>
             </section>
          </div>
          </form>
@@ -139,7 +139,19 @@
  }  
 </script>
 <style scoped>
-
+.button--light {
+  background-color: transparent;
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+ 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 3;
+ 
+}
 img{
      border-radius: 50%;
      width: 80px;

@@ -65,6 +65,26 @@ export default {
 </script>
 
 <style scoped>
+
+.button--light {
+  background-color: transparent;
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+ 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 3;
+ 
+}
+.card{
+    background-color: purple;
+    color:purple;
+    margin: 0px, 0px ,0px,0px 
+}
+
 .card-image{
     max-width: 10000px;
     margin: 0px, 0px ,0px,0px 
