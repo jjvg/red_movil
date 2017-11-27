@@ -4,10 +4,9 @@
           <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
           
       </v-ons-toolbar>
-    <tab></tab>
-   <v-ons-speed-dial position="bottom right" direction="up"
+       <v-ons-speed-dial position="bottom right" direction="up"
       :visible="spdVisible"
-      :open.sync="spdOpen" >
+      :open.sync="spdOpen" style="margin-bottom: 50px">
       <v-ons-fab :style="spdStyle">
         <v-ons-icon icon="md-dialpad"></v-ons-icon>
       </v-ons-fab>
@@ -21,6 +20,8 @@
         <v-ons-icon icon="md-search"></v-ons-icon>
       </v-ons-speed-dial-item>
     </v-ons-speed-dial>
+    <tab></tab>
+  
   </v-ons-page>
 </template>
 <script>
@@ -33,9 +34,7 @@ export default {
    spdVisible: true,
       updated:open,
       spdOpen: true,
-      spdStyle: {
-        backgroundColor: this.$ons.platform.isIOS() ? '#4282cc' : null
-      },
+     
 }
 </script>
 
@@ -52,4 +51,5 @@ export default {
     margin-left: 140px; 
     margin-top: 8px;  
 }
+
 </style>

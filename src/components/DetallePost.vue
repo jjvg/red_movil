@@ -38,7 +38,8 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentarios" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link> 
+                <router-link to="/comentario" ><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link>
+                <v-ons-button  modifier="material" class="button button--light"><i class="material-icons prefix">local_offer</i></v-ons-button>
          </div>
           
 </v-ons-card>
@@ -65,6 +66,26 @@ export default {
 </script>
 
 <style scoped>
+
+.button--light {
+  background-color: transparent;
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+ 
+}
+.button--light:active {
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 3;
+ 
+}
+.card{
+    background-color:white;
+    color:purple;
+    margin: 0px, 0px ,0px,0px 
+}
+
 .card-image{
     max-width: 10000px;
     margin: 0px, 0px ,0px,0px 

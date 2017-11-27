@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col s12">
 			<div align="center">
-				<h3>Registro de Personas</h3>
+				<h3 style="color: rgb(10, 160, 152);">Registro de Personas</h3>
 			</div>
 		</div>
 	</div>

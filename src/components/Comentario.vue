@@ -1,44 +1,151 @@
 <template>
-<v-ons-page>
-    <div class="coment">
-        
-        <div class="img">{{img}} </div>
-        <div class="ctn2">
-        
-            <div class="nombre"  v-model="nombre">{{nombre}} </div>
-            <div class="coment" v-model="contenido">{{contenido}} </div>
+    <v-ons-page id="app">
+        <v-ons-toolbar class="toolbar--material">
+            <div class="left">
+        <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+      </div>
+            <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+        </v-ons-toolbar>
+    <v-ons-card>    
+    <v-ons-list>
+    <v-ons-list-header style="color:  rgb(10, 160, 152);font-weight: bold;">Comentarios</v-ons-list-header>
+      <v-ons-list-item v-for="item in datos" :key="item.link">
+        <div class="list__item__left">
+          <img class="list-item__thumbnail" :src="item.img">
+          
         </div>
-    </div>
+        
+        <div class="list__item__center">
+          <span class="list-item__title">{{item.nombre}}</span>
+          <span class="list-item__subtitle">{{item.contenido}}</span>
+        </div>
+      </v-ons-list-item>
+      </v-ons-list>
+     
+     
     <div class="comenta">
-              <div class="ic">
-                    <i class="material-icons">chat_bubble</i>
-              </div>
-              <div class="com">
-                     <v-ons-input name="comentario" type="text" placeholder="¿Qué opinas?"></v-ons-input>
-              </div>
-              
+         <textarea class="textarea" rows="3" placeholder="Comentar..."></textarea>
+                <div class="right">
+                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><i class="zmdi zmdi-check"></i>
+                    </v-ons-button>
+                </div>  
+                          
     </div>
-              <v-ons-button modifier="material" style="margin: 6px 0">Comentar</v-ons-button>
+             
+     </v-ons-card> 
+             
     </v-ons-page>
 </template>
 
 <script>
-import imagen from '../assets/img/rc1.png'
+import imagen from '../assets/img/perfil.jpg'
+import img1 from '../assets/img/perrito.jpg'
 export default {
-   name: 'comentarios',
+   name: 'comentario',
    data: function() {
     return {
            
-          
-          nombre: 'María Conchita',
-          img:{ type: File},
+        datos: [
+          {
+          nombre: 'María Perez',
           img:imagen,
-          contenido: 'Probando',
-          }
-
-      },
-
+          contenido: 'Buena foto',
+          },
+          {
+          nombre: 'José Torres',
+          img: img1,
+          contenido: 'Saludos',
+          },
+          {
+          nombre: 'Ana Rojas',
+          img: imagen,
+          contenido: 'Me encanta esta foto',
+          },
+        ]
+      }
+   },
 }
 
 
 </script>
+<style scoped>
+
+.textarea {
+  
+  background: transparent;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px 5px 5px 5px;
+  font-size: 15px;
+  font-weight: 400;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #1f1f21;
+  width: 80%;
+  margin-right: 10px ; 
+}
+
+.list__item__left {
+ 
+  padding: 0 12px 0 0;
+  line-height: 1.2em;
+  min-height: 44px;
+}
+
+.list__item__center {
+  margin-right: auto;
+  -webkit-background-size: 100% 1px;
+  background-size: 100% 1px;
+  padding: 12px 6px 12px 0;
+ 
+}
+
+
+.list-item__title {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 0;
+  order: 0;
+  color: #000;
+  font-weight: 900;
+  font-size: 16px;
+}
+.list-item__subtitle {
+  opacity: 1;
+  font-size: 14px;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.toolbar--material{
+    background-color: purple;
+}
+.logo{
+  margin: 0 auto;
+  padding: 0px;
+    width: 40px;
+    height: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 8px;    
+}
+
+</style>
