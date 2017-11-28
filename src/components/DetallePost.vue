@@ -10,17 +10,14 @@
             
             
         </v-ons-toolbar>
-    <br>
-    <br>
-    <br>
-<v-ons-card>
+    <v-ons-card>
     <div class="pub">
        <div class="img">
-           <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
+           <img src="../assets/perfil.jpg" style="width: 150% !important;" class="perfil">
        </div> 
        <div class="col">
            <div class="f1">
-                <h4>Pepito Torres</h4>
+                <h4>Andrea</h4>
             </div>
             <div class="f2">
                 <h6>Hace 2 minutos</h6>
