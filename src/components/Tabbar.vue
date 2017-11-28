@@ -1,4 +1,5 @@
 <template>
+<v-ons-page id="app" modifier="material">
     <v-ons-tabbar swipeable position="bottom" modifier="material" style="background-color: purple; color: purple" 
     :visible="true" :index.sync="activeIndex" id="app">
   <template slot="pages">
@@ -11,6 +12,8 @@
   <v-ons-tab icon="md-account" label="Perfil"></v-ons-tab>
   <v-ons-tab icon="md-notifications" label="Noti" badge="4"></v-ons-tab>
 </v-ons-tabbar>
+ 
+</v-ons-page>
 </template>
 
   

@@ -49,13 +49,12 @@
                     </div>
                     <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
                         
-                            <router-link to="/registrarpersona" style="align: center;"><v-ons-action-sheet-button style="align: center;"><i class="material-icons" style="margin-right:10px;">face</i>Usuario</v-ons-action-sheet-button></router-link>
-                            <router-link to="/registrarcom"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">supervisor_account</i>Comunidad</v-ons-action-sheet-button></router-link>
-                            <router-link to="/registrarente"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">business</i>Ente</v-ons-action-sheet-button></router-link>
-                            <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0;" >Cancelar</v-ons-action-sheet-button>
+                            <router-link to="/registrarpersona"><v-ons-action-sheet-button><v-ons-icon icon="md-face" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Usuario</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarcom"><v-ons-action-sheet-button><v-ons-icon icon="md-accounts" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Comunidad</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarente"><v-ons-action-sheet-button><v-ons-icon icon="md-markunread-mailbox" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon> Ente</v-ons-action-sheet-button></router-link>
+                            <v-ons-action-sheet-button @click="actionSheetVisible=false"  ><v-ons-icon icon="md-close-circle" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Cancelar</v-ons-action-sheet-button>
                         
                     </v-ons-action-sheet>
-                    
     </v-ons-page>
 
    

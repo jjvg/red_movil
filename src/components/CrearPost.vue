@@ -41,10 +41,8 @@
         <div class="row l">
          
             <div class="input-field col s12 m6 l4">
-               
                     <input id="situacion" type="text" class="validate">
          			 <label for="email">Cuéntanos qué está sucediendo</label>
-                
                 </div>
              
         </div>
@@ -60,14 +58,12 @@
          <v-ons-list>
              <v-ons-list-item>
                 <div class="center">
-                    <label  >¿Con qué área se relaciona esta situación?</label>
-                
+                    <label>¿Con qué área se relaciona esta situación?</label>
                     <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem1" >
                         <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
                             {{ item.text }}
                         </option>
                     </v-ons-select>
-                
                 </div>
                 
             </v-ons-list-item>
@@ -79,8 +75,6 @@
 				</div>
          <label>Estado</label>
                 <div class="center">
-                    
-                
                     <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem2" >
                         <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
                             {{ item1.text }}
@@ -90,14 +84,11 @@
                 </div>
                 <label>Ciudad</label>
                 <div class="center">
-                    
-                
                     <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem3" >
                         <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
                     </v-ons-select>
-                
                 </div>
                 <div class="col s12 m12 l6">
                <div class="input-field">
@@ -186,13 +177,7 @@ export default {
       alert('Failed because: ' + message); 
    } 
 }},
-       savePost(){
-           redirect: '/home';
-            
-       },
-       regresar(){
-           redirect: '/home';
-       }
+  
    }
 }
 </script>

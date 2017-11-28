@@ -9,9 +9,7 @@
     <br>
     <br>
     <br>
-
 <v-ons-card>
-
     <div class="pub">
        <div class="img">
            <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
@@ -30,7 +28,7 @@
     </div>
     <div class="center">
     <div class="card_content">
-        <h3 style="font-weight: bold; ">{{titulo}}</h3>
+        <h3 style="font-weight: bold;">{{titulo}}</h3>
     </div>
     <div class="card_content">
         <h5>{{contenido}}</h5>
@@ -38,8 +36,8 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link>
-                <v-ons-button  modifier="material" class="button button--light"><i class="material-icons prefix">local_offer</i></v-ons-button>
+                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon>  Ver comentarios</v-ons-button></router-link>
+                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon>  Etiquetar</v-ons-button>
          </div>
           
 </v-ons-card>
@@ -82,7 +80,6 @@ export default {
 }
 .card{
     background-color:white;
-    color:purple;
     margin: 0px, 0px ,0px,0px 
 }
 
@@ -137,7 +134,6 @@ h5{
  
 }
 h4{
-  color: #44714E;
   line-height: 0;
 }
 
@@ -151,6 +147,9 @@ h6{
     align-items: center;
     flex-direction: row;
     width: 100%;
+}
+.toolbar--material{
+    background-color: purple
 }
 
 </style>

@@ -2,7 +2,7 @@
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
             <div class="left">
-        <router-link to="/principal"><v-ons-back-button>Page 1</v-ons-back-button></router-link>
+        <router-link to="/principal"><v-ons-back-button></v-ons-back-button></router-link>
       </div>
             <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
         </v-ons-toolbar>
@@ -26,7 +26,7 @@
     <div class="comenta">
          <textarea class="textarea" rows="3" placeholder="Comentar..."></textarea>
                 <div class="right">
-                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><i class="zmdi zmdi-check"></i>
+                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><v-ons-icon icon="md-check"></v-ons-icon>
                     </v-ons-button>
                 </div>  
                           

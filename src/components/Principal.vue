@@ -2,13 +2,13 @@
   <v-ons-page id="app">
       <v-ons-toolbar class="toolbar--material" modifier="material" >
           <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
-          
+            
       </v-ons-toolbar>
        <v-ons-speed-dial position="bottom right" direction="up"
       :visible="spdVisible"
       :open.sync="spdOpen" style="margin-bottom: 50px">
       <v-ons-fab :style="spdStyle">
-        <v-ons-icon icon="md-dialpad"></v-ons-icon>
+        <v-ons-icon icon="md-dialpad" modifier="material"></v-ons-icon>
       </v-ons-fab>
       <router-link to="/"><v-ons-speed-dial-item :style="spdStyle">
         <v-ons-icon icon="md-run"></v-ons-icon>
@@ -21,7 +21,10 @@
       </v-ons-speed-dial-item>
     </v-ons-speed-dial>
     <tab></tab>
-  
+  <div id="deviceready" class="blink">
+                <p class="event listening"></p>
+                <p class="event received"></p>
+            </div>
   </v-ons-page>
 </template>
 <script>
