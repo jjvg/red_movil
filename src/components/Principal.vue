@@ -16,9 +16,9 @@
        <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
         <v-ons-icon icon="md-airplay"></v-ons-icon>
       </v-ons-speed-dial-item></router-link>
-      <v-ons-speed-dial-item :style="spdStyle" >
+      <router-link to="/busqueda"><v-ons-speed-dial-item :style="spdStyle" >
         <v-ons-icon icon="md-search"></v-ons-icon>
-      </v-ons-speed-dial-item>
+      </v-ons-speed-dial-item></router-link>
     </v-ons-speed-dial>
     <tab></tab>
   
