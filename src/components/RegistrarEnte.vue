@@ -1,10 +1,14 @@
 <template>
     <v-ons-page id="app">
 		<v-ons-toolbar class="toolbar--material">
-			<div class="left">
-				<router-link to="/"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
-			</div>
-			<div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+            <div class="left">
+                <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
+            </div>
+            <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+            </div>
+            
+            
         </v-ons-toolbar>
 <div class="container">
 	
@@ -163,15 +167,6 @@
     align-items: center;
     flex-direction: row;
     margin-left: 10px;
-}
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 40px;
-    height: 40px;
-    align: center;
-    margin-left: 70px; 
-    margin-top: 8px;   
 }
 
 h5{
