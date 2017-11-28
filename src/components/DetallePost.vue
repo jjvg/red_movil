@@ -141,10 +141,6 @@ h6{
 }
 .toolbar--material{
     background-color: purple;
-<<<<<<< HEAD
-
-=======
->>>>>>> 63f1d4ba319f1bf85365becc80b0b6f2d8afcc3d
 }
 </style>
 
