@@ -20,6 +20,7 @@
         <br>
                 <div>
                 <v-ons-row>
+
                 <v-ons-col>
                     <div class="col2">
                         <v-ons-button id="im" modifier="quiet">
@@ -28,8 +29,8 @@
                     </div>
                 </v-ons-col>
                 
-                </div>
-                </v-ons-col>
+                
+                
                 <v-ons-col>
                     <div class="col2">
                      <v-ons-button id="im" modifier="quiet">
@@ -37,6 +38,7 @@
                      </v-ons-button>
                     </div>
                 </v-ons-col>
+                
             </v-ons-row>
         </div>
         <v-ons-card>
@@ -50,7 +52,7 @@
             <div class="input-field col s12 m6 l4">
                     <input id="situacion" type="text" class="validate">
          			 <label for="email">Cuéntanos qué está sucediendo</label>
-                </div>
+            </div>
              
         </div>
       
@@ -98,11 +100,11 @@
                     </v-ons-select>
                 </div>
                 <div class="col s12 m12 l6">
-               <div class="input-field">
-                     <v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
-                     <label for="text">Dirección</label>
+                <div class="input-field">
+                            <v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
+                            <label for="text">Dirección</label>
+                        </div>
                 </div>
-           </div>
 
         <section style="margin: 20px">
             
