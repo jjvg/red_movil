@@ -2,9 +2,13 @@
     <v-ons-page id="app">
         <v-ons-toolbar class="toolbar--material">
             <div class="left">
-        <router-link to="/principal"><v-ons-back-button></v-ons-back-button></router-link>
-      </div>
-            <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+                <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
+            </div>
+            <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+            </div>
+            
+            
         </v-ons-toolbar>
     <v-ons-card>    
     <v-ons-list>
@@ -138,14 +142,6 @@ export default {
 .toolbar--material{
     background-color: purple;
 }
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 40px;
-    height: 40px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 8px;    
-}
+
 
 </style>

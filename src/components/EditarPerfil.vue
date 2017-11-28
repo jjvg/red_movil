@@ -4,7 +4,10 @@
             <div class="left">
                 <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
             </div>
-            <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+            <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+            </div>
+            
             
         </v-ons-toolbar>
 
@@ -142,12 +145,7 @@
   opacity: 3;
  
 }
-img{
-     border-radius: 50%;
-     width: 80px;
-     height: 80px;
-     
-}
+
 .toolbar--material{
     background-color: purple;
 }
@@ -170,14 +168,6 @@ h6{
   font-size: 15px;
 }
 
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 40px;
-    height: 40px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 8px;    
-}
+
 
 </style>

@@ -63,14 +63,7 @@ ons-toolbar{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 40px;
-    height: 40px;
-    align: center;
-    
-}
+
 .log{
   width: 300%;
     display: flex;

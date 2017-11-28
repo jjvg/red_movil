@@ -1,9 +1,13 @@
 <template>
   <v-ons-page id="app">
-      <v-ons-toolbar class="toolbar--material" modifier="material" >
-          <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+      <v-ons-toolbar class="toolbar--material">
+           
+            <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+            </div>
             
-      </v-ons-toolbar>
+            
+        </v-ons-toolbar>
        <v-ons-speed-dial position="bottom right" direction="up"
       :visible="spdVisible"
       :open.sync="spdOpen" style="margin-bottom: 50px">
@@ -16,9 +20,9 @@
        <router-link to="/nuevopost"> <v-ons-speed-dial-item :style="spdStyle">
         <v-ons-icon icon="md-airplay"></v-ons-icon>
       </v-ons-speed-dial-item></router-link>
-      <v-ons-speed-dial-item :style="spdStyle" >
+      <router-link to="/busqueda"><v-ons-speed-dial-item :style="spdStyle" >
         <v-ons-icon icon="md-search"></v-ons-icon>
-      </v-ons-speed-dial-item>
+      </v-ons-speed-dial-item></router-link>
     </v-ons-speed-dial>
     <tab></tab>
   <div id="deviceready" class="blink">
@@ -44,15 +48,6 @@ export default {
 <style scoped>
 .toolbar--material{
   background-color: purple;
-}
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 45px;
-    height: 45px;
-    align: center;
-    margin-left: 120px; 
-    margin-top: 8px;  
 }
 
 </style>

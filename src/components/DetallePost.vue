@@ -1,11 +1,15 @@
 <template>
 <v-ons-page id="app">
     <v-ons-toolbar class="toolbar--material">
-      <div class="left">
-        <router-link to="/principal"><v-ons-back-button style="color:white"></v-ons-back-button></router-link>
-      </div>
-      <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
-    </v-ons-toolbar>
+            <div class="left">
+                <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
+            </div>
+            <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+            </div>
+            
+            
+        </v-ons-toolbar>
     <br>
     <br>
     <br>
@@ -78,23 +82,17 @@ export default {
   opacity: 3;
  
 }
+<<<<<<< HEAD
 .card{
     background-color:white;
     margin: 0px, 0px ,0px,0px 
 }
+=======
+>>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
 
 .card-image{
     max-width: 10000px;
     margin: 0px, 0px ,0px,0px 
-}
-.logo{
-  margin: 0 auto;
-  padding: 0px;
-    width: 40px;
-    height: 40px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 8px;    
 }
 
 .img{
@@ -112,10 +110,10 @@ export default {
     margin-left: 20px;
 }
 h5{
-  line-height: 20px;
+  text-align: justify;
   font-size: 15px;
   color: #00000099;
-  align: center;
+  text-decoration: none;
 }
 .posti{
   margin-top: 15px;
@@ -149,8 +147,13 @@ h6{
     width: 100%;
 }
 .toolbar--material{
+<<<<<<< HEAD
     background-color: purple
 }
+=======
+    background-color: purple;
+>>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
 
+}
 </style>
 

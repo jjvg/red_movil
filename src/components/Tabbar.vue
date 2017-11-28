@@ -10,7 +10,7 @@
 
   <v-ons-tab  icon="md-home" label="Home"></v-ons-tab>
   <v-ons-tab icon="md-account" label="Perfil"></v-ons-tab>
-  <v-ons-tab icon="md-notifications" label="Noti" badge="4"></v-ons-tab>
+  <v-ons-tab icon="md-notifications" label="Notif" badge="4"></v-ons-tab>
 </v-ons-tabbar>
  
 </v-ons-page>
