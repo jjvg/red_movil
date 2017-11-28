@@ -21,7 +21,7 @@
                 <img :src="item.img" style="width: 100%">    
             </div></router-link>
             <div class="card_content">
-                <h5>{{item.contenido}}</h5>
+                <h5 style="text-decoration:none;">{{item.contenido}}</h5>
             </div>
             
             <v-ons-row>
@@ -171,9 +171,10 @@ h6{
   line-height: 0;
   font-size: 10px;
 }
-h5{
-  line-height: 0.8;
+.h5{
+  text-align: justify;
   font-size: 15px;
   color: #00000099;
 }
+
 </style>
