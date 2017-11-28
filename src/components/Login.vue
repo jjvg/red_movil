@@ -4,7 +4,7 @@
              <v-ons-col>
                   <div class="card--material small purple ">
                     <div class="card-image">
-                        <img src="../assets/amigos.jpg" style="width: 100%">
+                        <img src="../assets/img/hands.jpg" style="width: 100%">
                         <span class="card__title white-text center">Bienvenido a REDCOM</span>
                     </div>
                     <div class="card-material__content white-text center">
