@@ -82,13 +82,6 @@ export default {
   opacity: 3;
  
 }
-<<<<<<< HEAD
-.card{
-    background-color:white;
-    margin: 0px, 0px ,0px,0px 
-}
-=======
->>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
 
 .card-image{
     max-width: 10000px;
@@ -147,13 +140,7 @@ h6{
     width: 100%;
 }
 .toolbar--material{
-<<<<<<< HEAD
-    background-color: purple
-}
-=======
     background-color: purple;
->>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
-
 }
 </style>
 

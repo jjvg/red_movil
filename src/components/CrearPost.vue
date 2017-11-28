@@ -18,14 +18,16 @@
            
            <h3  style="color: rgb(10, 160, 152);">Nueva Publicación</h3>
         <br>
-        <div>
-            <v-ons-row>
+                <div>
+                <v-ons-row>
                 <v-ons-col>
                     <div class="col2">
-               <v-ons-button id="im" modifier="quiet">
-                    <div style="color:#5d6367"><v-ons-icon style="color: #61e4b8; margin-right: 5px; margin-top:10px " icon="md-camera" size="30px"></v-ons-icon>   Camara</div>
-                </v-ons-button>
-                </div>
+                        <v-ons-button id="im" modifier="quiet">
+                            <div style="color:#5d6367"><v-ons-icon style="color: #61e4b8; margin-right: 5px; margin-top:10px " icon="md-camera" size="30px"></v-ons-icon>   Camara</div>
+                        </v-ons-button>
+                    </div>
+                </v-ons-col>
+                
                 </div>
                 </v-ons-col>
                 <v-ons-col>
@@ -37,10 +39,10 @@
                 </v-ons-col>
             </v-ons-row>
         </div>
-         <v-ons-card>
-        <div class="center">
-             <img id="myimg"style="width: 80%"></img>
-        </div>
+        <v-ons-card>
+            <div class="center">
+                <img id="myimg"style="width: 80%"></img>
+            </div>
         </v-ons-card>
             <br>
         <div class="row l">
@@ -108,14 +110,15 @@
          <div class="center">
                 <router-link to="/principal" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Publicar</v-ons-button></router-link> 
          </div>
-    </form>
+    
+            <div id="deviceready" class="blink">
+        
+            <p class="event listening"></p>
+            <p class="event received"></p>
+            </div>
+      </form>
 
-    </div>
-    <div id="deviceready" class="blink">
-   
-      <p class="event listening"></p>
-      <p class="event received"></p>
-    </div>
+    </div>      
     </v-ons-page>
 
 
@@ -259,7 +262,7 @@ h3{
 }
 
 .tit{
-	    display: flex;
+	display: flex;
     align-items: center;
     flex-direction: row;
     align: center;
