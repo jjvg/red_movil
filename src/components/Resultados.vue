@@ -1,5 +1,9 @@
 <template>
-<div class="container" id="app">
+<div class="container">
+
+   <div align="center" class="tit">
+				    <h4 style="color: rgb(10, 160, 152);">Resultados de la búsqueda</h4>
+		</div>
      <v-ons-list>
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <v-ons-card>
@@ -26,7 +30,7 @@
 <script>
 import img2 from '../assets/amigos.jpg'
 export default {
-  name: 'seguidores',
+  name: 'resultados',
   data: function() {
     return {
            datos: [
@@ -53,6 +57,11 @@ export default {
 
 </script>
 <style scoped>
+.tit{
+  background-color: white;
+  margin: 0 auto;
+  padding: 5px;
+}
 .button{
   position: right;
    font-size: 12px;

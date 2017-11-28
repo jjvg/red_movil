@@ -24,14 +24,14 @@
                     <v-ons-col>
                     <div class="col s12 m6">
                 <v-ons-button id="im" modifier="quiet">
-                    <div style="color:#5d6367"><i class="material-icons" style="color: #61e4b8; margin-right: 5px; margin-top:10px ">add_a_photo</i>   Camara</div>
+                    <div style="color:#5d6367"><v-ons-icon style="color: #61e4b8; margin-right: 5px; margin-top:10px " icon="md-camera" size="30px"></v-ons-icon>   Camara</div>
                 </v-ons-button>
                 </div>
                 </v-ons-col>
                 <v-ons-col>
                     <div class="col s12 m6">
                         <v-ons-button id="im" modifier="quiet">
-                    <div style="color:#5d6367"><i class="material-icons" style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px ">collections</i> Fototeca</div>
+                    <div style="color:#5d6367"><v-ons-icon style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px " icon="md-collection-image" size="30px"></v-ons-icon> Fototeca</div>
                      </v-ons-button>
                     </div>
                 </v-ons-col>

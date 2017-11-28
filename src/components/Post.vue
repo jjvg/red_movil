@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container" id="app">
      <v-ons-list>
       <v-ons-list-item v-for="item in datos" :key="item.link">
         <v-ons-card>
@@ -23,29 +23,25 @@
             <div class="card_content">
                 <h5 style="text-decoration:none;">{{item.contenido}}</h5>
             </div>
-            
+            <br>
+            <br>
             <v-ons-row>
                 <v-ons-col>
-                  <div  class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #5d6367;">thumb_up</i></div>
-                     <h6 style="color: #5d6367; margin-left:10px; margin-top: 15px;"> Me gusta</h6>
-                  </div>
+                    <v-ons-button modifier="quiet material" style="color: #5d6367">
+                         <v-ons-icon icon="md-thumb-up" size="30px"></v-ons-icon>
+                    </v-ons-button>
                 </v-ons-col>
                 <v-ons-col>
-                  
                   <router-link to="/detallepost">
-                  <div class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #5d6367;margin-top: 2px;">chat_bubble_outline</i></div>
-                     <h6 style="color: #5d6367;margin-left:10px;margin-top: 15px;"> Comentarios</h6>
-                  </div>
+                     <v-ons-button modifier="quiet material" style="color: #5d6367">
+                         <v-ons-icon icon="md-comments" size="30px"></v-ons-icon>
+                    </v-ons-button>
                   </router-link>
                 </v-ons-col>  
                 <v-ons-col>
-                  <div class="right">
-                  <div  class="col2">
-                      <div class="ic"><i class="material-icons" style="color: #5d6367; margin-top: 2px;">local_offer</i></div>
-                   </div>
-                  </div>
+                   <v-ons-button modifier="quiet material" style="color: #5d6367">
+                         <v-ons-icon icon="md-label" size="30px"></v-ons-icon>
+                    </v-ons-button>
                 </v-ons-col>
                   
                 
@@ -163,7 +159,6 @@ h6{
     margin-top: 7px;
 }
 h4{
-  color: #44714E;
   line-height: 0;
 }
 

@@ -1,5 +1,5 @@
 <template>
-<div id="home">
+<v-ons-page id="app">
     <v-ons-toolbar class="toolbar--material">
             <div class="left">
                 <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
@@ -13,9 +13,7 @@
     <br>
     <br>
     <br>
-
 <v-ons-card>
-
     <div class="pub">
        <div class="img">
            <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
@@ -34,7 +32,7 @@
     </div>
     <div class="center">
     <div class="card_content">
-        <h3 style="font-weight: bold; ">{{titulo}}</h3>
+        <h3 style="font-weight: bold;">{{titulo}}</h3>
     </div>
     <div class="card_content">
         <h5>{{contenido}}</h5>
@@ -42,13 +40,13 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link>
-                <v-ons-button  modifier="material" class="button button--light"><i class="material-icons prefix">local_offer</i></v-ons-button>
+                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon>  Ver comentarios</v-ons-button></router-link>
+                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon>  Etiquetar</v-ons-button>
          </div>
           
 </v-ons-card>
     
-</div>
+</v-ons-page>
 </template>
 
 <script>
@@ -84,6 +82,13 @@ export default {
   opacity: 3;
  
 }
+<<<<<<< HEAD
+.card{
+    background-color:white;
+    margin: 0px, 0px ,0px,0px 
+}
+=======
+>>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
 
 .card-image{
     max-width: 10000px;
@@ -127,7 +132,6 @@ h5{
  
 }
 h4{
-  color: #44714E;
   line-height: 0;
 }
 
@@ -143,7 +147,12 @@ h6{
     width: 100%;
 }
 .toolbar--material{
+<<<<<<< HEAD
+    background-color: purple
+}
+=======
     background-color: purple;
+>>>>>>> 9bd687bae7fe0f5876e584d7f705277ca37546c1
 
 }
 </style>

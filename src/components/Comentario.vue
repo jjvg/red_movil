@@ -30,7 +30,7 @@
     <div class="comenta">
          <textarea class="textarea" rows="3" placeholder="Comentar..."></textarea>
                 <div class="right">
-                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><i class="zmdi zmdi-check"></i>
+                    <v-ons-button class="material" style=" position: relative;border-radius:50%; top:4px;"><v-ons-icon icon="md-check"></v-ons-icon>
                     </v-ons-button>
                 </div>  
                           
