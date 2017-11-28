@@ -5,7 +5,7 @@
         <v-ons-card>
             <div class="pub">
                <div class="img">
-                   <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
+                   <img src="../assets/perfil.jpg" style="width: 150% !important;" class="perfil">
                </div> 
                 <div class="col">
                   <div class="f1">
@@ -23,8 +23,6 @@
             <div class="card_content">
                 <h5 style="text-decoration:none;">{{item.contenido}}</h5>
             </div>
-            <br>
-            <br>
             <v-ons-row>
                 <v-ons-col>
                     <v-ons-button modifier="quiet material" style="color: #5d6367">
