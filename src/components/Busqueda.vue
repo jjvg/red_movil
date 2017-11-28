@@ -4,7 +4,9 @@
       <div class="left">
         <router-link to="/principal"><v-ons-back-button style="color:white"></v-ons-back-button></router-link>
       </div>
-      <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+      <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+      </div>
     </v-ons-toolbar>
     <div class="prin">
         <div class="input-field col s12 m6 busq">
