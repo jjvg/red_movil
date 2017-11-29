@@ -21,28 +21,26 @@
                 <img :src="item.img" style="width: 100%">    
             </div></router-link>
             <div class="card_content">
-                <h5 style="text-decoration:none;">{{item.contenido}}</h5>
+               {{item.contenido}}
             </div>
             <v-ons-row>
                 <v-ons-col>
                     <v-ons-button modifier="quiet material" style="color: #5d6367">
-                         <v-ons-icon icon="md-thumb-up" size="30px"></v-ons-icon>
+                         <v-ons-icon icon="md-thumb-up" size="20px"></v-ons-icon>
                     </v-ons-button>
                 </v-ons-col>
                 <v-ons-col>
                   <router-link to="/detallepost">
                      <v-ons-button modifier="quiet material" style="color: #5d6367">
-                         <v-ons-icon icon="md-comments" size="30px"></v-ons-icon>
+                         <v-ons-icon icon="md-comments" size="20px"></v-ons-icon>
                     </v-ons-button>
                   </router-link>
                 </v-ons-col>  
                 <v-ons-col>
                    <v-ons-button modifier="quiet material" style="color: #5d6367">
-                         <v-ons-icon icon="md-label" size="30px"></v-ons-icon>
+                         <v-ons-icon icon="md-label" size="20px"></v-ons-icon>
                     </v-ons-button>
-                </v-ons-col>
-                  
-                
+                </v-ons-col> 
             </v-ons-row>
             <div class="com">
                 
@@ -164,10 +162,6 @@ h6{
   line-height: 0;
   font-size: 10px;
 }
-.h5{
-  text-align: justify;
-  font-size: 15px;
-  color: #00000099;
-}
+
 
 </style>

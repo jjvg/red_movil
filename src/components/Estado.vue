@@ -1,13 +1,13 @@
 <template>
     <div class="ctn-edo" id="app">
-        </router-link><v-ons-card>
+        <v-ons-card>
         <div class="estado">
             <div class="img">
                 <img src="../assets/perfil.jpg" class="perfil">
             </div> 
 	        <div class="edo">                
    		      <router-link to="/nuevopost">
-                 <h6 style="color: #080e0d54; font-family: Roboto;font-style: Roboto; font-size: 15px; align-content: center;"> ¿Qué está sucediendo?</h6>
+                 <v-ons-button style="color: #080e0d54; align-content: center;" modifier="quiet">¿Qué está sucediendo?</v-ons-button>
  	        </router-link>
               </div>
         </div>

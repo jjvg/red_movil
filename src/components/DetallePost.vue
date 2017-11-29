@@ -37,8 +37,8 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon>  Ver comentarios</v-ons-button></router-link>
-                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon>  Etiquetar</v-ons-button>
+                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon></v-ons-button></router-link>
+                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon></v-ons-button>
          </div>
           
 </v-ons-card>
@@ -66,12 +66,7 @@ export default {
 
 <style scoped>
 
-.button--light {
-  background-color: transparent;
-  color: rgba(0,0,0,0.4);
-  border: 1px solid rgba(0,0,0,0.2);
- 
-}
+
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
