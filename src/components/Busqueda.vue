@@ -4,7 +4,9 @@
       <div class="left">
         <router-link to="/principal"><v-ons-back-button style="color:white"></v-ons-back-button></router-link>
       </div>
-      <div class="center"><img src='../assets/img/rc1.png'  class="logo"></div>
+      <div class="center" >
+               <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+      </div>
     </v-ons-toolbar>
     <div class="prin">
         <div class="input-field col s12 m6 busq">
@@ -15,8 +17,7 @@
         <div class="boton">
            
         <v-ons-button  modifier="material" class="button button--light" @click="actionSheetVisible = true">Buscar</v-ons-button>
-        <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
-         
+        <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true></v-ons-action-sheet>
           <resultados-page></resultados-page>
           <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0; align: center;" >Volver</v-ons-action-sheet-button>
         </v-ons-action-sheet>
@@ -83,5 +84,8 @@ export default {
   border: 1px solid rgba(0,0,0,0.2);
   opacity: 3;
  
+}
+.toolbar--material{
+    background-color: purple;
 }
 </style>

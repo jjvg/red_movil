@@ -7,11 +7,17 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.helloworld"
-    },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "io.cordova.helloworld"
+      "PACKAGE_NAME": "io.cordova.redcom"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.cordova.redcom"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "io.cordova.redcom"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.cordova.redcom"
     }
   },
   "dependent_plugins": {}

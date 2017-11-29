@@ -2,7 +2,7 @@
  <v-ons-page id="app">
 	 	    <v-ons-toolbar class="toolbar--material">
             <div class="left">
-                <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
+                <router-link to="/"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
             </div>
             <div class="center" >
                <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
@@ -43,19 +43,16 @@
 			
                 <label>Sexo</label>
                 <div class="center">
-                    
-                
-                    <v-ons-select name="sexo" material class="material" style="width: 80%" v-model="selectedItem" >
+                    <v-ons-select name="sexo" material class="material" style="width: 150%" v-model="selectedItem" >
                         <option class="tam" v-for="item2 in sexo" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
                     </v-ons-select>
-                
                 </div>
 			<br>
 	  		<div class="center">
-                <router-link to="/" ><v-ons-button  modifier="material large" class="button button--light" style="margin: 6px 0">Registrar</v-ons-button></router-link> 
-         </div>
+                <router-link to="/" ><v-ons-button modifier="large" class="button--light">Registrar</v-ons-button></router-link> 
+        	 </div>
 		
 			
    		 </form>
@@ -118,5 +115,6 @@ p{
 .toolbar--material{
 	background-color: purple;
 }
+
 
 </style>

@@ -7,43 +7,31 @@
             <div class="center" >
                <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
             </div>
-            
-            
-        </v-ons-toolbar>
-
-			
-    <div class="container">
-        <div align="center">
+        </v-ons-toolbar>	
+        <div class="center">
 				<h3  style="color: rgb(10, 160, 152);">Editar perfil</h3>
-		</div>
-        <div class="row">
-   		<form class="col s12" action="#">
-            <div class="center">
-            <div class="row">
+        </div>
+   		<form action="#">
                 <v-ons-row>
-                    <v-ons-col>
-                    <div class="col s12 m6">
-                <v-ons-button id="im" modifier="quiet">
-                    <div style="color:#5d6367"><i class="material-icons" style="color: #61e4b8; margin-right: 5px; margin-top:10px ">add_a_photo</i>   Camara</div>
-                </v-ons-button>
-                </div>
-                </v-ons-col>
-                <v-ons-col>
-                    <div class="col s12 m6">
-                        <v-ons-button id="im" modifier="quiet">
-                    <div style="color:#5d6367"><i class="material-icons" style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px ">collections</i> Fototeca</div>
-                     </v-ons-button>
-                    </div>
-                </v-ons-col>
-                
-            </v-ons-row>
-            </div> 
-           <v-ons-card>
+                        <v-ons-col>
+                             <v-ons-button id="im" modifier="quiet" @click="camara()" v-bind="ver" v-model="ver">
+                                 <div style="color:#5d6367"><v-ons-icon style="color: #61e4b8; margin-right: 5px; margin-top:10px " icon="md-camera" size="20px"></v-ons-icon>  Camara</div>
+                             </v-ons-button>
+                        </v-ons-col>
+                        <v-ons-col>
+                            <v-ons-button id="im" modifier="quiet"  @click="ver=true" v-model="ver" v-bind="ver">
+                                <div style="color:#5d6367"><v-ons-icon style="color: rgb(172, 7, 187); margin-right: 5px; margin-top:10px " icon="md-collection-image" size="20px"></v-ons-icon> Fototeca</div>
+                            </v-ons-button>    
+                        </v-ons-col>
+                </v-ons-row>
+            <br> 
+           <v-ons-card v-if="ver">
                  <div class="center">
                      <img id="myimg"style="width: 80%"></img>
                  </div>
             </v-ons-card>
             <br>
+            <div class="container">
             <div class="row">
                 <form class="col s12" action="#">
                     <div class="row">
@@ -75,15 +63,16 @@
                     </div>
                 </form>
             </div>
-          
+          </div>
             <section style="margin: 20px">
-                <router-link to="/principal"><v-ons-button class="button button--light" modifier="material" >Guardar</v-ons-button></router-link>
+                <router-link to="/principal"><v-ons-button class="button button--light" modifier="material large" >Guardar</v-ons-button></router-link>
                 
             </section>
-         </div>
-             </form>
-         </div>
-        </div>
+        </form>    
+    <div id="deviceready" class="blink">
+        <p class="event listening"></p>
+        <p class="event received"></p>
+    </div>
          
     </v-ons-page>
 
@@ -96,6 +85,8 @@
      data:function(){
     
       return{
+          ver:{type:Boolean, default:false},
+          ver:false,
       nombre: 'Andrea',
       apellido: '',
       correo: 'andrea123@gmail.com',
@@ -113,6 +104,7 @@
    methods: {
               camara()
               {
+                  this.ver=true;
                     function cameraTakePicture() { 
                      navigator.camera.getPicture(onSuccess, onFail, {  
                         quality: 50, 

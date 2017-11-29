@@ -4,11 +4,11 @@
              <v-ons-col>
                   <div class="card--material small purple ">
                     <div class="card-image">
-                        <img src="../assets/amigos.jpg" style="width: 100%">
+                        <img src="../assets/img/hands.jpg" style="width: 100%">
                         <span class="card__title white-text center">Bienvenido a REDCOM</span>
                     </div>
                     <div class="card-material__content white-text center">
-                     La red social donde puedes obtener ayuda en tu comunidad
+                     ¡Soluciones para la comunidad al alcance de tu móvil!
                     </div>
                   </div>
              </v-ons-col>
@@ -37,27 +37,24 @@
                  <div class="center">
                 <router-link to="/principal"><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ingresar</v-ons-button></router-link> 
                  </div>
-                
+                <br>
                     <div class="center">
                     <v-ons-row>
                         <v-ons-col width="99%">
                             ¿Aún no te has Registrado?<div style="color:  rgb(10, 160, 152);font-weight: bold;" @click="actionSheetVisible = true">  Regístrate aquí</div>
                         </v-ons-col>
                         <v-ons-col>
-                            
                         </v-ons-col>
                     </v-ons-row>
                     </div>
-                    
                     <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
                         
-                            <router-link to="/registrarpersona" style="align: center;"><v-ons-action-sheet-button style="align: center;"><i class="material-icons" style="margin-right:10px;">face</i>Usuario</v-ons-action-sheet-button></router-link>
-                            <router-link to="/registrarcom"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">supervisor_account</i>Comunidad</v-ons-action-sheet-button></router-link>
-                            <router-link to="/registrarente"><v-ons-action-sheet-button><i class="material-icons" style="margin-right:10px;">business</i>Ente</v-ons-action-sheet-button></router-link>
-                            <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0;" >Cancelar</v-ons-action-sheet-button>
+                            <router-link to="/registrarpersona"><v-ons-action-sheet-button><v-ons-icon icon="md-face" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Usuario</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarcom"><v-ons-action-sheet-button><v-ons-icon icon="md-accounts" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Comunidad</v-ons-action-sheet-button></router-link>
+                            <router-link to="/registrarente"><v-ons-action-sheet-button><v-ons-icon icon="md-markunread-mailbox" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon> Ente</v-ons-action-sheet-button></router-link>
+                            <v-ons-action-sheet-button @click="actionSheetVisible=false"  ><v-ons-icon icon="md-close-circle" size="30px" style="margin: 0px 20px 0px 20px"></v-ons-icon>  Cancelar</v-ons-action-sheet-button>
                         
                     </v-ons-action-sheet>
-                    
     </v-ons-page>
 
    
@@ -72,13 +69,7 @@ export default {
       
   },
    
-  methods:{
-      
-      validar(){
-          
-              this.actionSheetVisible = true;
-      }
-  }
+
 }
 </script>
 <style scoped>
@@ -91,9 +82,7 @@ p{
     font-style: Roboto;
     color:cadetblue;
 }
-.card__title{
 
-}
 .button--light {
   background-color: transparent;
   color: #9E9898;

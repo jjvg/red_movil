@@ -1,5 +1,5 @@
 <template>
-<div id="home">
+<v-ons-page id="app">
     <v-ons-toolbar class="toolbar--material">
             <div class="left">
                 <router-link to="/principal"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
@@ -10,19 +10,14 @@
             
             
         </v-ons-toolbar>
-    <br>
-    <br>
-    <br>
-
-<v-ons-card>
-
+    <v-ons-card>
     <div class="pub">
        <div class="img">
-           <img src="../assets/img/perfil.jpg" style="width: 150% !important;" class="perfil">
+           <img src="../assets/perfil.jpg" style="width: 150% !important;" class="perfil">
        </div> 
        <div class="col">
            <div class="f1">
-                <h4>Pepito Torres</h4>
+                <h4>Andrea</h4>
             </div>
             <div class="f2">
                 <h6>Hace 2 minutos</h6>
@@ -34,7 +29,7 @@
     </div>
     <div class="center">
     <div class="card_content">
-        <h3 style="font-weight: bold; ">{{titulo}}</h3>
+        <h3 style="font-weight: bold;">{{titulo}}</h3>
     </div>
     <div class="card_content">
         <h5 style="color: blue">Barquisimeto - Edo. Lara</h5>
@@ -44,13 +39,13 @@
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ver comentarios</v-ons-button></router-link>
-                <v-ons-button  modifier="material" class="button button--light"><i class="material-icons prefix">local_offer</i></v-ons-button>
+                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon></v-ons-button></router-link>
+                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon></v-ons-button>
          </div>
           
 </v-ons-card>
     
-</div>
+</v-ons-page>
 </template>
 
 <script>
@@ -73,12 +68,7 @@ export default {
 
 <style scoped>
 
-.button--light {
-  background-color: transparent;
-  color: rgba(0,0,0,0.4);
-  border: 1px solid rgba(0,0,0,0.2);
- 
-}
+
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
@@ -129,7 +119,6 @@ h5{
  
 }
 h4{
-  color: #44714E;
   line-height: 0;
 }
 
@@ -146,7 +135,6 @@ h6{
 }
 .toolbar--material{
     background-color: purple;
-
 }
 </style>
 

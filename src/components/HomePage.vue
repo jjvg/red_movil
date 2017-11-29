@@ -1,11 +1,12 @@
 <template>
-  <v-ons-page>	  
+  <v-ons-page id="app" modifier="material">	  
     <div class="estado">
       <estado-page></estado-page>
      </div>
      <div class="post">   
         <post-page></post-page>
     </div>
+  
   </v-ons-page>
 </template>
 
