@@ -59,7 +59,7 @@
 </div>
 </template>
 <script>
-import img2 from '../assets/amigos.jpg'
+import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
 export default {
@@ -76,13 +76,13 @@ export default {
           img:{
             type: File,
           },
-          img:img2,
-          contenido: 'Celebrando con mis amigos'
+          img:img2, 
+          contenido: 'Bote de aguas blancas'
           },
           {
           label: 'Community Chat',
           img: img2,
-          contenido: 'hola'
+          contenido: '...'
           },
         ]
       }

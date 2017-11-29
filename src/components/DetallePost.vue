@@ -30,13 +30,15 @@
         </div>
     </div>
     <div class="card__imagen posti">
-        <img src="../assets/amigos.jpg" style="width: 100%">    
+        <img src="../assets/img/falla.jpg" style="width: 100%">    
     </div>
     <div class="center">
     <div class="card_content">
         <h3 style="font-weight: bold; ">{{titulo}}</h3>
     </div>
     <div class="card_content">
+        <h5 style="color: blue">Barquisimeto - Edo. Lara</h5>
+        <h5 style="color: blue">Hidrolara</h5>
         <h5>{{contenido}}</h5>
     </div>
     </div>
@@ -59,8 +61,8 @@ export default {
      data () {
          return {
      
-                    titulo: 'Celebrando con mis amigos',
-                    contenido: 'Hoy disfrutamos de un juego en equipo y todos trabajamos juntos para alcanzar nuestra meta'
+                    titulo: 'Bote de agua Av. Caracas',
+                    contenido: ' En la Av. Caracas con calles 3 y 4, frente a la urb. Ulala hay un bote de aguas blancas que lleva ya más de una semana'
                 }
 
             } 
