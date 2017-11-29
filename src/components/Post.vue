@@ -30,7 +30,7 @@
                     </v-ons-button>
                 </v-ons-col>
                 <v-ons-col>
-                  <router-link to="/detallepost">
+                  <router-link to="/comentario">
                      <v-ons-button modifier="quiet material" style="color: #5d6367">
                          <v-ons-icon icon="md-comments" size="20px"></v-ons-icon>
                     </v-ons-button>
