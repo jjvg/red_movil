@@ -12,6 +12,12 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "io.cordova.helloworld"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "io.cordova.redcom"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.cordova.redcom"
     }
   },
   "dependent_plugins": {}

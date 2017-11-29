@@ -25,20 +25,22 @@
         </div>
     </div>
     <div class="card__imagen posti">
-        <img src="../assets/amigos.jpg" style="width: 100%">    
+        <img src="../assets/img/falla.jpg" style="width: 100%">    
     </div>
     <div class="center">
     <div class="card_content">
         <h3 style="font-weight: bold;">{{titulo}}</h3>
     </div>
     <div class="card_content">
+        <h5 style="color: blue">Barquisimeto - Edo. Lara</h5>
+        <h5 style="color: blue">Hidrolara</h5>
         <h5>{{contenido}}</h5>
     </div>
     </div>
        
          <div class="center">
-                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon>  Ver comentarios</v-ons-button></router-link>
-                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon>  Etiquetar</v-ons-button>
+                <router-link to="/comentario" ><v-ons-button  modifier="material quiet"  style="margin: 6px 0; color: #5d6367"><v-ons-icon icon="md-comments" size="30px"></v-ons-icon></v-ons-button></router-link>
+                <v-ons-button  modifier="quiet material" style="color: #5d6367" ><v-ons-icon icon="md-label" size="30px"></v-ons-icon></v-ons-button>
          </div>
           
 </v-ons-card>
@@ -54,8 +56,8 @@ export default {
      data () {
          return {
      
-                    titulo: 'Celebrando con mis amigos',
-                    contenido: 'Hoy disfrutamos de un juego en equipo y todos trabajamos juntos para alcanzar nuestra meta'
+                    titulo: 'Bote de agua Av. Caracas',
+                    contenido: ' En la Av. Caracas con calles 3 y 4, frente a la urb. Ulala hay un bote de aguas blancas que lleva ya más de una semana'
                 }
 
             } 
@@ -66,12 +68,7 @@ export default {
 
 <style scoped>
 
-.button--light {
-  background-color: transparent;
-  color: rgba(0,0,0,0.4);
-  border: 1px solid rgba(0,0,0,0.2);
- 
-}
+
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
