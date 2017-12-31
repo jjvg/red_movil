@@ -16,6 +16,7 @@ import Principal from './components/Principal.vue'
 import RegistrarUser from './components/RegistrarUser.vue'
 import Comentario from './components/Comentario.vue'
 import Busqueda from './components/Busqueda.vue'
+import Reg1 from './components/Reg1.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -33,6 +34,7 @@ export default new Router({
         { name: 'principal', path: '/principal', component: Principal },
         { name: 'registro', path: '/registrarpersona', component: RegistrarUser },
         { name: 'comentario', path: '/comentario', component: Comentario },
-        { name: 'buscar', path: '/busqueda', component: Busqueda }
+        { name: 'buscar', path: '/busqueda', component: Busqueda },
+        { name: 'reg1', path: '/reg1', component: Reg1 }
     ],
 });

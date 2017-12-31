@@ -15,27 +15,29 @@
 			<div align="center">
 				<h3 style="color: rgb(10, 160, 152);">Registro de Entes</h3>
 			</div>
+            
 	<div class="row">
-   		<form class="col s12" action="#">
+   		<form class="col s12" action="#/reg1" >
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
-         	 		<input id="email" type="email" class="validate">
-         			 <label for="email">Correo electrónico</label>
+         	 		<input name="email" type="email" class="form-control" required>
+         			 <label class="control-label" for="email">Correo electrónico</label>
         		</div>
+                
         		<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">business</i>
-          			<input id="nombre"  type="text" class="validate">
-          			<label for="nombre">Nombre</label>
+          			<input name="nombre"  type="text" class="validate"  required>
+          			<label  for="nombre">Nombre</label>
        			</div>
        			<div class="input-field col s12 m6">
           			<i class="material-icons prefix">phone</i>
-         	 		<input id="tlf" type="number" class="validate">
+         	 		<input name="tlf" type="number" class="validate"  required>
           			<label for="tlf">Número telefónico</label>
         		</div>
 		 		<div class="input-field col s12 m6">
           			<i class="material-icons prefix">lock</i>
-          			<input id="password" type="password" class="validate">
+          			<input name="password" type="password" class="validate"  required>
           			<label for="password">Contraseña</label>
         		</div>
 			</div>
@@ -47,7 +49,7 @@
                 <v-ons-row>
                     <v-ons-col>
 			            <label>Estado</label>
-                        <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem"  required>
                             <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
                                     {{ item1.text }}
                             </option>
@@ -55,7 +57,7 @@
                     </v-ons-col>
                     <v-ons-col>
                         <label>Ciudad</label>  
-                        <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" >
+                        <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem"  >
                             <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
                                 {{ item2.text }}
                             </option>
@@ -66,7 +68,7 @@
                 <div class="col s12 m12 l6">
                		<div class="input-field">
 						   
-						<v-text-area name="contenido" id="contenido" length="50" v-model="contenido"></v-text-area>
+						<v-text-area name="contenido" id="contenido" length="50" v-model="contenido"  required></v-text-area>
 						<label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                		 </div>
            		</div>
@@ -79,9 +81,8 @@
                     </v-ons-select>
                      </div>
 			        <br>
-                 <div class="center">
-                <router-link to="/"><v-ons-button  modifier="large" class="button--light">Registrar</v-ons-button></router-link> 
-                 </div>
+                  <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                  
    		 </form>
  	  </div>
 	</div>				
@@ -89,6 +90,9 @@
  </v-ons-page>
 </template>
 <script>
+    import Vue from 'vue';
+    import VeeValidate from 'vee-validate';
+    Vue.use(VeeValidate);
     export default {
 		name: 'regente',
 		data : function() {
