@@ -31,8 +31,8 @@ new Vue({
     img,
     render: h => h(App),
     //template: '<App/>',
-    mounted() {
-        cordova.initialize()
-    }
-    //components: { App }*/
+    /* mounted() {
+       cordova.initialize()
+     }*/
+    components: { App }
 })
