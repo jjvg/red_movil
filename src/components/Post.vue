@@ -1,12 +1,12 @@
 <template>
 <div class="container" id="app">
      <v-ons-list>
-      <v-ons-list-item v-for="item in datos" :key="item.link">
+      <v-ons-list-item v-for="item in estados" :key="item.link">
         <v-ons-card>
             <div class="pub">
                <div class="img">
                    <img src="../assets/perfil.jpg" style="width: 150% !important;" class="perfil">
-               </div> 
+               </div>
                 <div class="col">
                   <div class="f1">
                       <h4>Andrea</h4>
@@ -16,12 +16,12 @@
                   </div>
                 </div>
             </div>
-           
+
             <router-link to="/detallepost"><div class="card__imagen posti">
-                <img :src="item.img" style="width: 100%">    
+                <img :src="item.img" style="width: 100%">
             </div></router-link>
             <div class="card_content">
-               {{item.contenido}}
+               {{item.estado}}
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -35,15 +35,15 @@
                          <v-ons-icon icon="md-comments" size="20px"></v-ons-icon>
                     </v-ons-button>
                   </router-link>
-                </v-ons-col>  
+                </v-ons-col>
                 <v-ons-col>
                    <v-ons-button modifier="quiet material" style="color: #5d6367">
                          <v-ons-icon icon="md-label" size="20px"></v-ons-icon>
                     </v-ons-button>
-                </v-ons-col> 
+                </v-ons-col>
             </v-ons-row>
             <div class="com">
-                
+
             </div>
         </v-ons-card>
       </v-ons-list-item>
@@ -54,21 +54,28 @@
 import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
+import axios from 'axios'
 export default {
   name: 'post',
+   created: function() {
+     this.getEstados();
+
+  },
+
   components: {
     DetallePost,
     'comentarios-page': Comentarios,
   },
   data: function() {
     return {
+       urlUser : 'http://127.0.0.1:8000/api/estados/?format=json',
            datos: [
           {
           label: 'Core Docs',
           img:{
             type: File,
           },
-          img:img2, 
+          img:img2,
           contenido: 'Bote de aguas blancas'
           },
           {
@@ -76,15 +83,22 @@ export default {
           img: img2,
           contenido: '...'
           },
-        ]
+        ],
+          estados:[],
       }
   },
   methods: {
-     verDetalle(){
-       
+     getEstados: function(){
+       axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
+         this.estados = response.data
+       });
+
      }
-  }
-}
+  },
+
+
+
+};
 </script>
 <style>
 .texto{
@@ -93,7 +107,7 @@ export default {
     width: 100%;
     justify-content: flex-end;
     margin-left: 0px;
-    
+
 }
 h6{
   font-size: 15px;
@@ -106,7 +120,7 @@ h6{
 
 .p{
     display: inline-block;
-    
+
 }
 .perfil {
     border-radius: 50%;
@@ -122,7 +136,7 @@ h6{
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: 30px;    
+    width: 30px;
 }
 .posti{
   margin-top: 15px;
