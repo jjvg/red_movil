@@ -54,7 +54,7 @@
                     <v-ons-col>
                      <label>Ciudad</label>
                     <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" required >
-                        <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
+                        <option class="tam1" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
                             {{ item2.text }}
                         </option>
                     </v-ons-select>

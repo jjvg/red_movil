@@ -19,11 +19,11 @@
 				<h3 style="color: rgb(10, 160, 152);">Registro de Personas</h3>
 			</div>
 	<div class="row">
-   		<form class="col s12" action="#/reg1">
+   		<form class="col s12">
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">contact_mail</i>
-         	 		<input id="email" type="email" class="validate" required>
+         	 		<input id="email" name="email" type="email" class="validate" required>
          			 <label for="email">Correo electronico</label>
         		</div>
         		<div class="input-field col s12 m6">
@@ -54,9 +54,10 @@
 			<br>
 	  	
 		 <div class="center"> 
-			 <button class="button--light btn1" modifier="large" type="submit">REGISTRAR</button> </div>
+			 <button class="button--light btn1" modifier="large" type="submit" onclick = "validar()">REGISTRAR</button> </div>
 			
    		 </form>
+            
  	  </div>
 	</div>				
  </v-ons-page>
@@ -88,7 +89,13 @@ export default {
 			var valor = document.getElementById("nombre").value;
 				this.$store.commit('saveUser', valor);
 			alert("Registrado"+" "+nombre.value);
-		}
+        },
+        validar(){
+            if(email.value=="aa@gmail.com"){
+                window.alert("este usuario ya se ha registrado previamente");
+                
+            }
+        }
 	}
 	
 };

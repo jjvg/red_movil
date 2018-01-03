@@ -18,22 +18,25 @@
                      <br>
                 </v-ons-col>
             </v-ons-row>
-                 <form name="login" action="#">
+            
+                 <form name="login">
                 <v-ons-row>
                     <v-ons-col width="20%"></v-ons-col>
                          <v-ons-col  vertical-align="center">
                            <v-ons-icon fixed-width size="30px" icon="md-account-box"></v-ons-icon>
-                           <v-ons-input name="email" type="email" required="true" placeholder="Correo"></v-ons-input>
+                           <v-ons-input name="email" id="email" type="email"  placeholder="Correo"></v-ons-input>
                        </v-ons-col>
                 </v-ons-row>
                 <v-ons-row>
                     <v-ons-col width="20%"></v-ons-col>
                          <v-ons-col >
                         <v-ons-icon fixed-width size="30px" icon="md-lock"></v-ons-icon>
-                        <v-ons-input name="pasword" type="password" required="true" placeholder="Contraseña"></v-ons-input>
+                        <v-ons-input name="password" id="password" type="password"  placeholder="Contraseña"></v-ons-input>
                        </v-ons-col>
+                       
                 </v-ons-row>
                  </form>
+                 
                  <div class="center">
                 <router-link to="/principal"><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0">Ingresar</v-ons-button></router-link> 
                  </div>
@@ -46,6 +49,7 @@
                         <v-ons-col>
                         </v-ons-col>
                     </v-ons-row>
+                
                     </div>
                     <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true >
                         
@@ -65,9 +69,30 @@ export default {
   data(){
      return{
           actionSheetVisible: false
-     }
-      
+     },
+      function valida() {
+          var correcto = false;
+          if((document.form.usuario.value == "j") && (document.form.pass.value == "1"))
+          {
+              
+                correcto = true;
+                document.form.action = '#/perfil';
+        document.form.submit();
+        
+          }
+          else
+          {
+              
+        window.alert("Los campos usuario y contraseña no pueden estar vacios");
+          }
+          return correcto;
+          
+    },
+    function go (){
+
+    }
   },
+  
    
 
 }

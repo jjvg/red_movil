@@ -13,11 +13,14 @@ import img from './assets/amigos.jpg'
 import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
 import Materials from 'vue-materials'
+import axios from 'axios'
+import VueResource from 'vue-resource'
 sync(store, router);
 Vue.use(Materials)
 Vue.config.productionTip = false
 
 Vue.use(VueOnsen)
+Vue.use(axios)
 
 
 /* eslint-disable no-new */

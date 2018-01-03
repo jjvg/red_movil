@@ -20,8 +20,10 @@
             <router-link to="/detallepost"><div class="card__imagen posti">
                 <img :src="item.img" style="width: 100%">    
             </div></router-link>
-            <div class="card_content">
-               {{item.contenido}}
+            
+            <div class="card_content" >
+               {{$data | json}}
+               aa
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -54,12 +56,18 @@
 import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
+import axios from 'axios'
 export default {
   name: 'post',
   components: {
     DetallePost,
     'comentarios-page': Comentarios,
   },
+  
+created: function(){
+  this.getPub();
+},
+
   data: function() {
     return {
            datos: [
@@ -76,14 +84,24 @@ export default {
           img: img2,
           contenido: '...'
           },
-        ]
+        ],
+        publicacion: [],
+        errors: []
       }
   },
-  methods: {
-     verDetalle(){
-       
-     }
-  }
+
+methods: {
+     getPub: function (){
+      
+       axios.get('http://localhost:8000/api/categoriapost').then(response => {
+          this.publicacion = response.data;
+       });
+      // JSON responses are automatically parsed.
+      
+    
+     },
+}
+  
 }
 </script>
 <style>
