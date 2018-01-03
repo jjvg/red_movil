@@ -28,7 +28,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .cartica{
-    margin-botton: 100px;
+    margin-bottom: 100px;
 }
 img{
     display: flex;
