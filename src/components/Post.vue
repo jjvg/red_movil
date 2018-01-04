@@ -16,19 +16,15 @@
                   </div>
                 </div>
             </div>
-            
+
               <img :src="getUrl(item.contenido)" style="width: 100%">
             <router-link to="/detallepost"><div class="card__imagen posti">
 
                 <img src="../assets/img/falla.jpg" style="width: 100%">
             </div></router-link>
             <div class="card_content">
-<<<<<<< HEAD
-               {{item.avatar}}
-=======
                {{item.titulo}}
                {{item.contenido}}
->>>>>>> 0f2172878c2ffed7be137832093994ddb8504437
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -74,17 +70,12 @@ export default {
     DetallePost,
     'comentarios-page': Comentarios,
   },
-  
+
 
   data: function() {
     return {
-<<<<<<< HEAD
-=======
-  
->>>>>>> 0f2172878c2ffed7be137832093994ddb8504437
-           datos: [
+      datos:[
           {
-          label: 'Core Docs',
           img:{
             type: File,
           },
@@ -101,7 +92,6 @@ export default {
       }
   },
   methods: {
-<<<<<<< HEAD
      getEstados: function(){
        axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
           headers: auth.getAuthHeader()
@@ -110,12 +100,6 @@ export default {
          this.estados = response.data;
        })
         .error((err) => console.log(err));
-=======
-     getEstado: function(){
-       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
-         this.estados = response.data
-       });
->>>>>>> 0f2172878c2ffed7be137832093994ddb8504437
 
      },
      getUrl: function(algo){
