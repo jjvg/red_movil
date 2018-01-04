@@ -53,12 +53,14 @@
                     <v-ons-col>
 			            <label>Estado</label>
                         <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem"  required>
-                            <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
-                                    {{ item1.text }}
+                            <option class="tam" v-for="item1 in estados" :value="item1.value" :key="item1.key">
+                                    {{ item1.estado }}
                             </option>
                         </v-ons-select>  
                     </v-ons-col>
-                    <v-ons-col>
+                 
+                </v-ons-row>
+                   <v-ons-col>
                         <label>Ciudad</label>  
                         <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem"  >
                             <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
@@ -66,7 +68,6 @@
                             </option>
                         </v-ons-select>
                     </v-ons-col>
-                </v-ons-row>
                     <br>
                 <div class="col s12 m12 l6">
                		<div class="input-field">
@@ -78,8 +79,8 @@
 				   <label>Área a la que se dedica</label>
 			        <div class="center">
                     <v-ons-select name="area" material class="material" style="width: 80%" v-model="selectedItem" >
-                        <option class="tam" v-for="item in items" :value="item.value" :key="item.key">
-                            {{ item.text }}
+                        <option class="tam" v-for="item in categ" :value="item.value" :key="item.key">
+                            {{ item.nombre }}
                         </option>
                     </v-ons-select>
                      </div>
@@ -95,9 +96,15 @@
 <script>
     import Vue from 'vue';
     import VeeValidate from 'vee-validate';
+    import axios from 'axios'
     Vue.use(VeeValidate);
     export default {
-		name: 'regente',
+        name: 'regente',
+        created: function() {
+     this.getEstado();
+     this.getCat();
+
+  },
 		data : function() {
         return {
            
@@ -106,34 +113,30 @@
             imagen:{type:File},
             contenido:{type:String},
             categoria:{type:Boolean},
-            items: [
-        { text: 'Otra', value: 'Otra' },
-        { text: 'Salud', value: 'Salud' },
-        { text: 'Seguridad', value: 'Seguridad' },
-        { text: 'Arte', value: 'Arte' },
-        { text: 'Alimentación', value: 'Alimentación' }
-      ],
-      edos: [
-        { text: 'Lara', value: 'Lara' },
-        { text: 'Yaracuy', value: 'Yaracuy' },
-        { text: 'Falcón', value: 'Falcón' },
-        { text: 'Zulia', value: 'Zulia'},
-        { text: 'Aragua', value: 'Aragua' }
-      ],
-      
-      ciudad: [
-        { text: 'Barquisimeto', value: 'Barquisimeto' },
-        { text: 'San Felipe', value: 'San Felipe' },
-        { text: 'Coro', value: 'Coro' },
-        { text: 'Maracaibo', value: 'Maracaibo'},
-        { text: 'Maracay', value: 'Maracay' }
-      ],
-      selectedItem: ''
+           
+  
+      selectedItem: '',
+         estados:[],
+         categ:[],
+      textSearch: "",
         
 
        }
        
    },
+   methods:{
+       getEstado: function(){
+       axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
+         this.estados = response.data
+       });
+
+     },
+     getCat: function(){
+         axios.get('http://localhost:8000/api/categoriapost/?format=json').then(response =>{
+         this.categ = response.data
+       });
+     }
+   }
     }
 
 </script>

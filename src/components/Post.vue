@@ -16,19 +16,15 @@
                   </div>
                 </div>
             </div>
-
-            <router-link to="/detallepost"><div class="card__imagen posti">
-                <img :src="item.img" style="width: 100%">
-            </div></router-link>
-<<<<<<< HEAD
             
-            <div class="card_content" >
-               {{$data | json}}
-               aa
-=======
+              <img :src="getUrl(item.contenido)" style="width: 100%">
+            <router-link to="/detallepost"><div class="card__imagen posti">
+
+                <img src="../assets/img/falla.jpg" style="width: 100%">
+            </div></router-link>
             <div class="card_content">
-               {{item.estado}}
->>>>>>> a602b6894c6ad554e02bb84449a396c17291c6e0
+               {{item.titulo}}
+               {{item.contenido}}
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -65,7 +61,7 @@ import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
-     this.getEstados();
+     this.getEstado();
 
   },
 
@@ -74,13 +70,10 @@ export default {
     'comentarios-page': Comentarios,
   },
   
-created: function(){
-  this.getPub();
-},
 
   data: function() {
     return {
-       urlUser : 'http://127.0.0.1:8000/api/estados/?format=json',
+  
            datos: [
           {
           label: 'Core Docs',
@@ -100,11 +93,16 @@ created: function(){
       }
   },
   methods: {
-     getEstados: function(){
-       axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
+     getEstado: function(){
+       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
          this.estados = response.data
        });
 
+     },
+     getUrl: function(algo){
+       var dir = algo;
+       var url = "../assets/img/" + dir;
+       return url;
      }
   },
 
