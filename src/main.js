@@ -15,12 +15,17 @@ import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
 import Materials from 'vue-materials'
 import axios from 'axios'
+<<<<<<< HEAD
 
+=======
+import VueResource from 'vue-resource'
+>>>>>>> 0f2172878c2ffed7be137832093994ddb8504437
 sync(store, router);
 Vue.use(Materials)
 Vue.config.productionTip = false
 Vue.use(axios)
 Vue.use(VueOnsen)
+Vue.use(axios)
 
 
 /* eslint-disable no-new */

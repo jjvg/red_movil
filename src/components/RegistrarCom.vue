@@ -45,21 +45,25 @@
                 <v-ons-row>
                     <v-ons-col>
 			        <label>Estado</label>
-                    <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem" required>
-                        <option class="tam" v-for="item1 in edos" :value="item1.value" :key="item1.key">
-                            {{ item1.text }}
+                    <v-ons-select name="edo" id="edo" material class="material" style="width: 80%" v-model="textSearch" required>
+                        <option class="tam" v-for="item1 in estados" :value="item1.value" :key="item1.key">
+                            {{ item1.estado }}
                         </option>
                     </v-ons-select>
                     </v-ons-col>
-                    <v-ons-col>
-                     <label>Ciudad</label>
-                    <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem" required >
-                        <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
-                            {{ item2.text }}
-                        </option>
-                    </v-ons-select>
-                    </v-ons-col>
+                  
                 </v-ons-row>
+                  <v-ons-col>
+                      
+                     <label>Ciudad</label>
+                     <div v-if="ciudadFilter && ciudadFilter.length">
+                    <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem" required >
+                        <option class="tam1" v-for="item1 in estados" :value="item1.value" :key="item1.key">
+                            {{ item1.ciudades}}
+                        </option>
+                    </v-ons-select>
+                    </div>
+                    </v-ons-col>
                 <div class="col s12 m12 l6">
                <div class="input-field">
                      <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" required></v-text-area>
@@ -75,39 +79,47 @@
  </v-ons-page>
 </template>
 <script>
+import axios from 'axios'
     export default {
-		name: 'regcom',
-		data : function() {
-        return {
+        name: 'regcom',
+        created: function() {
+     this.getEstado();
+
+  },
+	data : function() {
+      return {
            
             titulo:{type:String},
             titulo:'', 
             imagen:{type:File},
             contenido:{type:String},
             categoria:{type:Boolean},
-      edos: [
-        { text: 'Lara', value: 'Lara' },
-        { text: 'Yaracuy', value: 'Yaracuy' },
-        { text: 'Falcón', value: 'Falcón' },
-        { text: 'Zulia', value: 'Zulia'},
-        { text: 'Aragua', value: 'Aragua' }
-      ],
-      
-      ciudad: [
-        { text: 'Barquisimeto', value: 'Barquisimeto' },
-        { text: 'San Felipe', value: 'San Felipe' },
-        { text: 'Coro', value: 'Coro' },
-        { text: 'Maracaibo', value: 'Maracaibo'},
-        { text: 'Maracay', value: 'Maracay' }
-      ],
-      selectedItem: ''
+      selectedItem: '',
+      estados:[],
+      textSearch: "",
         
 
        }
        
-   
       
    },
+   computed: {
+     ciudadFilter: function() {
+       var textSearch = this.edo;
+       return this.estados.filter(function(el) {
+         return el.ciudades !== -1;
+       });
+     }
+  },
+
+   methods:{
+       getEstado: function(){
+       axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
+         this.estados = response.data
+       });
+
+     },
+   }
     }
 
 </script>
