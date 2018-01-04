@@ -21,7 +21,7 @@
                 <img :src="item.img" style="width: 100%">
             </div></router-link>
             <div class="card_content">
-               {{item.estado}}
+               {{item.avatar}}
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -51,6 +51,7 @@
 </div>
 </template>
 <script>
+import auth from '../auth'
 import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
@@ -68,7 +69,6 @@ export default {
   },
   data: function() {
     return {
-       urlUser : 'http://127.0.0.1:8000/api/estados/?format=json',
            datos: [
           {
           label: 'Core Docs',
@@ -89,9 +89,13 @@ export default {
   },
   methods: {
      getEstados: function(){
-       axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
-         this.estados = response.data
-       });
+       axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
+          headers: auth.getAuthHeader()
+       })
+       .then(response =>{
+         this.estados = response.data;
+       })
+        .error((err) => console.log(err));
 
      }
   },
