@@ -49,26 +49,27 @@
 					<h5 style="color: rgb(10, 160, 152);">Ubicación</h5>
 				</div>
                 <br>
-                <v-ons-row>
-                    <v-ons-col>
-			            <label>Estado</label>
-                        <v-ons-select name="edo" material class="material" style="width: 80%" v-model="selectedItem"  required>
-                            <option class="tam" v-for="item1 in estados" :value="item1.value" :key="item1.key">
-                                    {{ item1.estado }}
-                            </option>
-                        </v-ons-select>  
+                     <v-ons-row>
+                    <v-ons-col name="a" id="a">
+			        <label>Estado</label>
+                    <v-ons-select name="edo" id="edo"  v-on:change="getCiudad()" material class="material" style="width: 80%" v-model="selectedItem" required>
+                        <option class="tam" name="edos" id="edos" v-for="item1 in estados" :value="item1.id" :key="item1.key">
+                            {{ item1.estado }}
+                        </option>
+                    </v-ons-select>
                     </v-ons-col>
-                 
                 </v-ons-row>
-                   <v-ons-col>
-                        <label>Ciudad</label>  
-                        <v-ons-select name="ciudad" material class="material" style="width: 80%" v-model="selectedItem"  >
-                            <option class="tam" v-for="item2 in ciudad" :value="item2.value" :key="item2.key">
-                                {{ item2.text }}
-                            </option>
-                        </v-ons-select>
+                  <v-ons-col name="b" id="b">
+                      
+                     <label>Ciudad</label>
+                     
+                    <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem1" required >
+                        <option class="tam1" >
+                            {{ ciudad.ciudades}}
+                        </option>
+                    </v-ons-select>
+                    
                     </v-ons-col>
-                    <br>
                 <div class="col s12 m12 l6">
                		<div class="input-field">
 						   
@@ -85,6 +86,7 @@
                     </v-ons-select>
                      </div>
 			        <br>
+                    {{$data | json}}
                   <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
                   
    		 </form>
@@ -116,6 +118,8 @@
            
   
       selectedItem: '',
+        ciudad: [],
+        url: '',
          estados:[],
          categ:[],
       textSearch: "",
@@ -125,6 +129,24 @@
        
    },
    methods:{
+        getCiudad: function(){
+           
+          
+           console.log('changed!')
+    
+          this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
+           axios.get(this.url).then(response =>{
+         this.ciudad = response.data
+                });
+                console.log(this.url);
+            console.log(this.ciudad);
+            console.log(this.c)
+            if(this.ciudad.ciudades == "")
+            {
+                this.ciudad.ciudades = this.ciudad.capital;
+            }
+           
+       },
        getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
          this.estados = response.data
