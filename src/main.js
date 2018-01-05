@@ -7,18 +7,18 @@ import Vue from 'vue'
 import VueOnsen from 'vue-onsenui'
 import store from './store'
 import App from './App'
-import cordova from './cordova.js'
+import cordova from './cordova'
 import router from './router'
+import auth from './auth'
 import img from './assets/amigos.jpg'
 import { sync } from 'vuex-router-sync'
 import { mapState } from 'vuex'
 import Materials from 'vue-materials'
 import axios from 'axios'
-import VueResource from 'vue-resource'
 sync(store, router);
 Vue.use(Materials)
 Vue.config.productionTip = false
-
+Vue.use(axios)
 Vue.use(VueOnsen)
 Vue.use(axios)
 
@@ -29,6 +29,8 @@ new Vue({
     store,
     router,
     img,
+    auth,
+    cordova,
     render: h => h(App),
     //template: '<App/>',
     /* mounted() {

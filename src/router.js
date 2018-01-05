@@ -18,7 +18,7 @@ import Comentario from './components/Comentario.vue'
 import Busqueda from './components/Busqueda.vue'
 import Reg1 from './components/Reg1.vue'
 Vue.use(Router);
-
+export var router = new Router()
 export default new Router({
     mode: 'hash',
     scrollBehavior: () => ({ y: 0 }),

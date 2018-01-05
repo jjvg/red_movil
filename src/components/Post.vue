@@ -9,22 +9,22 @@
                </div>
                 <div class="col">
                   <div class="f1">
-                      <h4>Andrea</h4>
+                      <h4>{{p.authenticated}}</h4>
                   </div>
                   <div class="f2">
                       <h6>Hace 2 minutos</h6>
                   </div>
                 </div>
             </div>
-            
-              <img :src="getUrl(item.contenido)" style="width: 100%">
+
+              <img :src="item.avatar" style="width: 100%">
             <router-link to="/detallepost"><div class="card__imagen posti">
 
-                <img src="../assets/img/falla.jpg" style="width: 100%">
+                <img :src='item.avatar' style="width: 100%">
             </div></router-link>
             <div class="card_content">
                {{item.titulo}}
-               {{item.contenido}}
+               {{item.avatar}}
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -54,6 +54,7 @@
 </div>
 </template>
 <script>
+import auth from '../auth'
 import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
@@ -61,7 +62,11 @@ import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
+<<<<<<< HEAD
      this.getPub();
+=======
+     this.getEstados();
+>>>>>>> 9a2401171dfda73369de1904cf4a2687795094c0
 
   },
 
@@ -69,14 +74,12 @@ export default {
     DetallePost,
     'comentarios-page': Comentarios,
   },
-  
+
 
   data: function() {
     return {
-  
-           datos: [
+      datos:[
           {
-          label: 'Core Docs',
           img:{
             type: File,
           },
@@ -89,6 +92,7 @@ export default {
           contenido: '...'
           },
         ],
+<<<<<<< HEAD
           publicacion:[],
       }
   },
@@ -96,11 +100,25 @@ export default {
      getPub: function(){
        axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
          this.publicacion= response.data
+=======
+          estados:[],
+          p:''
+      }
+  },
+  methods: {
+     getEstados: function(){
+       axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
+          headers: {Authorization: `JWT ${auth.getAuthHeader()}`}})
+       .then(response =>{
+         this.estados = response.data;
+         this.p=auth.getUser();
+>>>>>>> 9a2401171dfda73369de1904cf4a2687795094c0
        });
 
+
      },
-     getUrl: function(algo){
-       var dir = algo;
+     getUrl: function(){
+       var dir = this.estados[1].avatar;
        var url = "../assets/img/" + dir;
        return url;
      }
