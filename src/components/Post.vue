@@ -62,11 +62,8 @@ import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
-<<<<<<< HEAD
      this.getPub();
-=======
      this.getEstados();
->>>>>>> 9a2401171dfda73369de1904cf4a2687795094c0
 
   },
 
@@ -92,27 +89,20 @@ export default {
           contenido: '...'
           },
         ],
-<<<<<<< HEAD
           publicacion:[],
       }
   },
   methods: {
      getPub: function(){
        axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
-         this.publicacion= response.data
-=======
-          estados:[],
-          p:''
-      }
-  },
-  methods: {
+         this.publicacion= response.data});
+      },
      getEstados: function(){
        axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
           headers: {Authorization: `JWT ${auth.getAuthHeader()}`}})
        .then(response =>{
          this.estados = response.data;
          this.p=auth.getUser();
->>>>>>> 9a2401171dfda73369de1904cf4a2687795094c0
        });
 
 

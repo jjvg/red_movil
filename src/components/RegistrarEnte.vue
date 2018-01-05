@@ -64,8 +64,8 @@
                      <label>Ciudad</label>
                      
                     <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem1" required >
-                        <option class="tam1" >
-                            {{ ciudad.ciudades}}
+                        <option class="tam1"v-for="item2 in ciudad.ciudades" :value="item2.id" :key="item2.key" >
+                            {{item2}}
                         </option>
                     </v-ons-select>
                     
@@ -86,7 +86,6 @@
                     </v-ons-select>
                      </div>
 			        <br>
-                    {{$data | json}}
                   <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
                   
    		 </form>

@@ -56,9 +56,9 @@
                       
                      <label>Ciudad</label>
                      
-                    <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem1" required >
-                        <option class="tam1" >
-                            {{ ciudad.ciudades}}
+                    <v-ons-select name="ciudad" id="ciudad" material class="material"style="width: 80%" v-model="selectedItem1" required >
+                        <option class="tam1" v-for="item2 in ciudad.ciudades" :value="item2.id" :key="item2.key">
+                            {{item2}}
                         </option>
                     </v-ons-select>
                     
@@ -69,7 +69,6 @@
                      <label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                 </div>
                  </div>
-			{{$data | json}}
             <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
    		 </form>
  	  </div>
@@ -121,22 +120,14 @@ import axios from 'axios'
        getCiudad: function(){
            
           
-           console.log('changed!')
+       
     
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
-         var c = document.getElementById("edo");
-         
+       
                 });
-                console.log(this.url);
-            console.log(this.ciudad);
-            console.log(this.c)
-            if(this.ciudad.ciudades == "")
-            {
-                this.ciudad.ciudades = this.ciudad.capital;
-            }
-           
+                
        },
        
       getEstado: function(){
