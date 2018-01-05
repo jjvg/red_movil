@@ -9,7 +9,7 @@
                </div>
                 <div class="col">
                   <div class="f1">
-                      <h4>Andrea</h4>
+                      <h4>{{p.authenticated}}</h4>
                   </div>
                   <div class="f2">
                       <h6>Hace 2 minutos</h6>
@@ -17,14 +17,14 @@
                 </div>
             </div>
 
-              <img :src="getUrl(item.contenido)" style="width: 100%">
+              <img :src="item.avatar" style="width: 100%">
             <router-link to="/detallepost"><div class="card__imagen posti">
 
-                <img src="../assets/img/falla.jpg" style="width: 100%">
+                <img :src='item.avatar' style="width: 100%">
             </div></router-link>
             <div class="card_content">
                {{item.titulo}}
-               {{item.contenido}}
+               {{item.avatar}}
             </div>
             <v-ons-row>
                 <v-ons-col>
@@ -62,7 +62,7 @@ import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
-     this.getEstado();
+     this.getEstados();
 
   },
 
@@ -89,21 +89,22 @@ export default {
           },
         ],
           estados:[],
+          p:''
       }
   },
   methods: {
      getEstados: function(){
        axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
-          headers: auth.getAuthHeader()
-       })
+          headers: {Authorization: `JWT ${auth.getAuthHeader()}`}})
        .then(response =>{
          this.estados = response.data;
-       })
-        .error((err) => console.log(err));
+         this.p=auth.getUser();
+       });
+
 
      },
-     getUrl: function(algo){
-       var dir = algo;
+     getUrl: function(){
+       var dir = this.estados[1].avatar;
        var url = "../assets/img/" + dir;
        return url;
      }

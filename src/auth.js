@@ -1,10 +1,16 @@
-import { router } from './router'
+import router from './router'
 import axios from 'axios'
+import decode from 'jwt-decode';
 // URL and endpoint constants
 const API_URL = 'http://localhost:8000/'
-const LOGIN_URL = API_URL + 'rest-auth/login/'
+const LOGIN_URL = API_URL + 'api-token-auth/'
 const SIGNUP_URL = API_URL + 'rest-auth/register/'
 
+
+function getParameterByName(name) {
+    let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
 export default {
 
     // User object will let us check authentication status
@@ -15,29 +21,24 @@ export default {
     // Send a request to the login URL and save the returned JWT
     login(creds, redirect) {
         axios.post(LOGIN_URL, creds).then(response => {
-            localStorage.setItem('id_token', response.data.key);
-            localStorage.setItem('access_token', response.data.key);
-            this.user.authenticated = true;
-            // Redirect to a specified route
-            router.go('/principal');
+            localStorage.setItem('id_token', response.data.id);
+            localStorage.setItem('access_token', response.data.token);
+            this.user.authenticated = true,
+                // Redirect to a specified route
+                router.go('/principal');
 
-        }).error((err) => console.log(err));
+        }).error((err) => console.log(err))
     },
 
     signup(creds, redirect) {
-        axios.post(SIGNUP_URL, creds, (data) => {
-            localStorage.setItem('id_token', data.id)
-            localStorage.setItem('access_token', data.access_token)
+        axios.post(SIGNUP_URL, creds).then(response => {
+            localStorage.setItem('id_token', response.data.id)
+            localStorage.setItem('access_token', response.data.key)
+            this.user.authenticated == true
 
-            this.user.authenticated = true
+            router.go(redirect);
 
-            if (redirect) {
-                router.go(redirect)
-            }
-
-        }).error((err) => {
-            context.error = err
-        })
+        });
     },
 
     // To log out, we just need to remove the token
@@ -58,8 +59,10 @@ export default {
 
     // The object to be passed as a header for authenticated requests
     getAuthHeader() {
-        return {
-            'Authorization': 'JWT' + localStorage.getItem('id_token')
-        }
+        return localStorage.getItem('access_token');
+    },
+    getUser() {
+        return this.user;
     }
+
 }
