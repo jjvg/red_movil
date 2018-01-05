@@ -137,13 +137,7 @@
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
                 });
-                console.log(this.url);
-            console.log(this.ciudad);
-            console.log(this.c)
-            if(this.ciudad.ciudades == "")
-            {
-                this.ciudad.ciudades = this.ciudad.capital;
-            }
+
            
        },
        getEstado: function(){
