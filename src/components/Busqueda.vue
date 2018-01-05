@@ -112,7 +112,7 @@ h6{
     margin-left: 20px;
 }
 h4{
-     color: green;
+     color: #26a69a;
 }
 .pub{
     display: flex;
