@@ -63,8 +63,6 @@ export default {
   name: 'post',
    created: function() {
      this.getPub();
-     this.getEstados();
-
   },
 
   components: {
@@ -101,21 +99,6 @@ export default {
          this.p=auth.getUser();
         });
       },
-     getEstados: function(){
-       axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
-          headers: {Authorization: `JWT ${auth.getAuthHeader()}`}})
-       .then(response =>{
-         this.estados = response.data;
-         this.p=auth.getUser();
-       });
-
-
-     },
-     getUrl: function(){
-       var dir = this.estados[1].avatar;
-       var url = "../assets/img/" + dir;
-       return url;
-     }
   },
 
 
