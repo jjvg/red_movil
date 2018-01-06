@@ -15,6 +15,7 @@
           <label for="input-Search">Búsqueda</label>
 
         </div>
+<<<<<<< HEAD
         <div class="boton">
 
         <v-ons-button  modifier="material" class="button button--light" @click="actionSheetVisible = true">Buscar</v-ons-button>
@@ -27,6 +28,12 @@
 <div class="ctnb">
 
             <v-ons-card >
+=======
+    </div>   
+<div class="ctnb">
+         <form class="col s12" >
+           
+>>>>>>> 30bb046a837f19208fabb4267d8450fba5c85182
               <v-ons-list-item >
             <div id="list-users" v-if="usersFilter && usersFilter.length">
 
@@ -35,9 +42,10 @@
                   <img src="../assets/perfil.jpg" alt="" width="40px" style=  "border-radius: 50% !important">
                 </div>
                 <div class="col">
-                  <div class="title f1">
+                 <router-link to="/perfil"> <div class="title f1">
                     <h5>{{user.name}}</h5>
-                  </div>
+                    <input :id="user.id"  type="hidden" :value="user.id">
+                  </div></router-link>
                   <div class="f2">
                     <h6>{{user.email}} - Estado {{user.estado}}</h6>
                   </div>
@@ -48,8 +56,13 @@
                 <h4>No se han encontrado coincidencias</h4>
             </div>
             </v-ons-list-item >
+<<<<<<< HEAD
             </v-ons-card>
 
+=======
+           
+           </form>
+>>>>>>> 30bb046a837f19208fabb4267d8450fba5c85182
            </div>
 
 </v-ons-page>
@@ -111,6 +124,9 @@ h6{
     width: 100%;
     margin-left: 20px;
 }
+h5{
+  color: black;
+}
 h4{
      color: #26a69a;
 }
@@ -145,7 +161,7 @@ h5{
   width: 100%;
 }
 .busq{
-    width: 60%;
+    width: 100%;
     display: flex;
     margin-right: 30px;
     margin-left: 10px;
