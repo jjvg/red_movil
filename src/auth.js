@@ -7,10 +7,6 @@ const LOGIN_URL = API_URL + 'api-token-auth/'
 const SIGNUP_URL = API_URL + 'rest-auth/register/'
 
 
-function getParameterByName(name) {
-    let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
 export default {
 
     // User object will let us check authentication status
@@ -23,10 +19,8 @@ export default {
         axios.post(LOGIN_URL, creds).then(response => {
             localStorage.setItem('id_token', response.data.id);
             localStorage.setItem('access_token', response.data.token);
-            this.user.authenticated = true,
-                // Redirect to a specified route
-                router.go('/principal');
-
+            this.user.authenticated = true
+            router.push(redirect);
         }).error((err) => console.log(err))
     },
 
@@ -46,14 +40,17 @@ export default {
         localStorage.removeItem('id_token')
         localStorage.removeItem('access_token')
         this.user.authenticated = false
+        router.push('/')
     },
 
     checkAuth() {
-        var jwt = localStorage.getItem('id_token')
+        var jwt = localStorage.getItem('access_token');
         if (jwt) {
-            this.user.authenticated = true
+            this.user.authenticated = true;
+            return true;
         } else {
-            this.user.authenticated = false
+            this.user.authenticated = false;
+            return false;
         }
     },
 
@@ -63,6 +60,17 @@ export default {
     },
     getUser() {
         return this.user;
+    },
+
+}
+export function requireAuth(to, from, next) {
+    if (!checkAuth()) {
+        next({
+            path: '/login',
+            query: { redirect: to.fullPath }
+        });
+    } else {
+        next();
     }
 
 }

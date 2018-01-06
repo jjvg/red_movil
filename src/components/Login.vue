@@ -38,7 +38,7 @@
                 </v-ons-row>
                  </div>
                  <div class="center">
-             <router-link to="/principal"><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0" @click="submit()">Ingresar</v-ons-button></router-link>
+             <v-ons-button class="button button--light material" style="margin: 6px 0" @click="submit()">INGRESAR</v-ons-button>
                  </div>
                 <br>
                     <div class="center">

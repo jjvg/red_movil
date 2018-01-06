@@ -5,7 +5,7 @@
         <router-link to="/principal"><v-ons-back-button style="color:white"></v-ons-back-button></router-link>
       </div>
       <div class="center" >
-          <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;"> 
+          <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:0; margin-top:8px;">
       </div>
     </v-ons-toolbar>
     <div class="prin">
@@ -13,26 +13,26 @@
           <i class="material-icons prefix">search</i>
           <input id="input-Search"  type="text" class="form-control" v-model="textSearch">
           <label for="input-Search">Búsqueda</label>
-          
+
         </div>
         <div class="boton">
-           
+
         <v-ons-button  modifier="material" class="button button--light" @click="actionSheetVisible = true">Buscar</v-ons-button>
         <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true>
           <resultados-page></resultados-page>
           <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0; align: center;" >Volver</v-ons-action-sheet-button>
         </v-ons-action-sheet>
         </div>
-    </div>   
+    </div>
 <div class="ctnb">
-         
+
             <v-ons-card >
               <v-ons-list-item >
             <div id="list-users" v-if="usersFilter && usersFilter.length">
-              
-              <div class="panel panel-default pub" v-for="user of usersFilter">
+
+              <div class="panel panel-default pub" v-for="user of usersFilter" :key="user.link">
                 <div class="left img">
-                  <img src="../assets/perfil.jpg" alt="" width="40px" style=  "border-radius: 50%; !important">
+                  <img src="../assets/perfil.jpg" alt="" width="40px" style=  "border-radius: 50% !important">
                 </div>
                 <div class="col">
                   <div class="title f1">
@@ -49,9 +49,9 @@
             </div>
             </v-ons-list-item >
             </v-ons-card>
-          
+
            </div>
-        
+
 </v-ons-page>
 </template>
 
@@ -65,7 +65,7 @@ export default {
    },
    created: function () {
      this.getUser();
-     
+
    },
    computed:{
      usersFilter: function(){
@@ -83,9 +83,9 @@ export default {
           textSearch: "",
           users: [],
      }
-      
+
   },
-   
+
   methods:{
       getUser: function(){
     console.log('1');
@@ -96,7 +96,7 @@ export default {
     console.log(this.users);
       }
   },
-       
+
 }
 </script>
 <style scoped>
@@ -157,19 +157,19 @@ h5{
     height: 40px;
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 8px;    
+    margin-top: 8px;
 }
 .button--light {
   background-color: transparent;
   color: #9E9898;
-  border: 1px solid rgba(0,0,0,0.2); 
+  border: 1px solid rgba(0,0,0,0.2);
 }
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: #9E9898;
   border: 1px solid rgba(0,0,0,0.2);
   opacity: 3;
- 
+
 }
 .toolbar--material{
     background-color: purple;

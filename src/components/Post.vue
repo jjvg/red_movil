@@ -94,8 +94,12 @@ export default {
   },
   methods: {
      getPub: function(){
-       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
-         this.publicacion= response.data});
+       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json',{
+          headers: {Authorization: `JWT ${auth.getAuthHeader()}`}
+       }).then(response =>{
+         this.publicacion= response.data
+         this.p=auth.getUser();
+        });
       },
      getEstados: function(){
        axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
