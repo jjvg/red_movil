@@ -22,8 +22,8 @@ Vue.use(axios)
 Vue.use(VueOnsen)
 Vue.use(axios)
 
-
-/* eslint-disable no-new */
+auth.checkAuth()
+    /* eslint-disable no-new */
 new Vue({
     el: '#app',
     store,
