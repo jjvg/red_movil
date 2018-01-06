@@ -52,15 +52,31 @@
 import img2 from '../assets/amigos.jpg'
 export default {
      name: 'detallepost',
-
+    created: function() {
+         this.getPub();
+      },
      data () {
          return {
      
                     titulo: 'Bote de agua Av. Caracas',
-                    contenido: ' En la Av. Caracas con calles 3 y 4, frente a la urb. Ulala hay un bote de aguas blancas que lleva ya más de una semana'
+                    contenido: ' En la Av. Caracas con calles 3 y 4, frente a la urb. Ulala hay un bote de aguas blancas que lleva ya más de una semana',
+                    publicacion:[],
                 }
 
-            } 
+            } ,
+             methods: {
+     getPub: function(){
+       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
+         this.publicacion= response.data
+       });
+
+     },
+     getUrl: function(algo){
+       var dir = algo;
+       var url = "../assets/img/" + dir;
+       return url;
+     }
+  },
 }      
      
 

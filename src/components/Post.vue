@@ -1,7 +1,7 @@
 <template>
 <div class="container" id="app">
      <v-ons-list>
-      <v-ons-list-item v-for="item in estados" :key="item.link">
+      <v-ons-list-item v-for="item in publicacion" :key="item.link">
         <v-ons-card>
             <div class="pub">
                <div class="img">
@@ -62,6 +62,7 @@ import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
+     this.getPub();
      this.getEstados();
 
   },
@@ -88,11 +89,14 @@ export default {
           contenido: '...'
           },
         ],
-          estados:[],
-          p:''
+          publicacion:[],
       }
   },
   methods: {
+     getPub: function(){
+       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
+         this.publicacion= response.data});
+      },
      getEstados: function(){
        axios.get('http://127.0.0.1:8000/api/perfil/?format=json',{
           headers: {Authorization: `JWT ${auth.getAuthHeader()}`}})

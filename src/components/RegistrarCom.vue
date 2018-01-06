@@ -20,7 +20,7 @@
 				<h3  style="color: rgb(10, 160, 152);">Registro de Comunidades</h3>
 			</div>
 	<div class="row">
-   		<form class="col s12"  action="#/reg1" >
+   		<form class="col s12"  action="#/reg1">
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
@@ -43,26 +43,25 @@
 					<h5 style="color: rgb(10, 160, 152);">Ubicación</h5>
                 </div>
                 <v-ons-row>
-                    <v-ons-col>
+                    <v-ons-col name="a" id="a">
 			        <label>Estado</label>
-                    <v-ons-select name="edo" id="edo" material class="material" style="width: 80%" v-model="textSearch" required>
-                        <option class="tam" v-for="item1 in estados" :value="item1.value" :key="item1.key">
+                    <v-ons-select name="edo" id="edo"  v-on:change="getCiudad()" material class="material" style="width: 80%" v-model="selectedItem" required>
+                        <option class="tam" name="edos" id="edos" v-for="item1 in estados" :value="item1.id" :key="item1.key">
                             {{ item1.estado }}
                         </option>
                     </v-ons-select>
                     </v-ons-col>
-                  
                 </v-ons-row>
-                  <v-ons-col>
+                  <v-ons-col name="b" id="b">
                       
                      <label>Ciudad</label>
-                     <div v-if="ciudadFilter && ciudadFilter.length">
-                    <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem" required >
-                        <option class="tam1" v-for="item1 in estados" :value="item1.value" :key="item1.key">
-                            {{ item1.ciudades}}
+                     
+                    <v-ons-select name="ciudad" id="ciudad" material class="material"style="width: 80%" v-model="selectedItem1" required >
+                        <option class="tam1" v-for="item2 in ciudad.ciudades" :value="item2.id" :key="item2.key">
+                            {{item2}}
                         </option>
                     </v-ons-select>
-                    </div>
+                    
                     </v-ons-col>
                 <div class="col s12 m12 l6">
                <div class="input-field">
@@ -70,7 +69,6 @@
                      <label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                 </div>
                  </div>
-			
             <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
    		 </form>
  	  </div>
@@ -79,13 +77,20 @@
  </v-ons-page>
 </template>
 <script>
+
 import axios from 'axios'
+
     export default {
         name: 'regcom',
         created: function() {
      this.getEstado();
-
+     this.getCiudad();
   },
+ onchange: function(){
+     this.getCiudad();
+      
+  },
+  
 	data : function() {
       return {
            
@@ -95,25 +100,37 @@ import axios from 'axios'
             contenido:{type:String},
             categoria:{type:Boolean},
       selectedItem: '',
+      selectedItem1: '',
+      url:'',
+     ciudad: [{}
+      ],
+      ciudad1:[],
       estados:[],
       textSearch: "",
-        
+      edo:'',
+     
 
        }
        
       
    },
-   computed: {
-     ciudadFilter: function() {
-       var textSearch = this.edo;
-       return this.estados.filter(function(el) {
-         return el.ciudades !== -1;
-       });
-     }
-  },
 
    methods:{
-       getEstado: function(){
+
+       getCiudad: function(){
+           
+          
+       
+    
+          this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
+           axios.get(this.url).then(response =>{
+         this.ciudad = response.data
+       
+                });
+                
+       },
+       
+      getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
          this.estados = response.data
        });
