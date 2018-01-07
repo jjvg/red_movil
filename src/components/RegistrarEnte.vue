@@ -24,8 +24,10 @@
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
-         	 		<input name="email" type="email" class="form-control" required>
-         			 <label class="control-label" for="email">Correo electrónico</label>
+         	 		<input id="email" type="email" v-model="textSearch" class="validate" required>
+         			 <label for="email">Correo electrónico</label>
+                     <div class="al"> <h4 v-if="usersFilter && usersFilter.length" v-show="show">Este usuario ya se encuentra registrado</h4>
+                      <h5  v-else>Usuario disponible</h5></div>
         		</div>
                 
         		<div class="input-field col s12 m6">
@@ -104,24 +106,38 @@
         created: function() {
      this.getEstado();
      this.getCat();
+    this.getUser();
 
   },
+  //función que se ejecuta al escribir en el input email
+   computed:{
+     usersFilter: function(){
+         var inpEm=$("#email").val();
+       if(inpEm == "")
+       {
+           this.show = false
+           
+       }
+       else{
+           this.show = true
+           
+       }
+       var textSearch = this.textSearch;
+       return this.users.filter(function(el) {
+         return el.email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
+       });
+       
+     }
+   },
 		data : function() {
-        return {
-           
-            titulo:{type:String},
-            titulo:'', 
-            imagen:{type:File},
-            contenido:{type:String},
-            categoria:{type:Boolean},
-           
-  
+        return { 
       selectedItem: '',
         ciudad: [],
         url: '',
          estados:[],
          categ:[],
       textSearch: "",
+        users: []
         
 
        }
@@ -129,16 +145,10 @@
    },
    methods:{
         getCiudad: function(){
-           
-          
-           console.log('changed!')
-    
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
-                });
-
-           
+                }); 
        },
        getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
@@ -150,6 +160,14 @@
          axios.get('http://localhost:8000/api/categoriapost/?format=json').then(response =>{
          this.categ = response.data
        });
+     },
+      //método utilizado para llenar el arreglo de users
+     getUser: function(){
+          axios.get('http://127.0.0.1:8000/api/user/?format=json')
+        .then(response => {
+        this.users = response.data
+    });
+  
      }
    }
     }
@@ -236,6 +254,22 @@ h5{
 }
 .toolbar--material{
     background-color: purple
+}
+h4{
+    font-size: 12px;
+    color: red;
+    line-height: 0px;
+    
+}
+h5{
+    font-size: 12px;
+    color: #26a69a;
+    line-height: 0px;
+    
+}
+.al{
+    margin-left: 45px;
+    margin-top: 0px;
 }
 
 </style>
