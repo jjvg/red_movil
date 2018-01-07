@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
+import auth from './auth'
 // const Foo = resolve => require(['../views/hello.vue'], resolve);
 // import hello from '../views/hello.vue';
 
@@ -31,7 +31,7 @@ export default new Router({
         { name: 'editarperfil', path: '/editarperfil', component: EditarPerfil },
         { name: 'regente', path: '/registrarente', component: RegistrarEnte },
         { name: 'regcom', path: '/registrarcom', component: RegistrarCom },
-        { name: 'principal', path: '/principal', component: Principal },
+        { name: 'principal', path: '/principal', beforeEnter: auth.requireAuth, component: Principal },
         { name: 'registro', path: '/registrarpersona', component: RegistrarUser },
         { name: 'comentario', path: '/comentario', component: Comentario },
         { name: 'buscar', path: '/busqueda', component: Busqueda },

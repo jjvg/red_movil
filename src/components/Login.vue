@@ -34,13 +34,16 @@
                         <v-ons-icon fixed-width size="30px" icon="md-lock"></v-ons-icon>
                         <v-ons-input class="form-control" type="password" required="true" placeholder="Contraseña" v-model="credentials.password"></v-ons-input>
                        </v-ons-col>
-
                 </v-ons-row>
                  </div>
+
                  <div class="center">
-             <router-link to="/principal"><v-ons-button  modifier="material" class="button button--light" style="margin: 6px 0" @click="submit()">Ingresar</v-ons-button></router-link>
+                   <v-ons-button class="button button--light material" style="margin: 6px 0" @click="submit()">Ingresar</v-ons-button>
                  </div>
-                <br>
+                  <v-ons-dialog cancelable :visible.sync="dialogVisible">
+                    <p style="text-align: center">Error en los datos</p>
+                   </v-ons-dialog>
+                  <br>
                     <div class="center">
                     <v-ons-row>
                         <v-ons-col width="99%">
@@ -65,8 +68,18 @@
 </template>
 <script>
 import auth from '../auth'
+import axios from 'axios'
 export default {
   name: 'login',
+
+   created: function(){
+       this.getUser();
+     },
+
+     computed:{
+
+     },
+
   data(){
      return{
         credentials: {
@@ -75,25 +88,44 @@ export default {
           password: ''
 
         },
-        error: '',
+        dialogVisible: false,
         actionSheetVisible: false,
         token:'',
+<<<<<<< HEAD
+=======
+         users: [],
+         names:[]
+>>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
       }
 
      },
      methods: {
+       getUser(){
+             console.log('1');
+              axios.get('http://127.0.0.1:8000/api/user/?format=json')
+              .then(response => {
+                this.users = response.data;
+
+              }).catch(error => {
+                console.log(error);
+              });
+              console.log(this.users);
+              },
         submit() {
-        var credentials = {
-          username: this.credentials.username,
-          password: this.credentials.password,
-
-        }
-        auth.login(credentials, '/principal')
-
-
-     }
-
-     }
+          this.token = this.users.indexOf(this.credentials.username)
+          window.alert(this.users)
+          window.alert(this.token)
+          if(this.token>=0){
+            var credentials = {
+            username: this.credentials.username,
+            password: this.credentials.password,
+            }
+          auth.login(credentials, '/principal')
+          }else{
+           this.dialogVisible = true
+         }
+      }
+     },
 }
 </script>
 <style scoped>

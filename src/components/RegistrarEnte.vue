@@ -5,20 +5,20 @@
                 <router-link to="/"><v-ons-back-button style="color: white"></v-ons-back-button></router-link>
             </div>
             <div class="center" >
-               
+
                <router-link to="/">
                     <img src='../assets/img/rc1.png' style="width: 40px; height:40px; margin-left:100px; margin-top:8px;">
-                </router-link> 
+                </router-link>
             </div>
-            
-            
+
+
         </v-ons-toolbar>
 <div class="container">
-	
+
 			<div align="center">
 				<h3 style="color: rgb(10, 160, 152);">Registro de Entes</h3>
 			</div>
-            
+
 	<div class="row">
    		<form class="col s12" action="#/reg1" >
       		<div class="row">
@@ -29,7 +29,7 @@
                      <div class="al"> <h4 v-if="usersFilter && usersFilter.length" v-show="show">Este usuario ya se encuentra registrado</h4>
                       <h5  v-else>Usuario disponible</h5></div>
         		</div>
-                
+
         		<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">business</i>
           			<input name="nombre"  type="text" class="validate"  required>
@@ -62,19 +62,19 @@
                     </v-ons-col>
                 </v-ons-row>
                   <v-ons-col name="b" id="b">
-                      
+
                      <label>Ciudad</label>
-                     
+
                     <v-ons-select name="ciudad" id="ciudad" material class="material" style="width: 80%" v-model="selectedItem1" required >
-                        <option class="tam1"v-for="item2 in ciudad.ciudades" :value="item2.id" :key="item2.key" >
+                        <option class="tam1" v-for="item2 in ciudad.ciudades" :value="item2.id" :key="item2.key" >
                             {{item2}}
                         </option>
                     </v-ons-select>
-                    
+
                     </v-ons-col>
                 <div class="col s12 m12 l6">
                		<div class="input-field">
-						   
+
 						<v-text-area name="contenido" id="contenido" length="50" v-model="contenido"  required></v-text-area>
 						<label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                		 </div>
@@ -89,11 +89,10 @@
                      </div>
 			        <br>
                   <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
-                  
+
    		 </form>
  	  </div>
-	</div>				
-  </div>		 
+	</div>
  </v-ons-page>
 </template>
 <script>
@@ -109,6 +108,7 @@
     this.getUser();
 
   },
+<<<<<<< HEAD
   //función que se ejecuta al escribir en el input email
    computed:{
      usersFilter: function(){
@@ -131,24 +131,53 @@
    },
 		data : function() {
         return { 
+=======
+		data : function() {
+        return {
+
+            titulo:{type:String},
+            titulo:'',
+            imagen:{type:File},
+            contenido:{type:String},
+            categoria:{type:Boolean},
+
+
+>>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
       selectedItem: '',
         ciudad: [],
         url: '',
          estados:[],
          categ:[],
       textSearch: "",
+<<<<<<< HEAD
         users: []
         
+=======
+
+>>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
 
        }
-       
+
    },
    methods:{
         getCiudad: function(){
+<<<<<<< HEAD
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
                 }); 
+=======
+
+
+           console.log('changed!')
+
+          this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
+           axios.get(this.url).then(response =>{
+         this.ciudad = response.data
+                });
+
+
+>>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
        },
        getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
@@ -196,12 +225,12 @@
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
-    opacity: 1;  
+    opacity: 1;
     line-height: 32px;
     letter-spacing: 0;
     border-radius: 3px;
     -webkit-font-smoothing: antialiased;
-    
+
 }
 .tit{
 	    display: flex;
@@ -229,7 +258,7 @@
 
 h5{
 	text-decoration: underline;
-	
+
 }
 .row1{
 	width: 100%;
@@ -242,15 +271,15 @@ h5{
 .button--light {
   background-color: transparent;
   color: #9E9898;
-  border: 1px solid rgba(0,0,0,0.2); 
-  
+  border: 1px solid rgba(0,0,0,0.2);
+
 }
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: #9E9898;
   border: 1px solid rgba(0,0,0,0.2);
   opacity: 3;
- 
+
 }
 .toolbar--material{
     background-color: purple
