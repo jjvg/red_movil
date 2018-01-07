@@ -41,7 +41,6 @@
                 <h4>No se han encontrado coincidencias</h4>
             </div>
             </v-ons-list-item >
-
            </form>
            </div>
 

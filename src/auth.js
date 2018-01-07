@@ -120,6 +120,7 @@ export function requireAuth(to, from, next) {
         next();
     }
 }
+<<<<<<< HEAD
 export function requireUser(to, from, next) {
     if (!checkAuth()) {
         next({
@@ -130,3 +131,15 @@ export function requireUser(to, from, next) {
         next();
     }
 }
+=======
+    export function requireUser(to, from, next) {
+        if (!checkAuth()) {
+            next({
+                path: '/login',
+                query: { redirect: to.fullPath }
+            });
+        } else {
+            next();
+        }
+    }
+>>>>>>> 1f9a42e1ca0e41f91b3c991790c910b5bf48fa4d
