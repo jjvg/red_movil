@@ -15,25 +15,10 @@
           <label for="input-Search">Búsqueda</label>
 
         </div>
-<<<<<<< HEAD
-        <div class="boton">
-
-        <v-ons-button  modifier="material" class="button button--light" @click="actionSheetVisible = true">Buscar</v-ons-button>
-        <v-ons-action-sheet v-model="actionSheetVisible" :visible="actionSheetVisible" cancelable: true>
-          <resultados-page></resultados-page>
-          <v-ons-action-sheet-button @click="actionSheetVisible=false" style="color: #222EF0; align: center;" >Volver</v-ons-action-sheet-button>
-        </v-ons-action-sheet>
-        </div>
     </div>
 <div class="ctnb">
-
-            <v-ons-card >
-=======
-    </div>   
-<div class="ctnb">
          <form class="col s12" >
-           
->>>>>>> 30bb046a837f19208fabb4267d8450fba5c85182
+
               <v-ons-list-item >
             <div id="list-users" v-if="usersFilter && usersFilter.length">
 
@@ -56,13 +41,8 @@
                 <h4>No se han encontrado coincidencias</h4>
             </div>
             </v-ons-list-item >
-<<<<<<< HEAD
-            </v-ons-card>
 
-=======
-           
            </form>
->>>>>>> 30bb046a837f19208fabb4267d8450fba5c85182
            </div>
 
 </v-ons-page>
@@ -76,6 +56,7 @@ export default {
     components:{
     'resultados-page':Resultados,
    },
+
    created: function () {
      this.getUser();
 
