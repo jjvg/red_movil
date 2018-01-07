@@ -3,12 +3,12 @@
     <v-ons-card>
         <img src="../assets/perfil.jpg" alt="Imagen perfil" >
           <div class="title">
-            {{nombre}}
+            {{user.namen}}
           </div>
       <div class="content">
 
         <v-ons-list>
-          <v-ons-list-header>Acerca de {{nombre}}</v-ons-list-header>
+          <v-ons-list-header>Acerca de {{user.name}}</v-ons-list-header>
           <v-ons-list-item>{{descripcion}}</v-ons-list-item>
           
         </v-ons-list>
@@ -53,6 +53,7 @@ import Post from './Post.vue'
 import Estado from './Estado.vue'
 import Seguidores from './Seguidores.vue'
 import Seguidos from './Seguidos.vue'
+import axios from 'axios'
 export default {
   name: 'perfil',
    components:{
@@ -60,6 +61,10 @@ export default {
     'estado-page': Estado,
     'seguidores-page':Seguidores,
     'seguidos-page':Seguidos
+   },
+   created(){
+      var id = this.getParameterByName('id');
+      this.getUser();
    },
   data(){
     return{
@@ -69,6 +74,8 @@ export default {
       seguidores:'100',
       modalVisible: false,
       modalVisible1:false,
+      idUser:'',
+      user: []
       
       
     }
@@ -80,7 +87,26 @@ export default {
         },
     showModal1(){
       this.modalVisible1= true;
-    }
+    },
+     getParameterByName: function(id, url) {
+      if (!url) url = window.location.href;
+        id = id.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + id + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        this.idUser = decodeURIComponent(results[2].replace(/\+/g, " "));
+        console.log(this.idUser);
+        return this.idUser
+    },
+      getUser: function (){
+        var url = 'http://127.0.0.1:8000/api/user/'+this.idUser+'/?format=json';
+        console.log(url);
+              axios.get(url).then(response => {
+                this.user = response.data
+              });
+        console.log(this.user);
+      }
   },
   
 

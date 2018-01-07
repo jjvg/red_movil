@@ -26,11 +26,11 @@
                 <div class="left img">
                   <img src="../assets/perfil.jpg" alt="" width="40px" style=  "border-radius: 50% !important">
                 </div>
-                <div class="col">
-                 <router-link to="/perfil"> <div class="title f1">
-                    <h5>{{user.name}}</h5>
-                    <input :id="user.id"  type="hidden" :value="user.id">
-                  </div></router-link>
+                <div class="col"  >
+                 <div class="title f1"  v-on:click="getPerfil(user.id)" >
+                   <router-link :to="url">  <h5>{{user.name}}</h5>
+                    <input :id="user.id" type="hidden" :value="user.id"></router-link>
+                  </div>
                   <div class="f2">
                     <h6>{{user.email}} - Estado {{user.estado}}</h6>
                   </div>
@@ -63,7 +63,6 @@ export default {
    },
    computed:{
      usersFilter: function(){
-       console.log('1');
        var textSearch = this.textSearch;
        return this.users.filter(function(el) {
          return el.name.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
@@ -75,6 +74,7 @@ export default {
      return{
           actionSheetVisible: false,
           textSearch: "",
+          url: "",
           users: [],
      }
 
@@ -82,14 +82,20 @@ export default {
 
   methods:{
       getUser: function(){
-    console.log('1');
-      axios.get('http://127.0.0.1:8000/api/user/?format=json')
+        axios.get('http://127.0.0.1:8000/api/user/?format=json')
     .then(response => {
       this.users = response.data
     });
-    console.log(this.users);
-      }
+  
+      },
+       getPerfil: function(id){
+  
+        var inp = $("#"+id).val();
+        this.url = '/perfil/?id='+inp;
+    },
   },
+     
+       
 
 }
 </script>

@@ -20,12 +20,15 @@
 				<h3  style="color: rgb(10, 160, 152);">Registro de Comunidades</h3>
 			</div>
 	<div class="row">
-   		<form class="col s12"  action="#/reg1">
+   		<form class="col s12"  :action="url1">
+               <p v-if="mostrar">{{msg}}</p>      <!-- esto es lo que digo que no se quiere mostrar, el if no hace caso -->
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
-         	 		<input id="email" type="email" class="validate" required>
+         	 		<input id="email" type="email" v-model="textSearch" class="validate" required>
          			 <label for="email">Correo electrónico</label>
+                     <div class="al"> <h4 v-if="usersFilter && usersFilter.length" v-show="show">Este usuario ya se encuentra registrado</h4>
+                      <h5  v-else>Usuario disponible</h5></div>
         		</div>
         		<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">supervisor_account</i>
@@ -68,6 +71,7 @@
                      <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" required></v-text-area>
                      <label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                 </div>
+                <input id="volv"  type="text" :value="url1">
                  </div>
             <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
    		 </form>
@@ -82,33 +86,55 @@ import axios from 'axios'
 
     export default {
         name: 'regcom',
-        created: function() {
+ 
+ created: function() {
+     
+     
      this.getEstado();
-     this.getCiudad();
+     this.getUser();
+     var volver = this.getParameterByName('volver');
+      console.log(this.volver1);
   },
- onchange: function(){
-     this.getCiudad();
-      
-  },
-  
+  //función que se ejecuta al escribir en el input email
+   computed:{
+     usersFilter: function(){
+         
+         var inpEm=$("#email").val();
+         
+       if(inpEm == "")
+       {
+           this.show = false
+           
+       }
+       else{;
+           this.show = true
+           
+       }
+       var textSearch = this.textSearch;
+       var a = this.users.filter(function(el) {
+         return el.email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
+       });
+       console.log('sii');
+       this.getUrl(a);
+       return a;
+       
+     },
+   },
 	data : function() {
       return {
            
-            titulo:{type:String},
-            titulo:'', 
-            imagen:{type:File},
-            contenido:{type:String},
-            categoria:{type:Boolean},
       selectedItem: '',
       selectedItem1: '',
       url:'',
-     ciudad: [{}
-      ],
-      ciudad1:[],
-      estados:[],
-      textSearch: "",
-      edo:'',
-     
+     ciudad: [],                    //arreglo que almacena las ciudades del estado seleccionado
+      estados:[],                   //arreglo que almacena los estados 
+      textSearch: "",               //utilizado para buscar que el usuario no esté registrado
+      users: [],                    //utilizado para la búsqueda del correo electrónico
+      show: false,
+      volver1: false,
+      mostrar: false,
+      url1:'',
+      msg: 'El correo electrónico que ha proporcionado se encuentra siendo utilizado por otro usuario, por favor intene de nuevo',
 
        }
        
@@ -116,12 +142,8 @@ import axios from 'axios'
    },
 
    methods:{
-
+       //método para buscar llenar el array ciudad con los datos del estado seleccionado
        getCiudad: function(){
-           
-          
-       
-    
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
@@ -129,13 +151,59 @@ import axios from 'axios'
                 });
                 
        },
-       
+       //método que se ejecuta en created para llenar el arreglo estados con los estados de venezuela
       getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
          this.estados = response.data
        });
-
      },
+     //método utilizado para llenar el arreglo de users
+     getUser: function(){
+          axios.get('http://127.0.0.1:8000/api/user/?format=json')
+        .then(response => {
+        this.users = response.data
+    });console.log(this.users);
+     },
+     //método para definir la url
+     getUrl: function(a){
+         console.log('2');
+         if(a && a.length){
+             this.volver = true;
+             this.url1="#/registrarcom/?volver=true";
+             console.log(this.url1);
+             return "#/registrarcom/?volver=true";
+             
+         }
+         else{
+             this.url1="#/reg1";
+             console.log(this.url1);
+             return "#/reg1";
+         }
+         console.log('3');
+     },
+     //obtener el valor de volver al momento de renderizar
+      getParameterByName: function(volver, url2) {
+       
+      if (!url2) url2 = window.location.href;
+       console.log('casi');
+        volver = volver.replace(/[\[\]]./g, "\\$&");
+        var regex = new RegExp("[?&.]" + volver + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url2);console.log('listo1');
+        if (!results) return null;
+        if (!results[2]) return '';
+        this.volver1 = decodeURIComponent(results[2].replace(/\+/g, ""));
+        
+                //de aqui para abajo es para ver si logro mostrar el mensaje
+        if(volver1= 'true')
+        {
+            this.mostrar = false;
+        }
+        else{
+            this.mostrar = false;
+        }
+        
+    },
+
    }
     }
 
@@ -210,4 +278,28 @@ import axios from 'axios'
 .toolbar--material{
     background-color: purple;
 }
+h4{
+    font-size: 12px;
+    color: red;
+    line-height: 0px;
+    
+}
+h5{
+    font-size: 12px;
+    color: #26a69a;
+    line-height: 0px;
+    
+}
+p{
+    color:red;
+    font-size: 14px;
+    align: center;
+    text-align: center;
+}
+.al{
+    margin-left: 45px;
+    margin-top: 0px;
+    
+}
+
 </style>
