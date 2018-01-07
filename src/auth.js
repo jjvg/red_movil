@@ -9,7 +9,8 @@ const GETUSER_URL = API_URL + 'api/user/?format=json'
 
 export default {
 
-    // User object will let us check authentication status
+    //Objeto usuario que se instancia en el sistema
+
     user: {
         _id: '',
         _cls: '',
@@ -21,23 +22,25 @@ export default {
         ciudad: '',
         direccion: '',
         apellido: '',
-        intereses: [],
+        intereses: Array,
         genero: 0,
         edad: 0,
         telefono_contacto: 0,
-        a_intereses: [],
+        a_intereses: Array,
         telefono: 0,
-        seguidores: [],
-        seguidos: [],
-        notificaciones: [],
-        modificado: { type: date },
+        seguidores: Array,
+        seguidos: Array,
+        notificaciones: Array,
+        modificado: { type: Date },
         activo: true,
         userperfil: '',
         authenticated: false
     },
-    correos: [],
+    users: { type: Array },
+    users: [],
+    valido: false,
 
-    // Send a request to the login URL and save the returned JWT
+    //Envia una solicitud para iniciar sesion y validar usuario y obtener el token de acceso  JWT
     login(creds, redirect) {
         axios.post(LOGIN_URL, creds).then(response => {
             localStorage.setItem('id_token', response.data.id);
@@ -47,13 +50,15 @@ export default {
         }).error((err) => console.log(err))
     },
 
+    // Metodo que realiza la insersion de un nuevo usuario en el sistema
+
     signup(creds, redirect) {
         axios.post(SIGNUP_URL, creds).then(response => {
-            localStorage.setItem('id_token', response.data.id)
-            localStorage.setItem('access_token', response.data.key)
-            this.user.authenticated == true
-
-            router.go(redirect);
+            //localStorage.setItem('id_token', response.data.id)
+            //localStorage.setItem('access_token', response.data.key)
+            this.user.authenticated == true;
+            window.alert(this.user.authenticated);
+            // router.push(redirect);
 
         });
     },
@@ -65,21 +70,25 @@ export default {
         this.user.authenticated = false
         router.push('/')
     },
-
-    getUser() {
+    // Metodo para obtener todos los usuarios del sistema
+    getUsers() {
         axios.get(GETUSER_URL).then(response => {
-            this.user = this.response.data
-            return this.user
+            this.users = response.data;
         }).catch(error => {
             console.log(error);
         })
     },
     checkUser(data) {
-        while (i < this.user.length) {
-            this.correos[i] == this.user[i]
-            i++;
-        };
-        return this.correos.indexOf(data);
+
+        for (var i = 0; i < this.users.length; i++) {
+            if (data.username == this.users[i].email && data.password == this.users[i].password) {
+                this.user = this.users[i];
+                this.valido = true
+                break;
+            }
+        }
+        return this.valido
+
     },
     checkAuth() {
         var jwt = localStorage.getItem('access_token');
@@ -110,13 +119,14 @@ export function requireAuth(to, from, next) {
     } else {
         next();
     }
-    export function requireUser(to, from, next) {
-        if (!checkAuth()) {
-            next({
-                path: '/login',
-                query: { redirect: to.fullPath }
-            });
-        } else {
-            next();
-        }
+}
+export function requireUser(to, from, next) {
+    if (!checkAuth()) {
+        next({
+            path: '/login',
+            query: { redirect: to.fullPath }
+        });
+    } else {
+        next();
     }
+}
