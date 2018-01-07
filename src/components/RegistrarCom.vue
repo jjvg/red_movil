@@ -71,7 +71,7 @@
                      <v-text-area name="contenido" id="contenido" length="50" v-model="contenido" required></v-text-area>
                      <label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                 </div>
-                <input id="volv"  type="text" :value="url1">
+               
                  </div>
             <div class="center"> <button class="button--light btn1" modifier="large" type="submit" >REGISTRAR</button> </div>
    		 </form>

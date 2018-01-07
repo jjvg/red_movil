@@ -8,24 +8,21 @@
                    <img src="../assets/perfil.jpg" style="width: 150% !important;" class="perfil">
                </div>
                 <div class="col">
-                  <div class="f1">
+                <!-- <div class="f1">
                       <h4>{{p.authenticated}}</h4>
-                  </div>
+                  </div>-->
                   <div class="f2">
                       <h6>Hace 2 minutos</h6>
                   </div>
                 </div>
             </div>
-
-              <img :src="item.avatar" style="width: 100%">
             <router-link to="/detallepost"><div class="card__imagen posti">
 
-                <img :src='item.avatar' style="width: 100%">
+                <img :src="'../assets/img/'+trimCharacter(item.contenido)" style="width: 100%">
             </div></router-link>
             <div class="card_content">
                {{item.titulo}}
-               {{item.avatar}}
-            </div>
+               </div>
             <v-ons-row>
                 <v-ons-col>
                     <v-ons-button modifier="quiet material" style="color: #5d6367">
@@ -55,14 +52,14 @@
 </template>
 <script>
 import auth from '../auth'
-import img2 from '../assets/img/falla.jpg'
 import DetallePost from './DetallePost.vue'
 import Comentarios from './Comentario.vue'
 import axios from 'axios'
 export default {
   name: 'post',
    created: function() {
-     this.getPub();
+     this.getPub1();
+     this.contenido = '../assets/img/falla.jpg';
   },
 
   components: {
@@ -73,37 +70,34 @@ export default {
 
   data: function() {
     return {
-      datos:[
-          {
-          img:{
-            type: File,
-          },
-          img:img2,
-          contenido: 'Bote de aguas blancas'
-          },
-          {
-          label: 'Community Chat',
-          img: img2,
-          contenido: '...'
-          },
-        ],
+     
           publicacion:[],
+          contenido: ''
       }
   },
   methods: {
-     getPub: function(){
-       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json',{
-          headers: {Authorization: `JWT ${auth.getAuthHeader()}`}
-       }).then(response =>{
+    getPub1: function(){
+       axios.get('http://127.0.0.1:8000/api/publicacion/?format=json').then(response =>{
          this.publicacion= response.data
-         this.p=auth.getUser();
+        // this.p=auth.getUser();
         });
       },
+     getPub: function(){
+          axios.get('http://127.0.0.1:8000/api/publicacion/?format=json',{
+                headers: {Authorization: `JWT ${auth.getAuthHeader()}`}
+       }).then(response =>{
+         this.publicacion= response.data
+        // this.p=auth.getUser();
+        });
+      },
+      trimCharacter: function(e){
+          return e.trim();
+      }
   },
 
 
 
-};
+}
 </script>
 <style>
 .texto{
