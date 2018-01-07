@@ -110,6 +110,7 @@ export function requireAuth(to, from, next) {
     } else {
         next();
     }
+}
     export function requireUser(to, from, next) {
         if (!checkAuth()) {
             next({
