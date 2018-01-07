@@ -9,13 +9,13 @@
 
         <v-ons-list>
           <v-ons-list-header>Acerca de {{user.name}}</v-ons-list-header>
-          <v-ons-list-item>{{descripcion}}</v-ons-list-item>
-          
+          <v-ons-list-item>{{perfil.info}}</v-ons-list-item>
+
         </v-ons-list>
         <div>
-           <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%; 
-                                                  position: absolute; 
-                                                  right: 16px; 
+           <router-link to="/editarperfil"><v-ons-button class="material" style="border-radius:50%;
+                                                  position: absolute;
+                                                  right: 16px;
                                                   top:8px;"
                                                  >
              <v-ons-icon icon="md-edit"></v-ons-icon></v-ons-button></router-link>
@@ -34,7 +34,7 @@
             </p>
         </v-ons-modal>
         </div>
-                     
+
       </div>
     </v-ons-card>
           <div class="estado">
@@ -54,6 +54,7 @@ import Estado from './Estado.vue'
 import Seguidores from './Seguidores.vue'
 import Seguidos from './Seguidos.vue'
 import axios from 'axios'
+import auth from '../auth'
 export default {
   name: 'perfil',
    components:{
@@ -63,8 +64,7 @@ export default {
     'seguidos-page':Seguidos
    },
    created(){
-      var id = this.getParameterByName('id');
-      this.getUser();
+      this.getUserInstance();
    },
   data(){
     return{
@@ -75,40 +75,35 @@ export default {
       modalVisible: false,
       modalVisible1:false,
       idUser:'',
-      user: []
-      
-      
+      user: [],
+      perfil:{
+        avatar:'',
+        info:'',
+      }
+
+
     }
   },
   methods: {
     showModal() {
             this.modalVisible = true;
-        
+
         },
     showModal1(){
       this.modalVisible1= true;
     },
-     getParameterByName: function(id, url) {
-      if (!url) url = window.location.href;
-        id = id.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + id + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        this.idUser = decodeURIComponent(results[2].replace(/\+/g, " "));
-        console.log(this.idUser);
-        return this.idUser
-    },
-      getUser: function (){
-        var url = 'http://127.0.0.1:8000/api/user/'+this.idUser+'/?format=json';
-        console.log(url);
-              axios.get(url).then(response => {
-                this.user = response.data
+      getUserInstance: function (){
+        this.user = auth.getUser()
+        this.idUser = this.user.userperfil
+        var url = 'http://127.0.0.1:8000/api/perfil/'+this.idUser+'/?format=json';
+              axios.get(url,{
+                headers: {Authorization: `JWT ${auth.getAuthHeader()}`}
+              }).then(response => {
+                this.perfil = response.data
               });
         console.log(this.user);
-      }
-  },
-  
+      },
+    },
 
 }
 </script>
@@ -120,20 +115,20 @@ export default {
  color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
   font-size: 12px;
- 
+
 }
 .button--light:active {
   background-color: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.4);
   border: 1px solid rgba(0,0,0,0.2);
   opacity: 3;
- 
+
 }
 img{
      border-radius: 50%;
      width: 150px;
      height: 150px;
-     
+
      }
 
 .toolbar--material{
@@ -141,6 +136,6 @@ img{
 }
 ons-card {
   text-align: center;
-  
+
 }
 </style>

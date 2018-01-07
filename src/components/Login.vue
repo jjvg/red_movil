@@ -41,7 +41,7 @@
                    <v-ons-button class="button button--light material" style="margin: 6px 0" @click="submit()">Ingresar</v-ons-button>
                  </div>
                   <v-ons-dialog cancelable :visible.sync="dialogVisible">
-                    <p style="text-align: center">Error en los datos</p>
+                    <p style="text-align: center">Error al ingresar los datos</p>
                    </v-ons-dialog>
                   <br>
                     <div class="center">
@@ -73,55 +73,34 @@ export default {
   name: 'login',
 
    created: function(){
-       this.getUser();
-     },
-
-     computed:{
-
+      auth.getUsers()
      },
 
   data(){
      return{
         credentials: {
-
           username:'',
           password: ''
-
-        },
+          },
         dialogVisible: false,
         actionSheetVisible: false,
-        token:'',
-         users: [],
-         names:[]
+        key:'',
       }
 
      },
      methods: {
-       getUser(){
-             console.log('1');
-              axios.get('http://127.0.0.1:8000/api/user/?format=json')
-              .then(response => {
-                this.users = response.data;
-
-              }).catch(error => {
-                console.log(error);
-              });
-              console.log(this.users);
-              },
         submit() {
-          this.token = this.users.indexOf(this.credentials.username)
-          window.alert(this.users)
-          window.alert(this.token)
-          if(this.token>=0){
-            var credentials = {
-            username: this.credentials.username,
-            password: this.credentials.password,
-            }
-          auth.login(credentials, '/principal')
-          }else{
-           this.dialogVisible = true
-         }
-      }
+              var credentials = {
+                username: this.credentials.username,
+                password: this.credentials.password,
+              }
+                this.key = auth.checkUser(credentials)
+                  if(this.key){
+                  auth.login(credentials, '/principal')
+                  }else{
+                  this.dialogVisible = true
+                  }
+        }
      },
 }
 </script>
