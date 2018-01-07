@@ -20,7 +20,8 @@
 			</div>
 
 	<div class="row">
-   		<form class="col s12" action="#/reg1" >
+   				<form class="col s12"  :action="url1">
+               <p v-if="mostrar">{{msg}}</p>
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
@@ -106,6 +107,7 @@
      this.getEstado();
      this.getCat();
     this.getUser();
+       var volver = this.getParameterByName('volver');
 
   },
   //función que se ejecuta al escribir en el input email
@@ -122,22 +124,28 @@
            
        }
        var textSearch = this.textSearch;
-       return this.users.filter(function(el) {
+       var a = this.users.filter(function(el) {
          return el.email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
        });
-       
+       this.getUrl(a);
+       return a;
      }
    },
 		data : function() {
         return { 
-      selectedItem: '',
-        ciudad: [],
+        selectedItem: '',
         url: '',
-         estados:[],
-         categ:[],
-      textSearch: "",
-        users: []
-        
+        categ:[],                      //arreglo que almacena las categorías
+        ciudad: [],                    //arreglo que almacena las ciudades del estado seleccionado
+        estados:[],                    //arreglo que almacena los estados
+        textSearch: "",                //utilizado para buscar que el usuario no esté registrado
+        users: [],                    //utilizado para la búsqueda del correo electrónico
+        show: false,
+        volver1: false,
+        mostrar: false,
+        url1:'',
+        msg: 'El correo electrónico que ha proporcionado se encuentra siendo utilizado por otro usuario, por favor intene de nuevo',
+
 
        }
 
@@ -147,7 +155,9 @@
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
-                }); 
+                });
+
+
        },
        getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{
@@ -167,7 +177,40 @@
         this.users = response.data
     });
   
-     }
+     },
+          //método para definir la url
+     getUrl: function(a){
+         if(a && a.length){
+             this.volver = true;
+             this.url1="#/registrarente/?volver=true";
+
+         }
+         else{
+             this.url1="#/reg1";
+         }
+     },
+          //obtener el valor de volver al momento de renderizar
+      getParameterByName: function(volver, url2) {
+
+      if (!url2) url2 = window.location.href;
+       console.log('casi');
+        volver = volver.replace(/[\[\]]./g, "\\$&");
+        var regex = new RegExp("[?&.]" + volver + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url2);console.log('listo1');
+        if (!results) return null;
+        if (!results[2]) return '';
+        this.volver1 = decodeURIComponent(results[2].replace(/\+/g, ""));
+
+        if(a && a.length)
+        {
+            this.mostrar = true;
+        }
+        else{
+            this.mostrar = false;
+        }
+
+    },
+
    }
     }
 
