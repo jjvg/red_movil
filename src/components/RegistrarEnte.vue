@@ -108,7 +108,6 @@
     this.getUser();
 
   },
-<<<<<<< HEAD
   //función que se ejecuta al escribir en el input email
    computed:{
      usersFilter: function(){
@@ -131,53 +130,24 @@
    },
 		data : function() {
         return { 
-=======
-		data : function() {
-        return {
-
-            titulo:{type:String},
-            titulo:'',
-            imagen:{type:File},
-            contenido:{type:String},
-            categoria:{type:Boolean},
-
-
->>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
       selectedItem: '',
         ciudad: [],
         url: '',
          estados:[],
          categ:[],
       textSearch: "",
-<<<<<<< HEAD
         users: []
         
-=======
-
->>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
 
        }
 
    },
    methods:{
         getCiudad: function(){
-<<<<<<< HEAD
           this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
            axios.get(this.url).then(response =>{
          this.ciudad = response.data
                 }); 
-=======
-
-
-           console.log('changed!')
-
-          this.url="http://127.0.0.1:8000/api/estados/"+this.selectedItem+"/?format=json";
-           axios.get(this.url).then(response =>{
-         this.ciudad = response.data
-                });
-
-
->>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
        },
        getEstado: function(){
        axios.get('http://127.0.0.1:8000/api/estados/?format=json').then(response =>{

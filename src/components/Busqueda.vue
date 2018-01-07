@@ -94,12 +94,9 @@ export default {
         this.url = '/perfil/?id='+inp;
     },
   },
-<<<<<<< HEAD
      
        
-=======
 
->>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
 }
 </script>
 <style scoped>

@@ -91,11 +91,8 @@ export default {
         dialogVisible: false,
         actionSheetVisible: false,
         token:'',
-<<<<<<< HEAD
-=======
          users: [],
          names:[]
->>>>>>> be6f3d7c7093c4bf8bc956d5bdc089fbd228da3d
       }
 
      },
