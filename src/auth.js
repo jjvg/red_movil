@@ -5,14 +5,37 @@ import decode from 'jwt-decode';
 const API_URL = 'http://localhost:8000/'
 const LOGIN_URL = API_URL + 'api-token-auth/'
 const SIGNUP_URL = API_URL + 'rest-auth/register/'
-
+const GETUSER_URL = API_URL + 'api/user/?format=json'
 
 export default {
 
     // User object will let us check authentication status
     user: {
+        _id: '',
+        _cls: '',
+        email: '',
+        slug: '',
+        name: '',
+        password: '',
+        estado: '',
+        ciudad: '',
+        direccion: '',
+        apellido: '',
+        intereses: [],
+        genero: 0,
+        edad: 0,
+        telefono_contacto: 0,
+        a_intereses: [],
+        telefono: 0,
+        seguidores: [],
+        seguidos: [],
+        notificaciones: [],
+        modificado: { type: date },
+        activo: true,
+        userperfil: '',
         authenticated: false
     },
+    correos: [],
 
     // Send a request to the login URL and save the returned JWT
     login(creds, redirect) {
@@ -35,7 +58,7 @@ export default {
         });
     },
 
-    // To log out, we just need to remove the token
+    // Remueve el token al salir del sistema
     logout() {
         localStorage.removeItem('id_token')
         localStorage.removeItem('access_token')
@@ -43,6 +66,21 @@ export default {
         router.push('/')
     },
 
+    getUser() {
+        axios.get(GETUSER_URL).then(response => {
+            this.user = this.response.data
+            return this.user
+        }).catch(error => {
+            console.log(error);
+        })
+    },
+    checkUser(data) {
+        while (i < this.user.length) {
+            this.correos[i] == this.user[i]
+            i++;
+        };
+        return this.correos.indexOf(data);
+    },
     checkAuth() {
         var jwt = localStorage.getItem('access_token');
         if (jwt) {
@@ -72,5 +110,13 @@ export function requireAuth(to, from, next) {
     } else {
         next();
     }
-
-}
+    export function requireUser(to, from, next) {
+        if (!checkAuth()) {
+            next({
+                path: '/login',
+                query: { redirect: to.fullPath }
+            });
+        } else {
+            next();
+        }
+    }

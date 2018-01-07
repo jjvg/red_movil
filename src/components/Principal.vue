@@ -40,11 +40,13 @@ export default {
       'tab': Tabbar
   },
   data(){
-   spdVisible:{ Type : Boolean}
-   spdVisible:true;
-      updated: open;
-      spdOpen: true;
-  },
+    return{
+   spdVisible:{ Type : Boolean},
+   spdVisible:true,
+      updated: open,
+      spdOpen: true,
+      }
+   },
   methods:{
      salir(){
        auth.logout()
