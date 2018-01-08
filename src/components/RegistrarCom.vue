@@ -21,7 +21,7 @@
 			</div>
 	<div class="row">
    		<form class="col s12"  :action="url1">
-               <p v-if="mostrar">{{msg}}</p>   
+               <p v-if="mostrar">{{msg}}</p>
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
@@ -71,7 +71,7 @@
                      <v-text-area name="contenido" id="contenido" length="50" v-model="userCom" required></v-text-area>
                      <label for="text"><i class="material-icons">pin_drop</i>Dirección</label>
                 </div>
-               
+
                  </div>
             <div class="center"> <button class="button--light btn1" modifier="large" type="submit" @click="submit()" >REGISTRAR</button> </div>
    		 </form>
@@ -129,9 +129,6 @@ import auth from '../auth'
         telefono_contacto: 0,
         a_intereses: Array,
         a_intereses: [],
-        modificado: { type: Date },
-        activo: true,
-        userperfil: '',
       },
       selectedItem: '',
       selectedItem1: '',
@@ -160,7 +157,21 @@ import auth from '../auth'
          password2:this.password,
          email:this.email,
        }
-       auth.signup(crede,'/')
+       var user ={
+          cls: 'User.Comunidad',
+          email:this.userCom.email,
+          name: this.userCom.name,
+          password: this.userCom.password,
+          estado: this.userCom.estado,
+          ciudad:this.userCom.ciu,
+          direccion:this.userCom.direccion,
+          a_intereses:this.userCom.a_intereses,
+          telefono_contacto:this.userCom.telefono_contacto,
+       }
+
+          auth.signup(crede,'/reg1',user)
+
+
      },
        //método para buscar llenar el array ciudad con los datos del estado seleccionado
        getCiudad: function(){

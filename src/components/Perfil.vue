@@ -1,7 +1,7 @@
 <template>
     <v-ons-page id="app">
     <v-ons-card>
-        <img src="../assets/perfil.jpg" alt="Imagen perfil" >
+        <img src="/img/perfil.jpg" alt="Imagen perfil" >
           <div class="title">
             {{user.namen}}
           </div>

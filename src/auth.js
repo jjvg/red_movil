@@ -28,6 +28,8 @@ export default {
         telefono_contacto: 0,
         a_intereses: Array,
         telefono: 0,
+        responsable: '',
+        area_dedicada: '',
         seguidores: Array,
         seguidos: Array,
         notificaciones: Array,
@@ -59,10 +61,10 @@ export default {
 
     signup(creds, redirect, data) {
         axios.post(SIGNUP_URL, creds).then(response => {
-            if (data_cls == 'User.Persona') {
+            if (data.cls == 'User.Persona') {
                 axios.post(GETUSER_URL, {
                     _cls: data.cls,
-                    email: data.emal,
+                    email: data.email,
                     name: data.name,
                     password: data.password,
                     estado: data.estado,
@@ -74,18 +76,61 @@ export default {
                     edad: data.edad,
                     activo: true,
                     userperfil: {
-                        avatar: 'avatar-persona',
+                        avatar: 'avatar-persona.png',
                         info: 'nuevo en la aplicacion',
                     }
                 }).then(response => {
                     this.alma == true;
+                    window.alert(this.alma);
                 })
             }
-
-            this.user.authenticated == true;
-            window.alert(this.user.authenticated);
-            // router.push(redirect);
-
+            if (data.cls == 'User.Comunidad') {
+                axios.post(GETUSER_URL, {
+                    _cls: data.cls,
+                    email: data.email,
+                    name: data.name,
+                    password: data.password,
+                    estado: data.estado,
+                    ciudad: data.ciudad,
+                    direccion: data.direccion,
+                    a_intereses: data.intereses,
+                    telefono_contacto: 0,
+                    responsable: '',
+                    activo: true,
+                    userperfil: {
+                        avatar: 'avatar-comunidad.png',
+                        info: 'nuevo en la aplicacion',
+                    }
+                }).then(response => {
+                    this.alma == true;
+                    window.alert(this.alma);
+                })
+            }
+            if (data.cls == 'User.Ente') {
+                axios.post(GETUSER_URL, {
+                    _cls: data.cls,
+                    email: data.email,
+                    name: data.name,
+                    password: data.password,
+                    estado: data.estado,
+                    ciudad: data.ciudad,
+                    direccion: data.direccion,
+                    intereses: data.intereses,
+                    telefono: 0,
+                    areadedicada: data.area,
+                    activo: true,
+                    userperfil: {
+                        avatar: 'avatar-ente.png',
+                        info: 'nuevo en la aplicacion',
+                    }
+                }).then(response => {
+                    this.alma == true;
+                    window.alert(this.alma)
+                })
+            }
+            router.push(redirect);
+        }).catch(error => {
+            console.log(error)
         });
     },
 
