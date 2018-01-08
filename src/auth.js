@@ -33,12 +33,17 @@ export default {
         notificaciones: Array,
         modificado: { type: Date },
         activo: true,
-        userperfil: '',
+        userperfil: {
+            avatar: '',
+            info: '',
+            estado: '',
+        },
         authenticated: false
     },
     users: { type: Array },
     users: [],
     valido: false,
+    alma: false,
 
     //Envia una solicitud para iniciar sesion y validar usuario y obtener el token de acceso  JWT
     login(creds, redirect) {
@@ -52,10 +57,31 @@ export default {
 
     // Metodo que realiza la insersion de un nuevo usuario en el sistema
 
-    signup(creds, redirect) {
+    signup(creds, redirect, data) {
         axios.post(SIGNUP_URL, creds).then(response => {
-            //localStorage.setItem('id_token', response.data.id)
-            //localStorage.setItem('access_token', response.data.key)
+            if (data_cls == 'User.Persona') {
+                axios.post(GETUSER_URL, {
+                    _cls: data.cls,
+                    email: data.emal,
+                    name: data.name,
+                    password: data.password,
+                    estado: data.estado,
+                    ciudad: data.ciudad,
+                    direccion: data.direccion,
+                    apellido: data.apellido,
+                    intereses: data.intereses,
+                    genero: data.genero,
+                    edad: data.edad,
+                    activo: true,
+                    userperfil: {
+                        avatar: 'avatar-persona',
+                        info: 'nuevo en la aplicacion',
+                    }
+                }).then(response => {
+                    this.alma == true;
+                })
+            }
+
             this.user.authenticated == true;
             window.alert(this.user.authenticated);
             // router.push(redirect);
@@ -120,7 +146,6 @@ export function requireAuth(to, from, next) {
         next();
     }
 }
-<<<<<<< HEAD
 export function requireUser(to, from, next) {
     if (!checkAuth()) {
         next({
@@ -131,15 +156,3 @@ export function requireUser(to, from, next) {
         next();
     }
 }
-=======
-    export function requireUser(to, from, next) {
-        if (!checkAuth()) {
-            next({
-                path: '/login',
-                query: { redirect: to.fullPath }
-            });
-        } else {
-            next();
-        }
-    }
->>>>>>> 1f9a42e1ca0e41f91b3c991790c910b5bf48fa4d

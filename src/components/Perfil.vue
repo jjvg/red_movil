@@ -77,6 +77,7 @@ export default {
       idUser:'',
       user: [],
       perfil:{
+        avatar:{Type: Img},
         avatar:'',
         info:'',
       }
