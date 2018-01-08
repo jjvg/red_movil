@@ -19,7 +19,8 @@
 				<h3 style="color: rgb(10, 160, 152);">Registro de Personas</h3>
 			</div>
 	<div class="row">
-   		<form class="col s12">
+   				<form class="col s12"  :action="url1">
+               <p v-if="mostrar">{{msg}}</p>
       		<div class="row">
 				<div class="input-field col s12 m6">
          			 <i class="material-icons prefix">email</i>
@@ -66,12 +67,13 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
+  import axios from 'axios';
 export default {
 	name: 'registro',
     created: function() {
         this.getUser();
     },
-    //función que se ejecuta al escribir en el input email
+   //función que se ejecuta al escribir en el input email
    computed:{
      usersFilter: function(){
          var inpEm=$("#email").val();
@@ -85,10 +87,11 @@ export default {
            
        }
        var textSearch = this.textSearch;
-       return this.users.filter(function(el) {
+       var a = this.users.filter(function(el) {
          return el.email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1;
        });
-       
+       this.getUrl(a);
+       return a;
      }
    },
 	data : function() {
@@ -103,12 +106,15 @@ export default {
         { text: 'Femenino', value: 'Femenino' },
         { text: 'Masculino', value: 'Masculino' },
       ],
+        textSearch: "",                //utilizado para buscar que el usuario no esté registrado
+        users: [],                    //utilizado para la búsqueda del correo electrónico
+        show: false,
+        volver1: false,
+        mostrar: false,
+        url1:'',
+        msg: 'El correo electrónico que ha proporcionado se encuentra siendo utilizado por otro usuario, por favor intene de nuevo',
+
 	}},
-	computed:{
-		...mapGetters([
-			'nombre'
-		])
-	},
 	methods:{
         //método utilizado para llenar el arreglo de users
      getUser: function(){
@@ -117,7 +123,39 @@ export default {
         this.users = response.data
     });
   
-     }
+     },
+           //método para definir la url
+     getUrl: function(a){
+         if(a && a.length){
+             this.volver = true;
+             this.url1="#/registrarpersona/?volver=true";
+
+         }
+         else{
+             this.url1="#/reg1";
+         }
+     },
+          //obtener el valor de volver al momento de renderizar
+      getParameterByName: function(volver, url2) {
+
+      if (!url2) url2 = window.location.href;
+       console.log('casi');
+        volver = volver.replace(/[\[\]]./g, "\\$&");
+        var regex = new RegExp("[?&.]" + volver + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url2);console.log('listo1');
+        if (!results) return null;
+        if (!results[2]) return '';
+        this.volver1 = decodeURIComponent(results[2].replace(/\+/g, ""));
+
+        if(a && a.length)
+        {
+            this.mostrar = true;
+        }
+        else{
+            this.mostrar = false;
+        }
+
+    },
 	}
 	
 };

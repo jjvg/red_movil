@@ -53,6 +53,10 @@ module.exports = {
                 }
             },
             {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'file-loader?name=img/[name].[ext]?[hash]',
+            },
+            {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
